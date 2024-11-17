@@ -15,6 +15,25 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+/* index.css */
+@font-face {
+  font-family: 'AngryBirds';
+  src: url('../public/fonts/angrybirds-regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+/* index.css or global.css */
+@font-face {
+  font-family: 'TTHoves';
+  src: url('/fonts/TT Hoves Pro Trial Regular.ttf') format('truetype');
+  font-weight: 400; /* Adjust the weight if needed */
+  font-style: normal;
+}
+
+/* Apply font globally */
+body {
+  font-family: 'AngryBirds', sans-serif;
+}
 
 a {
   font-weight: 500;
