@@ -1,0 +1,75 @@
+/* General styling for the container */
+.tracks-container {
+  padding: 20px;
+  text-align: center; /* Center the heading */
+}
+
+/* Styling for the heading */
+.tracks-heading {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Flexbox layout for cards */
+.cards-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center cards in rows */
+  gap: 20px; /* Space between cards */
+}
+
+/* Card styling */
+.card-wrapper {
+  width: 100%;
+  max-width: 300px; /* Limit the card width */
+  text-align: center;
+  margin: 10px;
+}
+
+.card {
+  width: 100%;
+  height: auto;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Ensure the image maintains its aspect ratio */
+}
+
+h2 {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* For tablets and mobile devices */
+@media (max-width: 768px) {
+  .tracks-heading {
+    font-size: 2rem; /* Adjust heading size for smaller screens */
+  }
+
+  .cards-wrapper {
+    justify-content: space-evenly; /* Adjust card spacing */
+  }
+  .card-wrapper {
+    max-width: 90%; /* Allow the card to take up more space on smaller screens */
+  }
+}
+
+/* For smaller screens like mobile */
+@media (max-width: 480px) {
+  .tracks-heading {
+    font-size: 1.5rem; /* Further reduce the heading size */
+  }
+
+  .cards-wrapper {
+    justify-content: space-evenly; /* Adjust card spacing */
+  }
+  .card-wrapper {
+    max-width: 100%; /* Cards take full width on smaller screens */
+  }
+}
