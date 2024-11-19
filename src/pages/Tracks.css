@@ -1,5 +1,5 @@
 /* General styling for the container */
-.container {
+.tracks-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
