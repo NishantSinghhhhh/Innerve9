@@ -25,22 +25,27 @@ const Card = ({ imageSrc, label }) => {
 
 const Tracks = () => {
   const cardsData = [
-    { imageSrc: EdtechImg, },
-    { imageSrc: HealthImg, },
     { imageSrc: ARVRImg, },
-    { imageSrc: GameImg,  },
-    { imageSrc: BlockChainImg, },
+    { imageSrc: EdtechImg,},
+    { imageSrc: HealthImg, },
+
+    { imageSrc: GameImg, },
+    { imageSrc: FinTechImg,},
     { imageSrc: CyberImg, },
-    { imageSrc: DefenceImg,  },
-    { imageSrc: FinTechImg,  },
+    { imageSrc: DefenceImg,},
+    { imageSrc: BlockChainImg, },
+    
     { imageSrc: LogiImg, },
   ];
 
   return (
     <div className="tracks-container">
-      {cardsData.map((card, index) => (
-        <Card key={index} imageSrc={card.imageSrc} label={card.label} />
-      ))}
+      <h1 className="tracks-heading">TRACKS</h1> {/* Heading on top */}
+      <div className="cards-wrapper">
+        {cardsData.map((card, index) => (
+          <Card key={index} imageSrc={card.imageSrc} label={card.label} />
+        ))}
+      </div>
     </div>
   );
 };
