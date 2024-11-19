@@ -14,11 +14,11 @@ import LogiImg from '../assets/Logi.png';
 
 const Card = ({ imageSrc, label }) => {
   return (
-    <div className="card-wrapper">
-      <div className="card">
+    <div className="card-wrapper" style={{ position: 'relative' }}>
+      <div className="card" style={{ position: 'relative' }}>
         <img src={imageSrc} alt={label} />
       </div>
-      <h2>{label}</h2>
+      <h2 style={{ position: 'absolute' }}>{label}</h2>
     </div>
   );
 };
@@ -39,13 +39,13 @@ const Tracks = () => {
   ];
 
   return (
-    <div className="tracks-container">
-      <h1 className="tracks-heading">TRACKS</h1>
-      <div className="cards-wrapper">
-        {cardsData.map((card, index) => (
+    <div className="tracks-container" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px', justifyContent: 'center', alignItems: 'center', backgroundColor: '#0A0A1C' }}>
+      <h1 className="tracks-heading" style={{ gridColumn: 'span 3', justifySelf: 'center', fontSize: '60px',  fontFamily: 'AngryBirds' }}>TRACKS</h1>
+      {cardsData.map((card, index) => (
+        <div style={{ transform: 'translate(0, 0)', justifySelf: 'center' }}>
           <Card key={index} imageSrc={card.imageSrc} label={card.label} />
-        ))}
-      </div>
+        </div>
+      ))}
     </div>
   );
 };

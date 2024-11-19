@@ -6,9 +6,11 @@ import Cards from "./components/Cards/index";
 function App() {
   return (
     <>
+    <div className="relative">
       <Hero />
       <Cards />
       <Tracks />
+    </div>
     </>
   );
 }
