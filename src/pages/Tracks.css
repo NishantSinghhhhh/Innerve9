@@ -1,7 +1,8 @@
 
 .tracks-container {
   padding: 20px;
-  text-align: center; 
+  text-align: center;
+ 
 }
 
 
@@ -14,10 +15,12 @@
 
 
 .cards-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  justify-content: center; 
+  align-items: center; 
+ gap:10px;
+  width:100vw;
 }
 
 
@@ -53,7 +56,9 @@ h2 {
   }
 
   .cards-wrapper {
+    display: flex;
     justify-content: space-evenly; 
+    flex-wrap: wrap;
   }
   .card-wrapper {
     max-width: 90%; 
@@ -67,7 +72,9 @@ h2 {
   }
 
   .cards-wrapper {
+    display: flex;
     justify-content: space-evenly; 
+    flex-wrap: wrap;
   }
   .card-wrapper {
     max-width: 100%; 
