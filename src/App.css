@@ -63,3 +63,12 @@ body {
   align-items: center;
   min-height: 100vh;
 }
+.app-container {
+  text-align: center; /* Center the content */
+}
+
+.heading {
+  font-size: 3rem;
+  margin-bottom: 20px; /* Add spacing below the heading */
+  color: white; /* You can change the color as per your design */
+}

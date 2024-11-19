@@ -1,37 +1,39 @@
-// import { useState } from "react";
-// import reactLogo from "./assets/react.svg";
-// import viteLogo from "/vite.svg";
+import React from "react";
+import Card from "./pages/Tracks";
 import "./App.css";
-import "./Tracks.jsx";
 
-function App() {
+// Import images from src/assets
+import EdtechImg from "./assets/Edtech.png";
+import HealthImg from "./assets/health.png";
+import ARVRImg from "./assets/ARVR.png";
+import GameImg from "./assets/Game.png";
+import BlockChainImg from "./assets/Block Chain.png";
+import CyberImg from "./assets/Cyber.png";
+import DefenceImg from "./assets/Defence.png";
+import FinTechImg from "./assets/FinTech.png";
+import LogiImg from "./assets/Logi.png";
 
-
-  return (
-    <>
-        <h1 className="text-3xl font-bold underline text-red-400">Hello world!</h1>
-        
-    </>
-  );
-}
 const App = () => {
   const cardsData = [
-    { imageSrc: './assets/Edtech.png', label: 'EdTech' },
-    { imageSrc: './assets/health.png', label: 'Health' },
-    { imageSrc: './assets/ARVR.png', label: 'AR-VR' },
-    { imageSrc: './assets/Game.png', label: 'GameDev' },
-    { imageSrc: './assets/Block Chain.png', label: 'BlockChain' },
-    { imageSrc: './assets/Cyber.png', label: 'CyberSec' },
-    { imageSrc: './assets/Defence.png', label: 'Defence' },
-    { imageSrc: './assets/FinTech.png', label: 'FinTech' },
-    { imageSrc: './assets/Logi.png', label: 'Logistics' },
+    { imageSrc: EdtechImg,},
+    { imageSrc: HealthImg, },
+    { imageSrc: ARVRImg,},
+    { imageSrc: GameImg, },
+    { imageSrc: BlockChainImg,},
+    { imageSrc: CyberImg, },
+    { imageSrc: DefenceImg,},
+    { imageSrc: FinTechImg,},
+    { imageSrc: LogiImg,  },
   ];
 
   return (
-    <div className="container">
-      {cardsData.map((card, index) => (
-        <Card key={index} imageSrc={card.imageSrc} label={card.label} />
-      ))}
+    <div className="app-container">
+      <h1 className="heading">TRACKS</h1>
+      <div className="container">
+        {cardsData.map((card, index) => (
+          <Card key={index} imageSrc={card.imageSrc} label={card.label} />
+        ))}
+      </div>
     </div>
   );
 };

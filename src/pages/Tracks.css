@@ -1,28 +1,60 @@
+/* General styling for the container */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Heading Style */
+.heading {
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+/* Card styling */
 .card-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  width: 100%;
+  max-width: 300px; /* Limit card width */
+  text-align: center;
+  margin: 10px;
+}
+
+.card {
+  width: 100%;
+  height: auto;
+}
+
+.card img {
+  width: 100%; /* Ensure image takes up the full width of the card */
+  height: auto;
+  object-fit: cover; /* Maintain aspect ratio of image */
+}
+
+h2 {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+/* For tablets and mobile devices */
+@media (max-width: 768px) {
+  .container {
+    justify-content: center; /* Center the cards */
   }
-  
-  .card {
-    width: 200px;
-    height: 200px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    background-color: white;
-    border-radius: 15px;
-    overflow: hidden;
+  .card-wrapper {
+    max-width: 90%; /* Allow the card to take up more space on smaller screens */
   }
-  
-  .card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+}
+
+/* For smaller screens like mobile */
+@media (max-width: 480px) {
+  .container {
+    justify-content: space-evenly; /* Adjust the space between cards */
   }
-  
-  .card-wrapper h2 {
-    margin: 10px 0 0;
-    font-size: 1em;
-    color: #333;
-    text-align: center;
+  .card-wrapper {
+    max-width: 100%; /* Cards will take full width on small screens */
   }
-  
+}
