@@ -40,7 +40,7 @@ const Tracks = () => {
 
   return (
     <div className="tracks-container">
-      <h1 className="tracks-heading">TRACKS</h1> {/* Heading on top */}
+      <h1 className="tracks-heading">TRACKS</h1>
       <div className="cards-wrapper">
         {cardsData.map((card, index) => (
           <Card key={index} imageSrc={card.imageSrc} label={card.label} />
