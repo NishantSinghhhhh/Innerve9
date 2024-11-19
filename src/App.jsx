@@ -1,11 +1,14 @@
 import Hero from "./components/Hero"
+import "./App.css";
+import Cards from "./components/Cards/index"
 
-const App = () => {
+function App() {
   return (
-    <div>
+    <>
       <Hero /> 
-    </div>
-  )
+      <Cards/>
+    </>
+  );
 }
 
-export default App
+export default App;
