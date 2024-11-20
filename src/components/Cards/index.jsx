@@ -6,6 +6,7 @@ import radialthird from "../../assets/radialtrianglethird.svg";
 import leftside from "../../assets/leftsidecut.svg";
 import rightside from "../../assets/rightsidecut.svg";
 import egg1 from "../../assets/Egg1-basket.svg"
+
 import egg2 from "../../assets/Egg2-basket.svg"
 import egg3 from "../../assets/Egg3-basket.svg"
 import BackgroundPrize from "../../assets/./BackgroundPrize.svg";
