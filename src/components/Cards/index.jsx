@@ -43,7 +43,7 @@ const Cards = () => {
 
   return (
 
-    <div className="relative top-[0%] z-[-2] w-screen transform">
+    <div className="relative flex justify-center items-center top-[0%] z-[-2] w-screen transform">
 
         <p className="absolute text-[60px] top-[30%] font-angrybirds z-[5] text-white left-[50%] transform -translate-x-1/2">PRIZE POOL OF Rs. 10,00,000+</p>
     <div className="absolute flex justify-center items-center top-[30%] w-[100%] h-screen  gap-10 z-[5] ">
@@ -52,7 +52,7 @@ const Cards = () => {
       <CardWrapper {...cardProps.cardProps.firstPrize} />
       <CardWrapper {...cardProps.cardProps.thirdPrize} />
     </div>
-    <img src={Cloud} alt="Cloud Background" className="relative z-[-4]"/>
+    <img src={Cloud} alt="Cloud Background" className="relative w-full z-[-4]"/>
     <img src={BackgroundPrize} alt="Background" className="absolute top-[12%] z-[4]" />
 
     </div>
