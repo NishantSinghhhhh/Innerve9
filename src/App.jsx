@@ -5,13 +5,11 @@ import Cards from "./components/Cards/index";
 
 function App() {
   return (
-    <>
-    <div className="relative">
+    <div className="flex flex-col justify-center items-center overflow-x-hidden gap-48 relative">
       <Hero />
       <Cards />
       <Tracks />
     </div>
-    </>
   );
 }
 

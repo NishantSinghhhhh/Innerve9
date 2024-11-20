@@ -3,14 +3,14 @@ import Navigate from "../assets/link.svg";
 
 const Navbar = () => {
   return (
-    <header>
+    <header className="w-full">
       <nav className="flex justify-between items-center py-4 px-8 lg:py-8 lg:px-[120px]">
         <a href="/">
           <img src={Logo} alt="logo" />
         </a>
         <div className="flex gap-4 items-center">
           <div className="flex items-center gap-2 cursor-pointer px-4">
-            <div className="bg-[#3AFFA3] h-[20px] w-1 shadow-[0_0_36px_8px_rgba(58,255,163,0.6)]"></div>
+            <div className="bg-[#3AFFA3] h-[20px] w-1 shadow-[0_0_36px_8px_rgba(58,255,163,0.5)]"></div>
             <p>Brochure</p>
             <img src={Navigate} alt="brochure" />
           </div>
