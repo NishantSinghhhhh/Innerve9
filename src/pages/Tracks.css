@@ -1,12 +1,10 @@
 .tracks-container {
   display: flex;
-  flex-direction: column; 
-  justify-content: center; 
-  align-items: center; 
-  min-height: 100vh; 
-
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
   text-align: center;
-  width:100%;
 }
 
 .tracks-heading {
@@ -19,20 +17,17 @@
 .cards-wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr); 
-  gap: 20px; 
-  justify-content: center; 
-  align-items: center; 
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
 }
 
 .card-wrapper {
-  width: 100%;
-  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-}
-
-.card {
-  width: 100%;
-  height: auto;
+  max-width: 300px;
 }
 
 .card img {
@@ -45,27 +40,22 @@ h2 {
   margin-top: 10px;
   font-size: 1.2rem;
   font-weight: 600;
-  color: #0A0A1C;
+  color: #333;
 }
 
-@media (max-width: 768px) {
-  .tracks-heading {
-    font-size: 2rem;
-  }
 
+@media (max-width: 768px) {
   .cards-wrapper {
     grid-template-columns: repeat(2, 1fr); 
-    gap: 15px; 
   }
 }
 
 @media (max-width: 480px) {
-  .tracks-heading {
-    font-size: 1.5rem;
-  }
-
   .cards-wrapper {
-    grid-template-columns: 1fr; 
-    gap: 10px;
+    grid-template-columns: 1fr;
   }
+}
+h1{
+  font-family: "AngryBirds";
+  src: url("./assets/fonts/angrybirds-regular.ttf") format("truetype");
 }
