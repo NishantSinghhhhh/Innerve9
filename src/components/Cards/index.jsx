@@ -14,7 +14,6 @@ import { div } from "three/webgpu";
 const Cards = () => {
   const cardProps = {
     cardProps: {
-      
       secondPrize: {
         prize: "Second Prize",
         prizeLabel: "SECOND",
@@ -43,7 +42,9 @@ const Cards = () => {
   };
 
   return (
-    <div className="relative top-[0%] z-[-2] w-[100%] transform bg-[#0A0A1C] ">
+
+    <div className="relative top-[0%] z-[-2] w-screen transform">
+
         <p className="absolute text-[60px] top-[30%] font-angrybirds z-[5] text-white left-[50%] transform -translate-x-1/2">PRIZE POOL OF Rs. 10,00,000+</p>
     <div className="absolute flex justify-center items-center top-[30%] w-[100%] h-screen  gap-10 z-[5] ">
              
