@@ -102,7 +102,7 @@ const FlipCountdown = ({ targetDate }) => {
   return (
     <div className="flex gap-4 md:gap-[96px] items-center justify-center">
       {/* Days */}
-      <div className="flex flex-col gap-4">
+      <div className="font-angrybirds flex flex-col gap-4">
         {renderDigits(timeLeft.days, "days")}
         <div>
           <p className="font-angrybirds text-base">DAYS</p>
@@ -110,7 +110,7 @@ const FlipCountdown = ({ targetDate }) => {
       </div>
 
       {/* Hours */}
-      <div className="flex flex-col gap-4">
+      <div className="font-angrybirds flex flex-col gap-4">
         {renderDigits(timeLeft.hours, "hours")}
         <div>
           <p className="font-angrybirds text-base">HOURS</p>
@@ -118,7 +118,7 @@ const FlipCountdown = ({ targetDate }) => {
       </div>
 
       {/* Minutes */}
-      <div className="flex flex-col gap-4">
+      <div className="font-angrybirds flex flex-col gap-4">
         {renderDigits(timeLeft.minutes, "minutes")}
         <div>
           <p className="font-angrybirds text-base">MINUTES</p>
@@ -126,7 +126,7 @@ const FlipCountdown = ({ targetDate }) => {
       </div>
 
       {/* Seconds */}
-      <div className="flex flex-col gap-4">
+      <div className="font-angrybirds flex flex-col gap-4">
         {renderDigits(timeLeft.seconds, "seconds")}
         <div>
           <p className="font-angrybirds text-base">SECONDS</p>
