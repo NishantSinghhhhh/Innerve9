@@ -6,6 +6,11 @@ export default {
 
   ],
   theme: {
+    extend: {
+      screens: {
+        xs: '480px',
+      },
+    },
     fontFamily: {
       angrybirds: ["AngryBirds", "sans-serif"],
       tthoves: ["TTHoves", "sans-serif"],// Add the custom font

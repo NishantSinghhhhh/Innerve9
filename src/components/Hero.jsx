@@ -3,6 +3,7 @@ import FlipCountdown from "./FlipCountdown";
 import Button from "./Button";
 import Devfolio from "../assets/devfolio.svg";
 import Dates from "./Dates";
+import React from "react";
 
 import Floating from "./Floating";
 import Heading from "./Heading";

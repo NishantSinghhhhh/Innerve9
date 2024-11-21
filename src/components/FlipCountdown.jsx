@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import "../index.css"; // This file contains CSS animations
+import React from "react";
 
+// eslint-disable-next-line react/prop-types
 const FlipCountdown = ({ targetDate }) => {
   const [timeLeft, setTimeLeft] = useState({
     days: "00",
@@ -63,7 +65,7 @@ const FlipCountdown = ({ targetDate }) => {
     calculateTimeLeft();
 
     return () => clearInterval(timer);
-  }, [targetDate, timeLeft]);
+  }, [targetDate]);
 
   const renderDigits = (value, unit) => (
     <div className="flex gap-[2px]">
