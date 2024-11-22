@@ -1,10 +1,10 @@
 import React from "react";
 import "./Tracks.css";
 
-import HeartImg from "../assets/heart.png"; 
-import RaysImg1 from "../assets/rays.png"; 
-import RaysImg2 from "../assets/rays2.png"; 
-import RaysImg3 from "../assets/rays3.png"; 
+import HeartImg from "../assets/heart.svg"; 
+import RaysImg1 from "../assets/rays.svg"; 
+import RaysImg2 from "../assets/rays2.svg"; 
+import RaysImg3 from "../assets/rays3.svg"; 
 
 
 const innerCardColors = [
