@@ -1,0 +1,53 @@
+import React from "react";
+
+const BlinkingDot = () => {
+  return (
+    <>
+      {/* Define animation styles inline */}
+      <style>
+        {`
+          @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+          }
+          @keyframes growBlur {
+            0% {
+              transform: scale(1);
+              opacity: 1;
+              filter: blur(0px);
+            }
+            50% {
+              transform: scale(2);
+              opacity: 0.4;
+              filter: blur(5px);
+            }
+            100% {
+              transform: scale(1);
+              opacity: 1;
+              filter: blur(0px);
+            }
+          }
+        `}
+      </style>
+      <div className="flex items-center relative">
+        {/* Inner static circle */}
+        <span
+          className="w-4 h-4 bg-pink-600 rounded-full absolute z-10"
+        //   style={{ animation: "blink 2.5s infinite" }}
+        ></span>
+        {/* Outer animated circle */}
+        <span
+          className="w-4 h-4 bg-pink-500 rounded-full absolute "
+          style={{
+            animation: "growBlur 2.5s infinite",
+            opacity: 1,
+          }}
+        ></span>
+        {/* Text next to the dot */}
+        <span className="text-sm ml-8">Registration Open</span>
+      </div>
+    </>
+  );
+};
+
+export default BlinkingDot;
