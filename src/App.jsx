@@ -3,6 +3,7 @@ import Hero from "./components/Hero";
 import "./App.css";
 import Cards from "./components/Cards/index";
 import Timeline from "./pages/Timeline";
+import Footer from "./pages/Footer";
 import React from "react";
 
 function App() {
@@ -12,7 +13,7 @@ function App() {
       <Cards />
       <Tracks />
       <Timeline/>
-
+      <Footer/>
     </div>
   );
 }
