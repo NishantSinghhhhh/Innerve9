@@ -26,7 +26,7 @@ const Cards = () => {
       firstPrize: {
         prize: "First Prize",
         prizeLabel: "FIRST",
-        amount: "100K",
+        amount: "125K",
         description:
           "Innerve Goodies and Merch. Fundings and Internship opportunities from our sponsors",
         images: { radial:radialfirst, leftside, rightside, egg:egg3 },
@@ -34,7 +34,7 @@ const Cards = () => {
       thirdPrize: {
         prize: "Third Prize",
         prizeLabel: "THIRD",
-        amount: "25K",
+        amount: "30K",
         description:
           "Innerve Goodies and Merch. Fundings and Internship opportunities from our sponsors",
         images: { radial: radialthird, leftside, rightside,egg:egg3 },
