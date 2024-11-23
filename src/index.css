@@ -23,6 +23,10 @@
   font-style: normal;
 }
 
+::-webkit-scrollbar{
+  display: none;
+}
+
 /* Apply font globally */
 body{
   color: white;

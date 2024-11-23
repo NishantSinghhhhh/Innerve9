@@ -32,12 +32,12 @@ const BlinkingDot = () => {
       <div className="flex items-center relative">
         {/* Inner static circle */}
         <span
-          className="w-4 h-4 bg-pink-600 rounded-full absolute z-10"
+          className="w-4 h-4 bg-[#3AFFA3] rounded-full absolute z-10"
         //   style={{ animation: "blink 2.5s infinite" }}
         ></span>
         {/* Outer animated circle */}
         <span
-          className="w-4 h-4 bg-pink-500 rounded-full absolute "
+          className="w-4 h-4 bg-[#3AFFA3] rounded-full absolute "
           style={{
             animation: "growBlur 2.5s infinite",
             opacity: 1,
