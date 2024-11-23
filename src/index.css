@@ -9,6 +9,12 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'pixellari';
+  src: url('../public/fonts/Pixellari.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 /* index.css or global.css */
 @font-face {
   font-family: 'TTHoves';
@@ -38,7 +44,7 @@ body{
     transform: translate(75vw,5vh);
   }
   50%{
-    transform: translate(100vw,0vh);
+    transform: translate(calc(100vw - 240px),0vh);
   }
   62.5% {
     transform: translate(75vw,5vh);
@@ -56,11 +62,11 @@ body{
 
 #floating-piggy {
   transform: translate(0%, 0%);
-  animation: float 30s linear infinite ;
+  animation: float 30s linear 10 ;
   will-change: transform;
 }
 
-.upper-flap.flip {
+/* .upper-flap.flip {
   animation: flip-animation 0.6s ease-in-out;
 }
 
@@ -74,5 +80,5 @@ body{
   100% {
     transform: rotateX(0);
   }
-}
+} */
 

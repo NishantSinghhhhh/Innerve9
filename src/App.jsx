@@ -8,7 +8,7 @@ import React from "react";
 
 function App() {
   return (
-    <div className="flex flex-col justify-center items-center overflow-x-hidden gap-48 relative">
+    <div className="flex flex-col justify-center items-center overflow-x-hidden relative">
       <Hero />
       <Cards />
       <Tracks />
