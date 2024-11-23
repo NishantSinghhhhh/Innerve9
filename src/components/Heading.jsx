@@ -1,3 +1,5 @@
+import React from "react";
+
 import Piggy from "../assets/piggy.svg";
 
 const Heading = () => {
