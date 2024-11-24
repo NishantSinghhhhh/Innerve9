@@ -13,7 +13,7 @@ const Navbar = () => {
           <div className="flex items-center gap-2 cursor-pointer px-4 group">
             <span className="h-[20px] w-1 bg-[#3AFFA3] z-10"></span>
             <span
-              className="h-3 w-1 bg-[#3AFFA3] absolute -translate-x-1/2"
+              className="h-4 w-1 bg-[#3AFFA3] absolute -translate-x-1/2"
               style={{
                 animation: "growBlur 500ms infinite",
                 opacity: 1,

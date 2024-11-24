@@ -5,13 +5,13 @@
 /* index.css */
 @font-face {
   font-family: 'AngryBirds';
-  src: url('../public/fonts/angrybirds-regular.ttf') format('truetype');
+  src: url('../fonts/angrybirds-regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'pixellari';
-  src: url('../public/fonts/Pixellari.ttf') format('truetype');
+  src: url('../fonts/Pixellari.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -30,7 +30,7 @@
 /* Apply font globally */
 body{
   color: white;
-  background: linear-gradient( #0A0A1D, #121212);
+  background: linear-gradient( #1F0030, #0E0212);
   font-family: 'TTHoves', sans-serif;
 }
 
