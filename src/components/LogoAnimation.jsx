@@ -18,6 +18,7 @@ const LogoAnimation = () => {
         trigger: "#upper",
         // markers: true,
         start: "bottom, 70%",
+        end: "100%, top",
         scrub: true,
       },
       ease:"power1.inOut"
@@ -30,6 +31,20 @@ const LogoAnimation = () => {
         trigger: "#upper",
         // markers: true,
         start: "70%, 70%",
+        end: "100%, top",
+        scrub: true,
+      },
+      ease:"power1.inOut"
+    });
+    gsap.from("#bottom", {
+      x:-300,
+      y: -700,
+      rotation: 120,
+      scrollTrigger: {
+        trigger: "#upper",
+        // markers: true,
+        start: "70%, 70%",
+        end: "100%, top",
         scrub: true,
       },
       ease:"power1.inOut"
