@@ -4,7 +4,7 @@ import React from "react";
 
 const Floating = () => {
     return (
-      <div className="-z-10 absolute left-[0%] bottom-[-38%] w-screen">
+      <div className="-z-10 absolute left-[0%] bottom-[-28%] w-screen">
         <img
           id="floating-piggy"
           // ref={bubbleRef}
