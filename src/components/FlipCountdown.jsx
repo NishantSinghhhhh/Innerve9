@@ -37,9 +37,10 @@ const FlipCountdown = ({ targetDate }) => {
         hours: String(
           Math.floor((difference / (1000 * 60 * 60)) % 24)
         ).padStart(2, "0"),
-        minutes: String(
-          Math.floor((difference / (1000 * 60)) % 60)
-        ).padStart(2, "0"),
+        minutes: String(Math.floor((difference / (1000 * 60)) % 60)).padStart(
+          2,
+          "0"
+        ),
         seconds: String(Math.floor((difference / 1000) % 60)).padStart(2, "0"),
       };
 
@@ -48,8 +49,8 @@ const FlipCountdown = ({ targetDate }) => {
         const newDigits = newTimeLeft[unit].split("");
         const oldDigits = timeLeft[unit].split("");
 
-        const newFlipState = newDigits.map((digit, index) =>
-          digit !== oldDigits[index]
+        const newFlipState = newDigits.map(
+          (digit, index) => digit !== oldDigits[index]
         );
 
         setFlipState((prev) => ({
@@ -76,7 +77,7 @@ const FlipCountdown = ({ targetDate }) => {
         >
           {/* Upper Flap with Flip Animation */}
           <div
-            className={`w-8 h-8 md:w-16 md:h-16 bg-[#FA5596] rounded-[4px] upper-flap ${
+            className={`w-8 h-8 md:w-16 md:h-16 bg-[#FA5596] rounded-[4px] upper-flap overflow-hidden ${
               flipState[unit][index] ? "flip" : ""
             }`}
             onAnimationEnd={() => {
@@ -87,13 +88,18 @@ const FlipCountdown = ({ targetDate }) => {
                 return { ...prev, [unit]: updatedFlipState };
               });
             }}
-          ></div>
+          >
+            {/* <p className="absolute top-[5%] text-[32px] md:text-[80px]">{digit}</p> */}
+          </div>
 
           {/* Lower Flap */}
-          <div className="w-8 h-8 md:w-16 md:h-16 bg-[#FA5596] rounded-[4px]"></div>
+          <div className="w-8 h-8 md:w-16 md:h-16 bg-[#FA5596] rounded-[4px] flex items-center justify-center overflow-hidden">
+            <p className="absolute top-[13%] md:top-[5%] text-[40px] md:text-[90px]">
+              {digit}
+            </p>
+          </div>
 
           {/* Digit */}
-          <p className="absolute text-[32px] md:text-[80px]">{digit}</p>
         </div>
       ))}
     </div>
@@ -102,7 +108,7 @@ const FlipCountdown = ({ targetDate }) => {
   return (
     <div className="flex gap-4 md:gap-[96px] items-center justify-center">
       {/* Days */}
-      <div className="font-angrybirds flex flex-col gap-4">
+      <div className=" font-[pixellari] flex flex-col gap-4">
         {renderDigits(timeLeft.days, "days")}
         <div>
           <p className="font-angrybirds text-base">DAYS</p>
@@ -110,7 +116,7 @@ const FlipCountdown = ({ targetDate }) => {
       </div>
 
       {/* Hours */}
-      <div className="font-angrybirds flex flex-col gap-4">
+      <div className=" font-[pixellari] flex flex-col gap-4">
         {renderDigits(timeLeft.hours, "hours")}
         <div>
           <p className="font-angrybirds text-base">HOURS</p>
@@ -118,7 +124,7 @@ const FlipCountdown = ({ targetDate }) => {
       </div>
 
       {/* Minutes */}
-      <div className="font-angrybirds flex flex-col gap-4">
+      <div className=" font-[pixellari] flex flex-col gap-4">
         {renderDigits(timeLeft.minutes, "minutes")}
         <div>
           <p className="font-angrybirds text-base">MINUTES</p>
@@ -126,7 +132,7 @@ const FlipCountdown = ({ targetDate }) => {
       </div>
 
       {/* Seconds */}
-      <div className="font-angrybirds flex flex-col gap-4">
+      <div className=" font-[pixellari] flex flex-col gap-4">
         {renderDigits(timeLeft.seconds, "seconds")}
         <div>
           <p className="font-angrybirds text-base">SECONDS</p>

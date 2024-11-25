@@ -1,46 +1,53 @@
 import React from "react";
 import "./Tracks.css";
 
-import EdtechImg from "../assets/Edtech.png";
-import HealthImg from "../assets/health.png";
-import ARVRImg from "../assets/ARVR.png";
-import GameImg from "../assets/Game.png";
-import BlockChainImg from "../assets/Block Chain.png";
-import CyberImg from "../assets/Cyber.png";
-import DefenceImg from "../assets/Defence.png";
-import FinTechImg from "../assets/FinTech.png";
-import LogiImg from "../assets/Logi.png";
+import HeartImg from "../assets/heart.svg"; 
+import RaysImg1 from "../assets/rays.svg"; 
+import RaysImg2 from "../assets/rays2.svg"; 
+import RaysImg3 from "../assets/rays3.svg"; 
 
-const Card = ({ imageSrc, label }) => {
+
+const innerCardColors = [
+  "#FA86B4", "#549EDE", "#903CD2", "#903CD2", "#FA86B4", 
+  "#549EDE", "#549EDE", "#903CD2", "#FA86B4"
+];
+
+
+const raysImages = [
+  RaysImg1, RaysImg2, RaysImg3, RaysImg3, RaysImg1, 
+  RaysImg2, RaysImg2, RaysImg3, RaysImg1
+];
+const labels = [
+  "AR/VR", "EdTech", "Health", "Gaming", "FinTech", 
+  "CyberSec", "Defence", "Blockchain", "Logistics"
+];
+
+const Card = ({ innerColor, raysImage }) => {
   return (
-    <div className="card-wrapper">
-      <div className="card">
-        <img src={imageSrc} alt={label} />
+    <div className="outer-card">
+      <img src={HeartImg} alt="Heart" className="heart-image" /> 
+      <div className="inner-card" style={{ backgroundColor: innerColor }}>
+        <img src={raysImage} alt="Rays" className="inner-image" />
       </div>
-      <h2>{label}</h2>
     </div>
   );
 };
 
 const Tracks = () => {
-  const cardsData = [
-    { imageSrc: ARVRImg, },
-    { imageSrc: EdtechImg,  },
-    { imageSrc: HealthImg, },
-    { imageSrc: GameImg,  },
-    { imageSrc: FinTechImg,  },
-    { imageSrc: CyberImg,  },
-    { imageSrc: DefenceImg, },
-    { imageSrc: BlockChainImg,},
-    { imageSrc: LogiImg, },
-  ];
-
   return (
     <div className="tracks-container">
       <h1 className="tracks-heading">TRACKS</h1>
       <div className="cards-wrapper">
-        {cardsData.map((card, index) => (
-          <Card key={index} imageSrc={card.imageSrc} label={card.label} />
+        {innerCardColors.map((innerColor, index) => (
+          <div className="card-container" key={index}>
+            <Card 
+              innerColor={innerColor} 
+              raysImage={raysImages[index]} 
+            />
+            <div className="card-label-container">
+              <h2 className="card-label">{labels[index]}</h2> 
+            </div>
+          </div>
         ))}
       </div>
     </div>

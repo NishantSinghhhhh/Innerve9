@@ -10,6 +10,7 @@ const Floating = () => {
           // ref={bubbleRef}
           src={BubblePiggy}
           alt="Bubble Piggy"
+          className="w-[80px] md:w-[270px]"
         />
       </div>
     );
