@@ -2,6 +2,7 @@ import React from 'react';
 import White from '../assets/White_Dot.svg';
 import Black from '../assets/Dot.svg';
 
+// testing from linux
 // Use destructuring to extract title, date, and description from props
 // eslint-disable-next-line react/prop-types
 const TimelineDetails = ({ title, date, description }) => {
