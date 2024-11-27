@@ -2,16 +2,15 @@ import React from 'react';
 
 const Noise = () => {
   return (
-    <div className="fixed inset-0 pointer-events-none z-[3023023023020] opacity-20">
+    <div className="fixed inset-0 w-full h-full pointer-events-none z-[3023023023020] opacity-50">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         version="1.1"
         xmlnsXlink="http://www.w3.org/1999/xlink"
         xmlnsSvgjs="http://svgjs.dev/svgjs"
-        viewBox="0 0 700 700"
         width="100%"
         height="100%"
-        className="absolute top-0 left-0 w-full h-full"
+        className="w-full h-full"
       >
         <defs>
           <filter
@@ -50,16 +49,6 @@ const Noise = () => {
             >
               <feDistantLight azimuth="3" elevation="200"></feDistantLight>
             </feSpecularLighting>
-            <feColorMatrix
-              type="saturate"
-              values="0"
-              x="0%"
-              y="0%"
-              width="100%"
-              height="100%"
-              in="specularLighting"
-              result="colormatrix"
-            ></feColorMatrix>
           </filter>
         </defs>
         <rect width="100%" height="100%" fill="transparent"></rect>
