@@ -6,6 +6,7 @@ import SponsorTab from '../components/SponsorTab';
 import Accops from "../assets/Accops.svg";
 // import Sponsor1 from "../assets/Sponsor1.svg";
 // import Sponsor2 from "../assets/Sponsor2.svg";
+import "./sponsors.css"
 
 const Sponsors = () => {
   const titleSponsorImages = [Accops, Accops, Accops];
@@ -19,7 +20,7 @@ const Sponsors = () => {
         {/* <img src={Leaves} className="" style={{ fill: 'rgba(254,94,3,255)' }} /> */}
       </div>
 
-      <div className="w-[100%] h-[400vh] bg-[#ff7603] relative">
+      <div className= "media" >
         {/* Background layers */}
         <div
           className="absolute inset-0 bg-cover bg-center"
