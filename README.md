@@ -1,9 +1,17 @@
-# React + Vite
+Innerve 9 Website
+Themed around Angry Birds
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the Innerve 9 Website repository! This project brings the exciting theme of Angry Birds to life, presenting an engaging and vibrant platform for the Innerve 9 event.
 
-Currently, two official plugins are available:
+About
+The Innerve 9 Website is a creative, fun-filled platform inspired by the colorful and lively Angry Birds universe. It serves as the central hub for event information, participant resources, schedules, and sponsor highlights.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-# Innerve9-temp
+Purpose
+Deliver a playful, Angry Birds-inspired design while maintaining professionalism.
+Provide easy access to event information and resources.
+Create a memorable online experience for participants and organizers.
+
+Tech Stack
+Frontend: React.js, Tailwind CSS
+Version Control: Git
+Deployment: Vercel
