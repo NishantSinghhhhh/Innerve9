@@ -30,10 +30,10 @@ const Hero = () => {
       <Dates />
       <Stars />
       <Floating />
-      <div className="hidden md:flex absolute -left-14 top-[45%]">
+      <div className="hidden lg:flex absolute -left-14 top-[45%]">
         <img src={Tnt} alt="tnt" />
       </div>
-      <div className="hidden md:flex absolute top-56 left-20">
+      <div className="hidden lg:flex absolute top-56 left-20">
         <Portal />
       </div>
     </section>

@@ -77,7 +77,7 @@ const FlipCountdown = ({ targetDate }) => {
         >
           {/* Upper Flap with Flip Animation */}
           <div
-            className={`w-8 h-8 md:w-16 md:h-16 bg-[#FA5596] rounded-[4px] upper-flap overflow-hidden ${
+            className={`relative w-8 h-8 md:w-16 md:h-16 bg-[#FA5596] rounded-[4px] upper-flap overflow-hidden ${
               flipState[unit][index] ? "flip" : ""
             }`}
             onAnimationEnd={() => {
@@ -89,14 +89,18 @@ const FlipCountdown = ({ targetDate }) => {
               });
             }}
           >
-            {/* <p className="absolute top-[5%] text-[32px] md:text-[80px]">{digit}</p> */}
+            <p className="text-[40px] md:text-[90px] mt-[10px]">{digit}</p>
+            <div className="absolute bottom-0 left-0 -translate-x-1/2 translate-y-1/2 w-5 h-5 bg-[#1d002d] rounded-full"></div>
+            <div className="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-5 h-5 bg-[#1d002d] rounded-full"></div>
           </div>
 
           {/* Lower Flap */}
-          <div className="w-8 h-8 md:w-16 md:h-16 bg-[#FA5596] rounded-[4px] flex items-center justify-center overflow-hidden">
-            <p className="absolute top-[13%] md:top-[5%] text-[40px] md:text-[90px]">
+          <div className="relative w-8 h-8 md:w-16 md:h-16 bg-[#FA5596] rounded-[4px] flex items-center justify-center overflow-hidden box-content border-none">
+            <p className=" text-[40px] md:text-[90px] mb-[44px]">
               {digit}
             </p>
+            <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-5 h-5 bg-[#1d002d] rounded-full"></div>
+            <div className="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 w-5 h-5 bg-[#1d002d] rounded-full"></div>
           </div>
 
           {/* Digit */}
