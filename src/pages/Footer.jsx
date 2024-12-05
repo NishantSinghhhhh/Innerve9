@@ -16,8 +16,8 @@ const Footer = () => {
         {/* 3D Sphere Section */}
         <div className="flex justify-center items-center xl:w-1/4 mt-8">
           <Canvas>
-            <ambientLight intensity={1.0} />
-            <directionalLight position={[2, 2, 2]} />
+          <ambientLight intensity={1.9} />
+            <directionalLight position={[1.6, 1.6, 1.6]} />
             <Sphere position={[0, 0, 0]} args={[3.1, 32, 32]} /> {/* Render the 3D Sphere */}
           </Canvas>
         </div>
@@ -39,10 +39,10 @@ const Footer = () => {
             {/* Kaushal Vyas Contact */}
             <div className="relative w-full max-w-xs mx-auto xl:mx-0 ">
               <p className="text-center text-gray-500 xl:text-left font-semibold mb-1">Kaushal Vyas</p>
-              <div className="num flex items-center justify-center xl:ml-[-7.75rem]">
+              <div className="num flex items-center justify-start ">
                 <img src={contactCtaImage} alt="Contact CTA" className="w-44 h-auto object-cover" />
-                <p className="absolute xl:text-sm text-xs">
-                +91 866 895 2920
+                <p className="absolute text-sm ml-8">
+                +91 86689 52920
                 </p>
               </div>
             </div>
@@ -50,10 +50,10 @@ const Footer = () => {
             {/* Deepshikha Rawat Contact */}
             <div className="relative w-full max-w-xs mx-auto xl:mx-0">
               <p className="text-center xl:text-left text-gray-500 font-semibold mb-1">Deepshika Rawat</p>
-              <div className="num flex items-center justify-center xl:ml-[-7.75rem]">
+              <div className="num flex items-center justify-start">
                 <img src={contactCtaImage} alt="Contact CTA" className="w-44 h-auto object-cover" />
-                <p className="absolute text-sm">
-                  +91 639 879 3447
+                <p className="absolute text-sm ml-8">
+                  +91 63987 93447
                 </p>
               </div>
             </div>

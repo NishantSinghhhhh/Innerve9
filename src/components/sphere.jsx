@@ -13,7 +13,7 @@ const Sphere = ({ position, args }) => {
 
 //   texture.repeat.set(1, 1)
   useFrame((state, delta) => {
-    ref.current.rotation.y -= delta * (isHovered ? 0.5 : 0.2); // Negative for clockwise rotation
+    ref.current.rotation.y -= delta * (isHovered ? 0.5 : 0.4); // Negative for clockwise rotation
   });
 
   return (
