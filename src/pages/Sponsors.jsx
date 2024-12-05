@@ -5,7 +5,7 @@ import BgTexture from "../assets/Sponsors_Texture.svg";
 import SponsorTab from '../components/SponsorTab';
 import Accops from "../assets/Accops.svg";
 import Devfolio from "../assets/devfolio.svg"
-import EthIndia from "../assets/ethindia.svg"
+import EthIndia from "../assets/ETHIndia.png"
 import Polygom from "../assets/Polygon.png"
 // import Sponsor1 from "../assets/Sponsor1.svg";
 // import Sponsor2 from "../assets/Sponsor2.svg";
@@ -54,7 +54,7 @@ const Sponsors = () => {
             <SponsorTab heading="Title Sponsor" images={titleSponsorImages}  piggyNumber={0}/>
             <SponsorTab heading="Gold Sponsors" images={goldSponsorImages} piggyNumber={1}/>
             <SponsorTab heading="Silver Sponsors" images={silverSponsorImages}  piggyNumber={2}/>
-            <SponsorTab heading="Title Sponsor" images={titleSponsorImages}  piggyNumber={0}/>
+            <SponsorTab heading="Title Sponsor" images={silverSponsorImages}  piggyNumber={0}/>
             <SponsorTab heading="Gold Sponsors" images={goldSponsorImages} piggyNumber={1}/>
             <SponsorTab heading="Silver Sponsors" images={silverSponsorImages} piggyNumber={2}/>
           </div>
@@ -67,3 +67,5 @@ const Sponsors = () => {
 };
 
 export default Sponsors;
+
+// removed conflicts
