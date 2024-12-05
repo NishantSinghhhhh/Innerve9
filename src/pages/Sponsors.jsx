@@ -52,7 +52,7 @@ const Sponsors = () => {
             <SponsorTab heading="Title Sponsor" images={titleSponsorImages}  piggyNumber={0}/>
             <SponsorTab heading="Gold Sponsors" images={goldSponsorImages} piggyNumber={1}/>
             <SponsorTab heading="Silver Sponsors" images={silverSponsorImages}  piggyNumber={2}/>
-            <SponsorTab heading="Title Sponsor" images={titleSponsorImages}  piggyNumber={0}/>
+            <SponsorTab heading="Title Sponsor" images={silverSponsorImages}  piggyNumber={0}/>
             <SponsorTab heading="Gold Sponsors" images={goldSponsorImages} piggyNumber={1}/>
             <SponsorTab heading="Silver Sponsors" images={silverSponsorImages} piggyNumber={2}/>
           </div>
