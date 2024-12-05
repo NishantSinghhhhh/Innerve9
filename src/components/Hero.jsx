@@ -24,7 +24,7 @@ const Hero = () => {
       <Navbar />
       <div className="w-full flex flex-col gap-24 justify-center items-center relative">
         <Heading />
-        <FlipCountdown targetDate="2025-02-07T00:00:00" onEnd={handleEnd} />
+        <FlipCountdown targetDate="2025-02-07T00:10:00" onEnd={handleEnd} />
         <Button BtnIcon={Devfolio} Label="APPLY WITH DEVFOLIO" />
       </div>
       <Dates />
