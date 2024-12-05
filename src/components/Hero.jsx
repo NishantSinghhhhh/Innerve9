@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "./Navbar";
 import FlipCountdown from "./FlipCountdown";
 import Button from "./Button";
-import Devfolio from "../assets/devfolio.svg";
+import Devfolio from "../assets/devfolio_1.svg";
 import Tnt from "../assets/bubble-tnt.svg";
 import Dates from "./Dates";
 import Stars from "./Stars";
