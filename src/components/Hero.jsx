@@ -9,6 +9,8 @@ import Stars from "./Stars";
 import Floating from "./Floating";
 import Heading from "./Heading";
 import Portal from "./Portal";
+import Grids from  '../assets/all_grids.svg'
+
 // import Red from "../assets/red.svg";
 // import Blue from "../assets/blue.svg";
 // import Yellow from "../assets/yellow.svg";
@@ -19,8 +21,17 @@ const Hero = () => {
   const handleEnd = () => {
     alert("Innerve 9 is now LIVE!!");
   };
+
   return (
-    <section id="hero" className="relative w-screen flex flex-col justify-center items-center gap-[120px]">
+    <section
+      id="hero"
+      className="relative w-screen flex flex-col justify-center items-center gap-[120px]"
+      style={{
+        backgroundImage: ` url(${Grids})`, 
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
       <Navbar />
       <div className="w-full flex flex-col gap-24 justify-center items-center relative">
         <Heading />
