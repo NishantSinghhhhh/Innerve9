@@ -25,8 +25,9 @@ const Sponsors = () => {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `linear-gradient(rgba(254, 69, 0, 0.7), rgba(254, 69, 0, 0.7)), url(${Background})`,
+            backgroundImage: ` url(${Background})`,
             opacity: 0.7,
+            mixBlendMode: "soft-light"
           }}
         />
         <div
@@ -34,6 +35,7 @@ const Sponsors = () => {
           style={{
             backgroundImage: `url(${BgTexture})`,
             opacity: 0.5,
+            mixBlendMode: "soft-light"
           }}
         />
 
