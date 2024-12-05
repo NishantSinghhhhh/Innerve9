@@ -67,3 +67,5 @@ const Sponsors = () => {
 };
 
 export default Sponsors;
+
+// removed conflicts
