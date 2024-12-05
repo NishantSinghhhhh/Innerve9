@@ -24,7 +24,7 @@ const Button = ({ BtnIcon, Label }) => {
         backgroundPosition: "center",
       }}
     >
-      {BtnIcon && <img src={BtnIcon} alt="icon" />}
+      {BtnIcon && <img src={BtnIcon} alt="icon" className="h-[2rem] w-[2rem]" />}
       {Label && <span className=" md:text-[32px] font-angrybirds">{Label}</span>}
       <img src={Warning} id="warning" alt="warning" className="absolute top-[-25%] left-[-8%] md:left-[-3%]"/>
     </button>
