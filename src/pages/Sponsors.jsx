@@ -4,12 +4,15 @@ import Background from "../assets/Sponsors_Bg.svg";
 import BgTexture from "../assets/Sponsors_Texture.svg";
 import SponsorTab from '../components/SponsorTab';
 import Accops from "../assets/Accops.svg";
+import Devfolio from "../assets/devfolio.png"
+import EthIndia from "../assets/ethindia.png"
+import Polygom from "../assets/Polygon.svg"
 // import Sponsor1 from "../assets/Sponsor1.svg";
 // import Sponsor2 from "../assets/Sponsor2.svg";
 import "./sponsors.css"
 
 const Sponsors = () => {
-  const titleSponsorImages = [Accops, Accops, Accops];
+  const titleSponsorImages = [Polygom, Devfolio, EthIndia];
   const goldSponsorImages = [Accops, Accops, Accops];
   const silverSponsorImages = [Accops, Accops, Accops]; // Add more images as needed.
 
