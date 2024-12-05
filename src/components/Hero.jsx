@@ -17,6 +17,7 @@ import Grids from  '../assets/all_grids.svg'
 // import White from "../assets/white.svg";
 import "../index.css"
 
+// comit by ujjwal
 const Hero = () => {
   const handleEnd = () => {
     alert("Innerve 9 is now LIVE!!");
