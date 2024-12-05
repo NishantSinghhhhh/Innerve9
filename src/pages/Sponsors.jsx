@@ -4,9 +4,9 @@ import Background from "../assets/Sponsors_Bg.svg";
 import BgTexture from "../assets/Sponsors_Texture.svg";
 import SponsorTab from '../components/SponsorTab';
 import Accops from "../assets/Accops.svg";
-import Devfolio from "../assets/devfolio.png"
-import EthIndia from "../assets/ethindia.png"
-import Polygom from "../assets/Polygon.svg"
+import Devfolio from "../assets/devfolio.svg"
+import EthIndia from "../assets/ethindia.svg"
+import Polygom from "../assets/Polygon.png"
 // import Sponsor1 from "../assets/Sponsor1.svg";
 // import Sponsor2 from "../assets/Sponsor2.svg";
 import "./sponsors.css"
