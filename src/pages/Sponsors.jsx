@@ -14,8 +14,8 @@ const Sponsors = () => {
   const silverSponsorImages = [Accops, Accops, Accops]; // Add more images as needed.
 
   return (
-    <div className="w-[100%]">
-      <div className="w-auto">
+    <div className="w-[100%] h-auto">
+      <div className="w-auto h-auto">
         {/* Optional leaves image */}
         {/* <img src={Leaves} className="" style={{ fill: 'rgba(254,94,3,255)' }} /> */}
       </div>
