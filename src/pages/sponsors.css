@@ -6,7 +6,7 @@
     position: relative;
   }
   
-  /* Media query for screens up to 1024px */
+  /* Media query for screens up to 1024px
   @media (max-width: 1024px) {
     .media {
       height: 400vh;
@@ -38,5 +38,12 @@
       height: 550vh;
     }
   }
-  
-  /* Testing from Nishant */
+   */
+
+  .bgTexture{
+    position: absolute; 
+    inset: 0;           
+    background-size: cover;
+    background-position: center; 
+    mix-blend-mode: soft-light;
+  }

@@ -17,5 +17,7 @@ export default {
       tthoves: ["TTHoves", "sans-serif"],// Add the custom font
       },
   },
-  plugins: [],
+  plugins: [
+    
+  ],
 }

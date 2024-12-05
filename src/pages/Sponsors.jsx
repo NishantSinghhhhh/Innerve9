@@ -17,8 +17,8 @@ const Sponsors = () => {
   const silverSponsorImages = [Accops, Accops, Accops]; // Add more images as needed.
 
   return (
-    <div className="w-[100%]">
-      <div className="w-auto">
+    <div className="w-[100%] h-auto">
+      <div className="w-auto h-auto">
         {/* Optional leaves image */}
         {/* <img src={Leaves} className="" style={{ fill: 'rgba(254,94,3,255)' }} /> */}
       </div>
@@ -28,8 +28,9 @@ const Sponsors = () => {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `linear-gradient(rgba(254, 69, 0, 0.7), rgba(254, 69, 0, 0.7)), url(${Background})`,
+            backgroundImage: ` url(${Background})`,
             opacity: 0.7,
+            mixBlendMode: "soft-light"
           }}
         />
         <div
@@ -37,6 +38,7 @@ const Sponsors = () => {
           style={{
             backgroundImage: `url(${BgTexture})`,
             opacity: 0.5,
+            mixBlendMode: "soft-light"
           }}
         />
 

@@ -20,11 +20,11 @@ const Navbar = () => {
               }}
             ></span>
             <p>Brochure</p>
-            <img src={Navigate} alt="brochure" />
+            <img src={Navigate} alt="brochure" className="group-hover:rotate-[45deg] transition duration-500"/>
           </div>
-          <button className="flex items-center gap-[10px] border border-[rgba(255,255,255,0.5)] pl-6 pr-4 py-[10px] rounded">
+          <button className="flex items-center gap-[10px] border border-[rgba(255,255,255,0.5)] pl-6 pr-4 py-[10px] rounded group">
             <p>Menu</p>
-            <img src={Navigate} alt="menu" />
+            <img src={Navigate} alt="menu" className="group-hover:rotate-[45deg] transition duration-500"/>
           </button>
         </div>
       </nav>
