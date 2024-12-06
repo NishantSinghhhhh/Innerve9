@@ -5,6 +5,7 @@ import TimelineDetails from "../components/TimelineDetails";
 import Logo from "../assets/logo (1).svg";
 import Black from "../assets/Dot.svg";
 import LogoAnimation from "../components/LogoAnimation";
+import White_Leaves from "../assets/White_Leaves_1.svg";
 
 const timelineData = [
   {
@@ -145,20 +146,21 @@ const Timeline = () => {
             </div>
           </div>
           {/* Logo Section - Separate from the main white section */}
-          <div className=" bg-white w-32 md:w-[240px]">
+          <div className=" bg-white w-32 md:w-[240px] z-10">
             <img src={Logo} alt="Logo" />
           </div>
         </div>
       </div>
 
       {/* Cloud Image - Bottom */}
-      <div className="relative bottom-[10px] w-full">
-        <img
-          src={Cloud}
-          alt="Cloud Background"
-          className="w-full object-cover transform rotate-180"
-        />
-      </div>
+      <div className="relative lg:bottom-[13rem] md:bottom-[8rem] sm:bottom-[5rem] bottom-[4rem] w-full z-1">
+      <img
+        src={White_Leaves}
+        alt="Cloud Background"
+        className="w-full object-cover transform"
+      />
+    </div>
+
     </section>
   );
 };
