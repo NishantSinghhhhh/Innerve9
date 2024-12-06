@@ -85,17 +85,18 @@ const Timeline = () => {
       {/* White Section */}
       <div className="bg-white py-36 flex flex-col gap-[108px]">
         <div className="relative flex flex-col items-center justify-center gap-5">
-          <p className="font-angrybirds text-black text-[80px] md:text-[128px] leading-[100%]">
+          <div className="relative font-angrybirds text-black text-[80px] md:text-[128px] leading-[100%]">
             TIMELINE
-          </p>
+            <img
+            src={Piggy}
+            alt="Piggy"
+            className="absolute w-6 md:w-10 top-[-20%] left-[90%] rotate-[-6.39deg]"
+          />
+          </div>
           <p className="font-angrybirds text-black text-[20px] md:text-[32px] leading-[100%] uppercase">
             HERE&apos;S YOUR GUIDE TO INNERVE9
           </p>
-          <img
-            src={Piggy}
-            alt="Piggy"
-            className="absolute md:top-[-10%] top-[-20%] md:left-[945px] left-[80%] rotate-[-6.39deg]"
-          />
+          
         </div>
 
         {/* timeline main*/}
