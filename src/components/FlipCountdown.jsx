@@ -89,18 +89,18 @@ const FlipCountdown = ({ targetDate }) => {
               });
             }}
           >
-            <p className="text-[40px] md:text-[90px] mt-[10px]">{digit}</p>
-            <div className="absolute bottom-0 left-0 -translate-x-1/2 translate-y-1/2 w-5 h-5 bg-[#1d002d] rounded-full"></div>
-            <div className="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-5 h-5 bg-[#1d002d] rounded-full"></div>
+            <p className="text-[40px] md:text-[90px] mt-2 md:mt-[10px]">{digit}</p>
+            <div className="absolute bottom-0 left-0 -translate-x-1/2 translate-y-1/2 w-[8px] h-2 md:w-5 md:h-5 bg-[#1d002d] rounded-full"></div>
+            <div className="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-2 h-2 md:w-5 md:h-5 bg-[#1d002d] rounded-full"></div>
           </div>
 
           {/* Lower Flap */}
           <div className="relative w-8 h-8 md:w-16 md:h-16 bg-[#FA5596] rounded-[4px] flex items-center justify-center overflow-hidden box-content border-none">
-            <p className=" text-[40px] md:text-[90px] mb-[44px]">
+            <p className=" text-[40px] md:text-[90px] mb-[28px] md:mb-[44px]">
               {digit}
             </p>
-            <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-5 h-5 bg-[#1d002d] rounded-full"></div>
-            <div className="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 w-5 h-5 bg-[#1d002d] rounded-full"></div>
+            <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-2 h-2 md:w-5 md:h-5 bg-[#1d002d] rounded-full"></div>
+            <div className="absolute top-0 right-0 translate-x-1/2 -translate-y-1/2 w-2 h-2 md:w-5 md:h-5 bg-[#1d002d] rounded-full"></div>
           </div>
 
           {/* Digit */}

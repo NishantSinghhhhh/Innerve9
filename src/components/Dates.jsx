@@ -5,17 +5,17 @@ import KingPiggy from "../assets/kingpiggy.svg"
 const Dates = () => {
   return (
     <div className="relative flex justify-center items-center gap-[32px] md:gap-[60px] font-angrybirds">
-      <div>
+      <div className="relative">
         <p className="text-[80px] md:text-[128px]">07</p>
         <p className="text-[20px] md:text-5xl">FEB 2025</p>
+        <img src={Piggy} alt="piggy" className="absolute w-8 md:w-11 top-[0%] left-[60%] rotate-[-7deg]"/>
       </div>
       <div className="text-[80px] md:text-[128px]">-</div>
-      <div>
+      <div className="relative">
         <p className="text-[80px] md:text-[128px]">08</p>
         <p className="text-[20px] md:text-5xl">FEB 2025</p>
+        <img src={KingPiggy} alt="kingpiggy" className="absolute w-5 md:w-9 top-[41%] left-[62%]"/>
       </div>
-      <img src={Piggy} alt="piggy" className="hidden md:flex absolute top-[5%] left-[20%] rotate-[-7deg]"/>
-      <img src={KingPiggy} alt="kingpiggy" className="hidden md:flex absolute top-[45%] left-[87.5%]"/>
     </div>
   );
 };
