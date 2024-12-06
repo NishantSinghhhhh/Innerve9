@@ -7,6 +7,7 @@ import Sponsors from "./pages/Sponsors";
 import Footer from "./pages/Footer";
 import Noise from "./components/noise";
 
+
 import React from "react";
 
 
@@ -14,6 +15,7 @@ function App() {
   return (
     <div className="h-full w-full flex flex-col justify-center items-center overflow-x-hidden relative">
       <Hero />
+      {/* <Prizes /> */}
       <Cards />
       <Tracks />
       <Timeline/>

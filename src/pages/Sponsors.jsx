@@ -1,5 +1,8 @@
 import React from 'react';
-import Leaves from "../assets/Orange_Leaves.svg";
+import Upper_Leaves from "../assets/Orange_Leaves.png";
+import Upper_Leaves_1 from "../assets/Orange_Leaves_1.png";
+import Lower_Leaves from "../assets/Orange_Leaves_bottom.png";
+import Sponsor_bottom from "../assets/Sponsor_bottom.png";
 import Background from "../assets/Sponsors_Bg.svg";
 import BgTexture from "../assets/Sponsors_Texture.svg";
 import SponsorTab from '../components/SponsorTab';
@@ -18,15 +21,16 @@ const Sponsors = () => {
 
   return (
     <div className="w-[100%] h-auto">
-      <div className="w-auto h-auto">
-        {/* Optional leaves image */}
-        {/* <img src={Leaves} className="" style={{ fill: 'rgba(254,94,3,255)' }} /> */}
+
+      <div className="-mb-72" style={{backgroundImage: `url(${Upper_Leaves_1})`, backgroundPosition:"center"}}
+      >
+        <img src ={Upper_Leaves_1}  className=""/>
       </div>
 
       <div className= "media" >
         {/* Background layers */}
         <div
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0"
           style={{
             backgroundImage: ` url(${Background})`,
             opacity: 0.7,
@@ -34,7 +38,7 @@ const Sponsors = () => {
           }}
         />
         <div
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 bg-center"
           style={{
             backgroundImage: `url(${BgTexture})`,
             opacity: 0.5,
@@ -61,6 +65,11 @@ const Sponsors = () => {
         </div>
       </div>
 
+      <div className="-mt-64" style={{ backgroundImage: `url(${Sponsor_bottom})`, backgroundPosition:"center"}}
+      >
+        <img src ={Sponsor_bottom}  className=""/>
+      </div>
+          
       <div />
     </div>
   );
