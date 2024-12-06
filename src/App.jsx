@@ -2,6 +2,7 @@ import Tracks from "./pages/Tracks";
 import Hero from "./components/Hero";
 import "./App.css";
 import Cards from "./components/Cards/index";
+import Footer from "./pages/footer";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Hero />
       <Cards />
       <Tracks />
+      <Footer />
     </div>
   );
 }
