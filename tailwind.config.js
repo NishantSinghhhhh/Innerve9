@@ -9,6 +9,7 @@ export default {
     extend: {
       screens: {
         xs: '480px',
+        mx: '1390px',
       },
     },
     fontFamily: {
@@ -16,5 +17,7 @@ export default {
       tthoves: ["TTHoves", "sans-serif"],// Add the custom font
       },
   },
-  plugins: [],
+  plugins: [
+    
+  ],
 }

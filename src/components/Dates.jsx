@@ -1,3 +1,4 @@
+import React from "react";
 import Piggy from "../assets/piggy.svg"
 import KingPiggy from "../assets/kingpiggy.svg"
 
