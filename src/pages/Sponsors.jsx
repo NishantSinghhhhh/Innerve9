@@ -1,80 +1,59 @@
-import React from 'react';
-import Upper_Leaves from "../assets/Orange_Leaves.png";
-import Upper_Leaves_1 from "../assets/Orange_Leaves_1.png";
-import Lower_Leaves from "../assets/Orange_Leaves_bottom.png";
-import Sponsor_bottom from "../assets/Sponsor_bottom.png";
-import Background from "../assets/Sponsors_Bg.svg";
-import BgTexture from "../assets/Sponsors_Texture.svg";
-import SponsorTab from '../components/SponsorTab';
+import React from 'react'
 import Accops from "../assets/Accops.svg";
 import Devfolio from "../assets/devfolio.svg"
 import EthIndia from "../assets/ETHIndia.png"
 import Polygom from "../assets/Polygon.png"
-// import Sponsor1 from "../assets/Sponsor1.svg";
-// import Sponsor2 from "../assets/Sponsor2.svg";
-import "./sponsors.css"
+import UpperLeaves from "../assets/Orange_Leaves_1.png";
+import LowerLeaves from "../assets/Orange_Leaves_bottom.png";
+import Texture from "../assets/texture.svg";
+import SponsorTab from '../components/SponsorTab';
 
 const Sponsors = () => {
   const titleSponsorImages = [Polygom, Devfolio, EthIndia];
   const goldSponsorImages = [Accops, Accops, Accops];
-  const silverSponsorImages = [Accops, Accops, Accops]; // Add more images as needed.
+  const silverSponsorImages = [Accops, Accops, Accops];
 
   return (
-    <div className="w-[100%] h-auto">
-
-      <div className="-mb-72" style={{backgroundImage: `url(${Upper_Leaves_1})`, backgroundPosition:"center"}}
-      >
-        <img src ={Upper_Leaves_1}  className=""/>
+    <section className="relative w-full flex flex-col justify-center items-center">
+      {/* upper leaves */}
+      <div className="w-[120vw] -mb-10 md:-mb-64">
+        <img
+          src={UpperLeaves}
+          alt="leaves"
+          className="w-full object-cover"
+        />
       </div>
 
-      <div className= "media" >
-        {/* Background layers */}
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: ` url(${Background})`,
-            opacity: 0.7,
-            mixBlendMode: "soft-light"
-          }}
-        />
-        <div
-          className="absolute inset-0 bg-center"
-          style={{
-            backgroundImage: `url(${BgTexture})`,
-            opacity: 0.5,
-            mixBlendMode: "soft-light"
-          }}
-        />
+      {/* sponsor */}
+      <div className='flex flex-col justify-center items-center relative py-24 bg-[#FE7702] w-full' >
+      <div className='absolute w-full h-full top-0 left-0' style={{backgroundImage: `url(${Texture})`, backgroundPosition:"top", backgroundRepeat:"repeat", backgroundSize:"100%", mixBlendMode:"soft-light", opacity:0.8}} ></div>
+        {/* heading */}
+        <div className='flex flex-col md:flex-row gap-0'>
+          <p className='capitalize text-[32px] md:text-7xl font-angrybirds text-[#FFFF5C] leading-none'>Our</p>
+          <p className='capitalize text-[80px] md:text-[128px] font-angrybirds text-[#FFFF5C] leading-none'>Sponsors</p>
+        </div>
 
-        <div className="relative z-10 p-[5rem] pt-[10rem]">
-          {/* Main heading */}
-          <div className="flex flex-row justify-center pb-[5rem]">
-            <p className="font-angrybirds text-[72px] text-[#FFFF5C]">OUR</p>
-            <p className="font-angrybirds text-[128px] text-[#FFFF5C]">SPONSORS</p>
-          </div>
-
-          {/* SponsorTabs */}
-          <div className="space-y-12">
+        {/* sponsors tab */}
+        <div className='px-6'>
             <SponsorTab heading="Title Sponsor" images={titleSponsorImages}  piggyNumber={0}/>
             <SponsorTab heading="Gold Sponsors" images={goldSponsorImages} piggyNumber={1}/>
             <SponsorTab heading="Silver Sponsors" images={silverSponsorImages}  piggyNumber={2}/>
             <SponsorTab heading="Title Sponsor" images={silverSponsorImages}  piggyNumber={0}/>
             <SponsorTab heading="Gold Sponsors" images={goldSponsorImages} piggyNumber={1}/>
             <SponsorTab heading="Silver Sponsors" images={silverSponsorImages} piggyNumber={2}/>
-          </div>
         </div>
       </div>
 
-      <div className="-mt-64" style={{ backgroundImage: `url(${Sponsor_bottom})`, backgroundPosition:"center"}}
-      >
-        <img src ={Sponsor_bottom}  className=""/>
+      {/* upper leaves */}
+      <div className="w-[120vw] -mt-10 md:-mt-64" >
+        <img
+          src={LowerLeaves}
+          alt="leaves"
+          className="w-full object-cover"
+        />
       </div>
-          
-      <div />
-    </div>
-  );
-};
+    </section>
+  )
+}
 
-export default Sponsors;
-
-// removed conflicts
+export default Sponsors

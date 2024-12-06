@@ -13,7 +13,7 @@ import React from "react";
 
 function App() {
   return (
-    <div className="h-full w-full flex flex-col justify-center items-center overflow-x-hidden relative">
+    <div className="h-full w-full flex flex-col gap-[120px] justify-center items-center overflow-x-hidden relative">
       <Hero />
       {/* <Prizes /> */}
       <Cards />

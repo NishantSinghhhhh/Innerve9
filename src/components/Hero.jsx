@@ -41,7 +41,7 @@ const Hero = () => {
       </div>
       <Dates />
       <Stars />
-      <Floating />
+      {/* <Floating /> */}
       <div className="hidden lg:flex absolute -left-14 top-[45%]">
         <img src={Tnt} alt="tnt" />
       </div>
