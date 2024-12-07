@@ -43,28 +43,28 @@
     }
 }
 
-/* Object-2 Styles */
+
 .object-2 {
     display: flex;
     gap: 40px;
     margin-right: 50px;
 }
 
-/* Image Styles inside Object-2 */
+
 .object-2 img {
     width: 40px;
     height: auto;
     transform: scale(1.5);
 }
 
-/* Additional Images */
+
 .additional-images {
     display: flex;
     gap: 100px;
     align-items: center;
 }
 
-/* Image Styles inside Additional Images */
+
 .additional-images img {
     transform: scale(1);
     height: auto;
