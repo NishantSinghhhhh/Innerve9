@@ -22,7 +22,7 @@ function App() {
       <Cards />
       <Tracks />
 
-      <Footer />
+    
       <Timeline/>
       <Sponsors/>
       <Footer/>
