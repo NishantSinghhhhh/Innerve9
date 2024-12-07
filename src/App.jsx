@@ -2,6 +2,9 @@ import Tracks from "./pages/Tracks";
 import Hero from "./components/Hero";
 import "./App.css";
 import Cards from "./components/Cards/index";
+
+import Footer from "./pages/footer";
+
 import Timeline from "./pages/Timeline";
 import Sponsors from "./pages/Sponsors";
 import Footer from "./pages/Footer";
@@ -15,9 +18,11 @@ function App() {
   return (
     <div className="h-full w-full flex flex-col gap-[120px] justify-center items-center overflow-x-hidden relative">
       <Hero />
-      {/* <Prizes /> */}
+      
       <Cards />
       <Tracks />
+
+      <Footer />
       <Timeline/>
       <Sponsors/>
       <Footer/>
