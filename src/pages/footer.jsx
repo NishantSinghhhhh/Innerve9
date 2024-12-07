@@ -1,12 +1,12 @@
 import React from "react";
-import roth from "../assets/roth.svg"; 
+import roth from "../assets/roth.svg"; // Update the path as per your directory structure
 import linkedin from "../assets/in.svg";
 import discord from "../assets/disc.svg";
 import instagram from "../assets/insta.svg";
 import xLogo from "../assets/x.svg";
 import contactUs from "../assets/contact-us.svg";
 import venue from "../assets/venue.svg";
-import "./footer.css";
+import "./footer.css"; // Assuming you have moved the CSS into App.css
 
 const Footer=()=> {
   return (
