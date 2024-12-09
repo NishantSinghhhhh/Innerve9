@@ -10,8 +10,9 @@ const TestimonialsCard = ({ content, name }) => {
         border: '3px solid #FF5BB1', // Border with solid pink color
         borderRadius: '12px', // Rounded corners for the border
         backgroundOrigin: 'border-box',
-        backgroundImage: 'linear-gradient(to bottom, rgba(179, 121, 27, 0.2) 40%, rgba(119, 119, 119, 0.3) 100%)',
+        backgroundImage: 'linear-gradient(to bottom, rgba(179, 121, 27, 0.25) 10%, rgba(119, 119, 119, 0.3) 100%)',
         backgroundClip: 'padding-box',
+        // borderImageSource: ''
     }}
     >
       <div

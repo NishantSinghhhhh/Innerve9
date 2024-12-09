@@ -2,6 +2,7 @@ import React from 'react';
 import Piggy from "../assets/piggy.svg";
 import TestimonialsCard from '../components/TestimonialsCard';
 
+
 const data = [
     {
       content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta est suscipit a iste impedit fuga sed. Obcaecati amet fugiat ea quibusdam nulla sit incidunt dolorum totam nobis quae aperiam esse earum vitae dolor.",
