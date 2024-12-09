@@ -12,26 +12,29 @@ const TestimonialsCard = ({ content, name }) => {
         backgroundImage: 'linear-gradient(to bottom, rgba(255, 91, 177, 0.1), rgba(98, 98, 98, 0.1))',
         backgroundOrigin: 'border-box',
         backgroundClip: 'padding-box',
-      }}
+    }}
     >
       <div
         style={{
-          width: '100%',
-          height: '100%',
-          borderRadius: '10px', // Matches the rounded corners of the inner container
+            width: '100%',
+            height: '100%',
+            borderRadius: '10px', // Matches the rounded corners of the inner container
         }}
-      >
+        >
         <img
           src={PinkGrid}
           alt="Pink Grid"
           style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            objectFit: 'cover',
-            width: '100%',
-            height: '100%',
-            zIndex: 1,
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              objectFit: 'cover',
+              width: '100%',
+              height: '100%',
+              // zIndex: 1,
+              backdropFilter: 'blur(100px)',
+              border: '3px ', 
+              borderRadius: '12px',
             pointerEvents: 'none', // Ensures no interaction with the image
           }}
         />
