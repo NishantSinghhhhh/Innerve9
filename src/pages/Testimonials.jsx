@@ -1,6 +1,7 @@
 import React from 'react';
 import Piggy from "../assets/piggy.svg";
 import TestimonialsCard from '../components/TestimonialsCard';
+import TestimonialsCard1 from '../components/test';
 
 
 const data = [
@@ -22,7 +23,7 @@ const Testimonials = () => {
 
   return (
     <div>
-      <div className="relative font-angrybirds text-[80px] md:text-[128px] leading-[100%]">
+      <div className="relative font-angrybirds text-[80px] md:text-[128px] leading-[100%] mb-[4rem]">
         <img
           src={Piggy}
           alt="Piggy" 
@@ -31,9 +32,9 @@ const Testimonials = () => {
         Testimonials
       </div>
 
-      <div className="pt-[4rem] flex flex-wrap gap-[2rem] justify-center">
+      <div className="pt-[4rem] flex flex-wrap gap-[5rem] justify-center">
         {data.map((testimonial, index) => (
-          <TestimonialsCard 
+          <TestimonialsCard1 
             key={index}
             content={testimonial.content}
             name={testimonial.name}
