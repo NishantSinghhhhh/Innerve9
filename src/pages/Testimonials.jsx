@@ -1,7 +1,6 @@
 import React from 'react';
 import Piggy from "../assets/piggy.svg";
 import TestimonialsCard from '../components/TestimonialsCard';
-import TestimonialsCard1 from '../components/test';
 
 
 const data = [
@@ -34,7 +33,7 @@ const Testimonials = () => {
 
       <div className="pt-[4rem] flex flex-wrap gap-[5rem] justify-center">
         {data.map((testimonial, index) => (
-          <TestimonialsCard1 
+          <TestimonialsCard
             key={index}
             content={testimonial.content}
             name={testimonial.name}

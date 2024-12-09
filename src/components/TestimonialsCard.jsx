@@ -1,30 +1,34 @@
 import React from 'react';
 import PinkGrid from "../assets/Pink_Grid.svg";
 import Spark from "../assets/Spark.svg";
+import { blur } from 'three/webgpu';
 
-const TestimonialsCard = ({ content, name }) => {
+const TestimonialsCard1 = ({ content, name }) => {
   return (
     <div
-      className="w-[440px] h-[505px] relative p-[32px] pt-[96px]"
+      className="w-[440px] h-[505px] flex items-center justify-center "
       style={{
-        border: '3px solid #FF5BB1', // Border with solid pink color
-        borderRadius: '12px', // Rounded corners for the border
+        position: 'relative',
+        borderRadius: '12px', // Rounded corners
+        backgroundImage: 'linear-gradient(to bottom, #FF5BB1, #626262', // Gradient background
         backgroundOrigin: 'border-box',
-        backgroundImage: 'linear-gradient(to bottom, rgba(179, 121, 27, 0.25) 10%, rgba(119, 119, 119, 0.3) 100%)',
-        backgroundClip: 'padding-box',
-        // borderImageSource: ''
-    }}
-    >
-      <div
-       style={{
-        width: '100%',
-        height: '100%',
-        borderRadius: '12px',
+        backgroundClip: 'border-box', // Makes the gradient visible only on the border
+        backdropFilter: 'blur(100px)', 
 
       }}
-      
-        >
-        <img
+    >
+      <div
+        className="flex items-center justify-center p-[2rem]"
+        style={{
+          borderRadius: '12px', // Adjusted for inner content
+          backgroundColor: '#14021e', // Background color for inner content
+          width: '98.5%', // Makes the inner div almost fill the outer container
+          height: '98.5%', // Makes the inner div almost fill the outer container
+          backgroundImage: 'linear-gradient(to bottom, rgba(179, 121, 27, 0.2) 40%, rgba(119, 119, 119, 0.3) 100%)',
+        }}
+      >
+         <img
+         
           src={PinkGrid}
           alt="Pink Grid"
           style={{
@@ -35,8 +39,6 @@ const TestimonialsCard = ({ content, name }) => {
               width: '100%',
               height: '100%',
               // zIndex: 1,
-              backdropFilter: 'blur(100px)',
-              border: '3px ', 
               borderRadius: '12px',
             pointerEvents: 'none', // Ensures no interaction with the image
           }}
@@ -63,4 +65,4 @@ const TestimonialsCard = ({ content, name }) => {
   );
 };
 
-export default TestimonialsCard;
+export default TestimonialsCard1;
