@@ -10,63 +10,63 @@ import White_Leaves from "../assets/White_Leaves_1.svg";
 const timelineData = [
   {
     title: "REGISTRATION STARTS",
-    date: "15 DEC 2025",
+    date: "15 DEC 2024",
     description:
-      "The registration f and an dor the event begins. Make sure to sign up early to secure your spot.",
+      "Secure your spot starting December 15, 2024, at 12:00 AM IST. Join us for an exciting 24-hour hackathon by registering early!",
   },
   {
     title: "REGISTRATION Ends",
-    date: "15 DEC 2025",
+    date: "20 JAN 2025",
     description:
-      "The registration for the event begins. Make sure to sign up early to secure your spot.",
+      "Last date to register for the hackathon!. Don't miss out on this opportunity—finalize your participation before it's too late!",
   },
   {
-    title: "REGISTRATION STARTS",
-    date: "15 DEC 2025",
+    title: "Pre-Innerve Games",
+    date: "25 JAN 2025",
     description:
-      "The registration for the event begins. Make sure to sign up early to secure your spot.",
+      "Embark on an exciting Pre-Innerve game designed exclusively for first-year students!",
   },
   {
-    title: "REGISTRATION STARTS",
-    date: "15 DEC 2025",
+    title: "Participant Check-in",
+    date: "6 FEB, 2025 6:00 PM",
     description:
-      "The registration for the event begins. Make sure to sign up early to secure your spot.",
+      "Engage in a warm welcome, thorough orientation, and the distribution of essential welcome kits as we kick off the hackathon experience.",
   },
   {
-    title: "REGISTRATION STARTS",
-    date: "15 DEC 2025",
+    title: "Hackathon Begins",
+    date: "7 FEB 2025 10:00 AM",
     description:
-      "The registration for the event begins. Make sure to sign up early to secure your spot.",
+      "Get ready to code, innovate, and collaborate! The Hackathon journey begins—ideas soar, projects flourish, and success celebrated.",
   },
   {
-    title: "REGISTRATION STARTS",
-    date: "15 DEC 2025",
+    title: "Mentorship Session",
+    date: "7 FEB 2025 05:00 PM",
     description:
-      "The registration for the event begins. Make sure to sign up early to secure your spot.",
+      "Get personalized guidance from experienced mentors in a dedicated session.",
   },
   {
-    title: "REGISTRATION STARTS",
-    date: "15 DEC 2025",
+    title: "Midnight Jam and Energizer",
+    date: "8 FEB 2025 12:00 AM",
     description:
-      "The registration for the event begins. Make sure to sign up early to secure your spot.",
+      "Fuel your creativity with our Midnight Jam—a lively session featuring energizing activities and music.",
   },
   {
-    title: "REGISTRATION STARTS",
-    date: "15 DEC 2025",
+    title: "Coding hours end",
+    date: "8 FEB 2025 10:00 AM",
     description:
-      "The registration for the event begins. Make sure to sign up early to secure your spot.",
+      "Wrap up your coding journey, take a breather, and gear up for the project submission phase.",
   },
   {
-    title: "REGISTRATION STARTS",
-    date: "15 DEC 2025",
+    title: "Judging Round",
+    date: "8 FEB 2025 12:00 PM",
     description:
-      "The registration for the event begins. Make sure to sign up early to secure your spot.",
+      "Step into the spotlight as you present your projects in the judging round. Showcase your innovation.",
   },
   {
-    title: "REGISTRATION STARTS",
-    date: "15 DEC 2025",
+    title: "Final Presentation",
+    date: "8 FEB 2025 6:00 PM",
     description:
-      "The registration for the event begins. Make sure to sign up early to secure your spot.",
+      "Bring your project to life, highlight key features, demonstrate functionality, and showcase the impact of your innovation on the real-world problem you tackled.",
   },
 ];
 
@@ -84,7 +84,7 @@ const Timeline = () => {
 
       {/* White Section */}
       <div className="bg-white py-36 flex flex-col gap-[108px]">
-        <div className="relative flex flex-col items-center justify-center gap-5">
+        <div className=" relative flex flex-col items-center justify-center gap-5">
           <div className="relative font-angrybirds text-black text-[80px] md:text-[128px] leading-[100%]">
             TIMELINE
             <img
@@ -100,7 +100,7 @@ const Timeline = () => {
         </div>
 
         {/* timeline main*/}
-        <div className="flex flex-col items-center justify-center gap-24 md:gap-64">
+        <div className=" flex flex-col items-center justify-center gap-24 md:gap-64">
           {/* timeline data and innerve logo formation */}
           <div className="w-[100%] flex justify-center items-center gap-auto">
             {/* left div */}
@@ -110,7 +110,7 @@ const Timeline = () => {
 
             {/* Right Division// timeline data */}
             <div className="flex px-4 flex-col justify-center items-center gap-[18px]">
-              <div className="flex flex-col items-start justify-start gap-[18px]">
+            <div className="flex flex-col items-start justify-start gap-[18px]">
                 {timelineData.map((event, index) => (
                   <TimelineDetails
                     key={index}
@@ -120,7 +120,7 @@ const Timeline = () => {
                   />
                 ))}
               </div>
-              <div className="text-black flex gap-6 md:gap-[44px]">
+              <div className="text-black flex gap-6 md:gap-[44px] flex-row w-[90%]">
                 {/* Dots */}
                 <img
                   src={Black}
@@ -132,22 +132,23 @@ const Timeline = () => {
                 <div className="w-[80%]">
                   <div className="flex flex-row justify-between items-center">
                     <p className="font-angrybirds text-base md:text-[20px]">
-                      REGISTRATION STARTS
+                    Result Declaration
                     </p>
                     <p className="font-tthoves text-[14px] text-gray-500">
-                      15 DEC 2025
+                    8 FEB 2025 7:00 PM
                     </p>
                   </div>
                   <div className="font-tthoves text-left text-sm md:text-base pt-[1rem]">
-                    The registration for the event begins. Make sure to sign up
-                    early to secure your spot.
+                  The moment you've been waiting for is here! Discover the
+                    hackathon winners and celebrate the outstanding
+                    achievements of participants.
                   </div>
                 </div>
               </div>
             </div>
           </div>
           {/* Logo Section - Separate from the main white section */}
-          <div className=" bg-white w-32 md:w-[240px] z-10">
+          <div className=" bg-white w-[50%] md:w-[240px] z-10">
             <img src={Logo} alt="Logo" />
           </div>
         </div>
