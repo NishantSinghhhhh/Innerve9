@@ -12,10 +12,10 @@ const timelineData = [
     title: "REGISTRATION STARTS",
     date: "15 DEC 2025",
     description:
-      "The registration for the event begins. Make sure to sign up early to secure your spot.",
+      "The registration f and an dor the event begins. Make sure to sign up early to secure your spot.",
   },
   {
-    title: "REGISTRATION STARTS",
+    title: "REGISTRATION Ends",
     date: "15 DEC 2025",
     description:
       "The registration for the event begins. Make sure to sign up early to secure your spot.",
