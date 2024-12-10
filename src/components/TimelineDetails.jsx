@@ -7,7 +7,7 @@ import Black from '../assets/Dot.svg';
 // eslint-disable-next-line react/prop-types
 const TimelineDetails = ({ title, date, description }) => {
   return (
-    <div className="text-black flex gap-6 md:gap-[44px] flex-row">
+    <div className="text-black flex gap-6 md:gap-[44px] flex-row  w-[90%] ">
       {/* Dots */}
       <div className="flex flex-col gap-[1rem] justify-center items-center h-full">
         <img src={Black} className="w-[40px] h-[40px]" alt="Black Dot" />
@@ -18,7 +18,7 @@ const TimelineDetails = ({ title, date, description }) => {
       </div>
 
       {/* Details */}
-      <div className="w-[80%]">
+      <div className="w-[80%] ">
         <div className="flex flex-row justify-between items-center">
           <p className="font-angrybirds text-base md:text-[20px]">{title}</p>
           <p className="font-tthoves text-[14px] text-gray-500">{date}</p>
