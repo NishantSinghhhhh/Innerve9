@@ -21,7 +21,7 @@ function App() {
       <Tracks />
       <Timeline/>
       <Testimonials/>
-      {/* <Sponsors/> */}
+      <Sponsors/>
       <SponsorUs/>
       <Footer/>
       <Noise />
