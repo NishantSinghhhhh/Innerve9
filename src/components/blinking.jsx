@@ -44,7 +44,7 @@ const BlinkingDot = () => {
           }}
         ></span>
         {/* Text next to the dot */}
-        <span className="text-sm ml-8">Registration Open</span>
+        <span className="text-[18px] ml-8">Registration Open</span>
       </div>
     </>
   );
