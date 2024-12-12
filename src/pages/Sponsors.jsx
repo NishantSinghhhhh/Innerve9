@@ -18,6 +18,8 @@ import echo from "../assets/echo.svg"
 import xyz from "../assets/xyz.svg"
 import verbwire from "../assets/verbwire.svg"
 import icici from "../assets/icici.svg"
+import buddhani from "../assets/budhani.png"
+import GDSCOSS from "../assets/GDSCAIT.png"
 
 const Sponsors = () => {
   const titleSponsorImages = [Accops, mro];
@@ -26,6 +28,8 @@ const Sponsors = () => {
   const coSponsorImages = [kaagaz,replit, quine];
   const subSponsorImages = [verbwire, xyz,echo];
   const goodwillPartnerImages = [icici];
+  const communityPartner = [GDSCOSS];
+  const FoodPartner = [buddhani];
 
   return (
     <section className="relative w-full flex flex-col justify-center items-center">
@@ -56,6 +60,8 @@ const Sponsors = () => {
             <SponsorTab heading="Co Sponsors" images={coSponsorImages}  piggyNumber={2}/>
             <SponsorTab heading="Sub Sponsor" images={subSponsorImages}  piggyNumber={0}/>
             <SponsorTab heading="GoodWill Partner" images={goodwillPartnerImages} piggyNumber={1}/>
+            <SponsorTab heading="Community Partner" images={communityPartner} piggyNumber={3}/>
+            <SponsorTab heading="Food Partner" images={FoodPartner} piggyNumber={3}/>
             {/* <SponsorTab heading="Silver Sponsors" images={silverSponsorImages} piggyNumber={2}/> */}
         </div>
       </div>
