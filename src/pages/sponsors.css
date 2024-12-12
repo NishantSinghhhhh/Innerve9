@@ -5,40 +5,6 @@
     background-color: #ff7603;
     position: relative;
   }
-  
-  /* Media query for screens up to 1024px
-  @media (max-width: 1024px) {
-    .media {
-      height: 400vh;
-    }
-  }
-  
- 
-  @media (min-width: 1025px) and (max-width: 1390px) {
-    .media {
-      height: 430vh; 
-    }
-  }
-
-  
-  @media (min-width: 962px) and (max-width: 1024px) {
-      .media {
-          height: 440vh; 
-        }
-    }
-    
-    @media (min-width: 768px) and (max-width: 962px) {
-      .media {
-        height: 430vh; 
-      }
-    }
-
-  @media (max-width: 768px) {
-    .media {
-      height: 550vh;
-    }
-  }
-   */
 
   .bgTexture{
     position: absolute; 
@@ -47,3 +13,5 @@
     background-position: center; 
     mix-blend-mode: soft-light;
   }
+
+  

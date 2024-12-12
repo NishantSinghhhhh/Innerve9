@@ -20,21 +20,21 @@ import RotatingRoth from "../components/Rotating_roth.jsx";
 const Footer1 = () => {
   return (
     <>
-    <div className="w-[100%] h-[35rem] overflow-hidden">
-      <div className="flex flex-row justify-between mb-[1.5rem]">
+    <div className="w-[100%] h-[58rem] md:h-[25rem] lg:h-[35rem] xl:h-[35rem] overflow-hidden">
+      <div className="flex md:flex-row justify-between mb-[1.5rem] flex-col">
 
       <div className="">
         <RotatingRoth/>
       </div>
 
-      <div className="flex justify-center items-center mt-4">
+      {/* <div className="flex justify-center items-center mt-4">
         <div className="flex flex-row gap-4">
           <img src={linkedin} alt="LinkedIn" className="w-15 h-15" />
           <img src={discord} alt="Discord" className="w-15 h-15" />
           <img src={instagram} alt="Instagram" className="w-15 h-15" />
           <img src={xLogo} alt="X (formerly Twitter)" className="w-15 h-15" />
         </div>
-      </div>
+      </div> */}
 
 
       <div className="xl:w-1/4 flex flex-col items-center justify-center mt-8">
@@ -90,23 +90,35 @@ const Footer1 = () => {
     </div>
 
       </div>
-      <div className="border-t border-[#] w-[100vw] min-h-14 mr-[2rem] ml-[2rem] flex items-center justify-center">
-        <div className="w-[95%] flex items-center justify-between">
-          <div className="flex items-center gap-[10px]">
-            <div className=""><BlinkingDot /></div>
-          </div>
-          <div>
-            Made with ❤️ by Open Source Software Club
-          </div>
-          <div className="flex gap-[15px]">
-            <img src={discord1} alt="Discord" />
-            <img src={github} alt="GitHub" />
-            <img src={meta} alt="Meta" />
-            <img src={X_1} alt="X" />
-            <img src={linkedIn} alt="LinkedIn" />
-          </div>
+      <div className="border-t border-[#9CA3AF] pt-[10px] w-full min-h-14 
+      flex flex-col 
+      md:flex-row 
+      md:items-center 
+      md:justify-center">
+      <div className="w-[95%] 
+        flex flex-col 
+        md:flex-row 
+        items-center 
+        justify-between 
+        space-y-4 
+        md:space-y-0">
+        <div className="flex items-center gap-[10px]">
+          <BlinkingDot />
+        </div>
+        
+        <div className="text-[#9CA3AF] text-[15px] md:text-[18px] text-center">
+          Made with ❤️ by Open Source Software Club
+        </div>
+        
+        <div className="flex gap-[15px]">
+          <img src={discord1} alt="Discord" className="w-6 h-6 md:w-auto md:h-auto" />
+          <img src={github} alt="GitHub" className="w-6 h-6 md:w-auto md:h-auto" />
+          <img src={meta} alt="Meta" className="w-6 h-6 md:w-auto md:h-auto" />
+          <img src={X_1} alt="X" className="w-6 h-6 md:w-auto md:h-auto" />
+          <img src={linkedIn} alt="LinkedIn" className="w-6 h-6 md:w-auto md:h-auto" />
         </div>
       </div>
+    </div>
     </div>
   </>
   );
