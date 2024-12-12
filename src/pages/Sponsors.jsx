@@ -60,8 +60,8 @@ const Sponsors = () => {
             <SponsorTab heading="Co Sponsors" images={coSponsorImages}  piggyNumber={2}/>
             <SponsorTab heading="Sub Sponsor" images={subSponsorImages}  piggyNumber={0}/>
             <SponsorTab heading="GoodWill Partner" images={goodwillPartnerImages} piggyNumber={1}/>
-            <SponsorTab heading="Community Partner" images={communityPartner} piggyNumber={3}/>
-            <SponsorTab heading="Food Partner" images={FoodPartner} piggyNumber={3}/>
+            {/* <SponsorTab heading="Community Partner" images={communityPartner} piggyNumber={3}/> */}
+            {/* <SponsorTab heading="Food Partner" images={FoodPartner} piggyNumber={3}/> */}
             {/* <SponsorTab heading="Silver Sponsors" images={silverSponsorImages} piggyNumber={2}/> */}
         </div>
       </div>
