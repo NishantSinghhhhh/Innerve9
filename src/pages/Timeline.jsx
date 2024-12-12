@@ -105,7 +105,8 @@ const Timeline = () => {
           <div className="w-[100%] flex justify-center items-center gap-auto">
             {/* left div */}
             <div className="hidden md:flex w-[48%] justify-center items-center relative">
-              <LogoAnimation />
+            <img src={Logo} alt="Logo" />
+              {/* <LogoAnimation /> */}
             </div>
 
             {/* Right Division// timeline data */}
@@ -148,9 +149,9 @@ const Timeline = () => {
             </div>
           </div>
           {/* Logo Section - Separate from the main white section */}
-          <div className=" bg-white w-[50%] md:w-[240px] z-10">
+          {/* <div className=" bg-white w-[50%] md:w-[240px] z-10">
             <img src={Logo} alt="Logo" />
-          </div>
+          </div> */}
         </div>
       </div>
 
