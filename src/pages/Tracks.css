@@ -2,13 +2,6 @@
   text-align: center;
   padding: 20px;
 }
-.outer-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  position: relative;
-}
 
 .inner-card {
   width: 200px;
@@ -59,9 +52,10 @@
   position: relative;
 }
 
-.heart-image {
+.outer-image {
   position: absolute;
-  transform: scale(0.5);
+  height: 100px;
+  width: 100px;
   z-index: 1;
 }
 
@@ -126,8 +120,9 @@
     height: 180px;
   }
 
-  .heart-image {
-    scale:0.7;
+  .outer-image {
+    height:50px;
+    width: 50px;
   }
   .tracks-heading{
     font-size: 4em;
