@@ -13,6 +13,7 @@ import SecImg from "../assets/security.svg";
 import RaysImg1 from "../assets/rays.svg"; 
 import RaysImg2 from "../assets/rays2.svg"; 
 import RaysImg3 from "../assets/rays3.svg"; 
+import Piggy from "../assets/piggy.svg";
 
 const innerCardColors = [
   "#FA86B4", "#549EDE", "#903CD2", "#903CD2", "#FA86B4", 
@@ -48,7 +49,14 @@ const Card = ({ innerColor, raysImage, outerImage }) => {
 const Tracks = () => {
   return (
     <div className="tracks-container">
-      <h1 className="tracks-heading">TRACKS</h1>
+      <div className="relative font-angrybirds text-white text-[80px] md:text-[128px] leading-[100%] mb-[6rem]">
+            TRACKS
+            <img
+            src={Piggy}
+            alt="Piggy"
+            className="absolute w-6 md:w-10 top-[-18%] left-[59.5%] rotate-[-6.39deg]"
+          />
+          </div>
       <div className="cards-wrapper">
         {innerCardColors.map((innerColor, index) => (
           <div className="card-container" key={index}>
