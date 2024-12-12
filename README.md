@@ -72,7 +72,7 @@ Ensure the following are installed on your system:
     npm start
 5. **Open your browser and navigate to**:
     ```bash
-    [npm install](http://localhost:3000)
+    (http://localhost:3000)
 6. 🎉 You're all set! Explore the Innerve 9 website locally.
 
 
