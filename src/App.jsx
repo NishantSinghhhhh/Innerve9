@@ -9,7 +9,7 @@ import Noise from "./components/noise";
 import Testimonials from "./pages/Testimonials";
 import SponsorUs from "./pages/SponsorUs";
 import React from "react";
-
+import Footer1 from "./pages/Foooter1";
 
 
 function App() {
@@ -21,9 +21,9 @@ function App() {
       <Tracks />
       <Timeline/>
       <Testimonials/>
-      <Sponsors/>
+      {/* <Sponsors/> */}
       <SponsorUs/>
-      <Footer/>
+      <Footer1/>
       <Noise />
     </div>
   );

@@ -32,7 +32,7 @@ const SponsorUs = () => {
         
         {/* Wooden Section with Background Image */}
         <div
-          className="z-10 flex items-center justify-center w-[100%] md:w-[80%] lg:w-[70%] h-[50vh] md:h-[60vh] lg:h-[70vh] bg-no-repeat bg-center bg-contain"
+          className="z-10 flex items-center justify-center w-[100%] md:w-[%] lg:w-[70%] h-[50vh] md:h-[60vh] lg:h-[70vh] bg-no-repeat bg-center bg-contain"
           style={{
             backgroundImage: `url(${Wooden})`,
           }}
@@ -41,21 +41,21 @@ const SponsorUs = () => {
           <div className="flex flex-col items-center justify-center gap-[2rem] md:px-[2rem] text-center">
             <div className="w-full">
               <div className='text-left'>
-                <p className="text-white font-angrybirds text-[32px] md:text-[48px] ml-[4rem]">
+                <p className="text-white font-angrybirds text-[1rem] md:text-[3rem] ml-[1rem]">
                   WANT TO
                 </p>
               </div>
               
               <div>
-                <p className="text-white font-angrybirds text-[32px] md:text-[8rem]">
+                <p className="text-white font-angrybirds text-[2rem] md:text-[8rem]">
                   SPONSOR US!
                 </p>
               </div>
             </div>
             
-            <div className="flex flex-col md:flex-row gap-[1.5rem] md:gap-[3rem]">
-              <ButtonSponsor text="SPONSOR US" />
-              <ButtonSponsor text="GET BROCHURE"  />
+            <div className="flex flex-col  md:flex-row gap-[1rem] md:gap-[3rem]">
+              <ButtonSponsor Label ="SPONSOR US" />
+              <ButtonSponsor Label="GET BROCHURE"  />
             </div>
           </div>
         </div>

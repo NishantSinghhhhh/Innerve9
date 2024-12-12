@@ -4,37 +4,30 @@ import btn from "../assets/btn.svg";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
-const ButtonSponsor = ({ text }) => {
-    useGSAP(() => {
-        gsap.to("#warning", {
-          y: -20,
-          repeat: -1,
-          yoyo: true,
-          duration: 0.3, // Fast animation duration
-          ease: "power1.inOut" // Smooth easing for the motion
-        });
-      }, []);
-      
-      
+const ButtonSponsor = ({ BtnIcon, Label }) => {
+  useGSAP(() => {
+    gsap.to("#warning", {
+      y: -20,
+      repeat: -1,
+      yoyo: true,
+      ease: "power1"
+    });
+  }, []);
+
   return (
-    <div
-      className="md:w-[23.8rem] md:h-[4.7rem] relative"
+    <button
+      className="flex items-center justify-center gap-[10px] px-16 py-8 text-white relative"
       style={{
         backgroundImage: `url(${btn})`,
-        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundSize:"contain",
         backgroundPosition: "center",
       }}
     >
-      <div className="font-angrybirds h-[100%] w-[100%] md:text-[36px] flex items-center justify-center relative">
-        <p>{text}</p>
-        <img
-          src={Warning}
-          id="warning"
-          className="absolute top-[-10%] right-[-10%] md:top-[-20%] md:left-[5%] h-[24px] md:h-[48px]"
-          alt="warning"
-        />
-      </div>
-    </div>
+      {BtnIcon && <img src={BtnIcon} alt="icon" className="h-[2rem] w-[2rem]" />}
+      {Label && <span className=" md:text-[32px] font-angrybirds">{Label}</span>}
+      <img src={Warning} id="warning" alt="warning" className="absolute top-[5%] left-[-8%] md:left-[-3%]"/>
+    </button>
   );
 };
 
