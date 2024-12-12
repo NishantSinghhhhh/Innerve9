@@ -10,7 +10,8 @@ import Floating from "./Floating";
 import Heading from "./Heading";
 import Portal from "./Portal";
 import Grids from  '../assets/all_grids.svg'
-
+import BubblePiggy from "../assets/bubble-piggy.svg";
+import RenderFloating from "../components/Floating";
 // import Red from "../assets/red.svg";
 // import Blue from "../assets/blue.svg";
 // import Yellow from "../assets/yellow.svg";
@@ -41,7 +42,7 @@ const Hero = () => {
       </div>
       <Dates />
       <Stars />
-      {/* <Floating /> */}
+      <RenderFloating imgSrc={BubblePiggy}/>
       <div className="hidden lg:flex absolute -left-14 top-[45%]">
         <img src={Tnt} alt="tnt" />
       </div>
