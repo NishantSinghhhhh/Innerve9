@@ -23,12 +23,12 @@ const data = [
 const Testimonials = () => {
   return (
     <div className="px-4 md:px-8 lg:px-16">
-      <div className="relative font-angrybirds text-[48px] sm:text-[64px] md:text-[80px] lg:text-[96px] xl:text-[128px] leading-[100%] mb-12 md:mb-16 text-center">
-        <img
-          src={Piggy}
-          alt="Piggy"
-          className="absolute w-[20px] sm:w-[30px] md:w-[40px] lg:w-[50px] top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 rotate-[-6.39deg]"
-        />
+      <div className="relative font-angrybirds text-[64px] sm:text-[64px] md:text-[80px] lg:text-[96px] xl:text-[128px] leading-[100%] mb-12 md:mb-16 text-center">
+      <img
+        src={Piggy}
+        alt="Piggy"
+        className="absolute w-[20px] h-[20px] sm:w-[15px] md:w-[20px] lg:w-[25px] top-[65%] left-[54%] transform -translate-x-1/2 -translate-y-1/2 rotate-[-6.39deg] xl:top-[65%] xl:left-[52%] xl:h-[30px] xl:w-[30px] lg:top-[65%] lg:left-[40%]"
+      />
         Testimonials
       </div>
       <div className="pt-8 md:pt-12 flex flex-wrap gap-8 md:gap-12 justify-center">

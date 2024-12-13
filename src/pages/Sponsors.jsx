@@ -77,6 +77,7 @@ const Sponsors = () => {
 
       {/* Lower leaves */}
       <div className="w-[120vw] -mt-10 md:-mt-64">
+
         <img
           src={LowerLeaves}
           alt="leaves"
