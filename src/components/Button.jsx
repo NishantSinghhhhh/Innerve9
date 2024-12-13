@@ -2,15 +2,15 @@ import React from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import btn from "../assets/btn.svg";
-import Warning from "../assets/warning-graphic.svg";
+import warning_video from "../assets/warning.webm";
 
 const Button = ({ BtnIcon, Label }) => {
   useGSAP(() => {
-    gsap.to("#warning", {
+    gsap.to("#warning-video", {
       y: -20,
       repeat: -1,
       yoyo: true,
-      ease: "power1"
+      ease: "power1",
     });
   }, []);
 
@@ -20,13 +20,20 @@ const Button = ({ BtnIcon, Label }) => {
       style={{
         backgroundImage: `url(${btn})`,
         backgroundRepeat: "no-repeat",
-        backgroundSize:"contain",
+        backgroundSize: "contain",
         backgroundPosition: "center",
       }}
     >
       {BtnIcon && <img src={BtnIcon} alt="icon" className="h-[2rem] w-[2rem]" />}
-      {Label && <span className=" md:text-[32px] font-angrybirds">{Label}</span>}
-      <img src={Warning} id="warning" alt="warning" className="absolute top-[-25%] left-[-8%] md:left-[-3%]"/>
+      {Label && <span className="md:text-[32px] font-angrybirds">{Label}</span>}
+      <video
+        id="warning-video"
+        className="absolute -top-[10rem] -left-[10rem]"
+        src={warning_video}
+        autoPlay
+        loop
+        muted
+      />
     </button>
   );
 };
