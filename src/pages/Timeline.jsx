@@ -156,12 +156,23 @@ const Timeline = () => {
       </div>
 
       {/* Cloud Image - Bottom */}
-      <div className="relative lg:bottom-[13rem] md:bottom-[8rem] sm:bottom-[5rem] bottom-[4rem] w-full z-1">
-      <img
+      <div className="relative min-h-8 md:h-24 sm:h-16 lg:h-36 rotate-180 w-full z-1"
+      style={{
+        backgroundImage: ` url(${White_Leaves})`,
+        backgroundSize: "110%",
+        backgroundRepeat: "no-repeat",
+        // backgroundPosition: "center",
+      }}
+      >
+      {/* <img
         src={White_Leaves}
         alt="Cloud Background"
         className="w-full object-cover transform"
-      />
+        style={{
+          backgroundSize: "100vw",
+
+        }}
+      /> */}
     </div>
 
     </section>
