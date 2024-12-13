@@ -9,14 +9,14 @@ import Stars from "./Stars";
 import Floating from "./Floating";
 import Heading from "./Heading";
 import Portal from "./Portal";
-import Grids from  '../assets/all_grids.svg'
+import Grids from "../assets/all_grids.svg";
 import BubblePiggy from "../assets/bubble-piggy.svg";
 import RenderFloating from "../components/Floating";
 // import Red from "../assets/red.svg";
 // import Blue from "../assets/blue.svg";
 // import Yellow from "../assets/yellow.svg";
 // import White from "../assets/white.svg";
-import "../index.css"
+import "../index.css";
 
 // comit by ujjwal
 const Hero = () => {
@@ -29,9 +29,9 @@ const Hero = () => {
       id="hero"
       className="relative w-screen flex flex-col justify-center items-center gap-[120px]"
       style={{
-        backgroundImage: ` url(${Grids})`, 
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundImage: ` url(${Grids})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
       }}
     >
       <Navbar />
@@ -42,7 +42,7 @@ const Hero = () => {
       </div>
       <Dates />
       <Stars />
-      <RenderFloating imgSrc={BubblePiggy}/>
+      <RenderFloating imgSrc={BubblePiggy} />
       <div className="hidden lg:flex absolute -left-14 top-[45%]">
         <img src={Tnt} alt="tnt" />
       </div>
