@@ -17,6 +17,7 @@ import Blue from "../assets/blue.svg";
 import Yellow from "../assets/yellow.svg";
 import White from "../assets/white.svg";
 import "../index.css";
+import CountdownExample from "./FlipClockCountdown";
 
 // comit by ujjwal
 const Hero = () => {
@@ -38,6 +39,7 @@ const Hero = () => {
       <div className="w-full flex flex-col gap-24 justify-center items-center relative">
         <Heading />
         <FlipCountdown targetDate="2025-02-07T00:10:00" onEnd={handleEnd} />
+        {/* <CountdownExample /> */}
         <Button BtnIcon={Devfolio} Label="APPLY WITH DEVFOLIO" />
       </div>
       <Dates />
