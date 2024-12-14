@@ -12,10 +12,10 @@ import Portal from "./Portal";
 import Grids from "../assets/all_grids.svg";
 import BubblePiggy from "../assets/bubble-piggy.svg";
 import RenderFloating from "../components/Floating";
-// import Red from "../assets/red.svg";
-// import Blue from "../assets/blue.svg";
-// import Yellow from "../assets/yellow.svg";
-// import White from "../assets/white.svg";
+import Red from "../assets/red.svg";
+import Blue from "../assets/blue.svg";
+import Yellow from "../assets/yellow.svg";
+import White from "../assets/white.svg";
 import "../index.css";
 
 // comit by ujjwal
@@ -47,8 +47,19 @@ const Hero = () => {
         <img src={Tnt} alt="tnt" />
       </div>
       <div className="hidden lg:flex absolute top-56 left-20">
-        <Portal />
+        <Portal  birdImage={Red}/>
       </div>
+        <div className=" hidden lg:flex absolute  right-[20px] top-[25%]">
+          <Portal  birdImage={Blue}/>
+        </div>
+
+        <div className="hidden lg:flex absolute top-[70%] right-[10%]">
+          <Portal  birdImage={Yellow}/>
+        </div>
+
+        <div className="hidden lg:flex absolute top-[80%] left-[10%]">
+          <Portal  birdImage={White}/>
+        </div>
     </section>
   );
 };

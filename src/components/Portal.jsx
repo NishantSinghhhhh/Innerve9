@@ -1,19 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Port from "../assets/portal.svg";
-import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import Red from "../assets/red.svg"
 
-const Portal = () => {
-  useGSAP(() => {
-    gsap.from("#bird", {
-      y: 35,
-      repeat: -1,
-      yoyo: true,
-      rotate: 6,
-      ease: "power1",
-      duration: 3,
-    });
+const Portal = ({ birdImage }) => {
+  useEffect(() => {
+    gsap.fromTo(
+      "#bird",
+      { y: -20 }, // Starting position
+      {
+        y: 20, // Ending position
+        repeat: -1, // Infinite loop
+        yoyo: true, // Reverse the animation direction
+        ease: "power1.inOut", // Smooth easing
+        duration: 2, // Duration of the animation
+      }
+    );
   }, []);
 
   return (
@@ -21,7 +22,7 @@ const Portal = () => {
       <img src={Port} alt="port" />
       <img
         id="bird"
-        src={Red}
+        src={birdImage}
         alt="bird"
         className="absolute top-6 left-[50%] -translate-x-1/2"
       />
