@@ -24,7 +24,7 @@ const Portal = ({ birdImage }) => {
         id="bird"
         src={birdImage}
         alt="bird"
-        className="absolute top-6 left-[50%] -translate-x-1/2"
+        className="absolute top-6 left-[40%] -translate-x-1/2"
       />
     </div>
   );
