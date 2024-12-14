@@ -14,7 +14,7 @@ const CardWrapper = ({ prize, prizeLabel, description, amount, images }) => {
           {/* Prize Label */}
           <PrizeLabel text={prizeLabel}/>
           <div
-            className={`relative w-[27.5rem] h-[33.81rem] ${
+            className={`relative w-[20rem] h-[30rem] md:w-[27.5rem] md:h-[33.81rem] ${
               prize === "First Prize"
                 ? "bg-[#E14863]"
                 : prize === "Third Prize"
