@@ -5,13 +5,9 @@ import radialsecond from "../../assets/radialtrianglesecond.svg";
 import radialthird from "../../assets/radialtrianglethird.svg";
 import leftside from "../../assets/leftsidecut.svg";
 import rightside from "../../assets/rightsidecut.svg";
-import egg1 from "../../assets/Egg1-basket.svg";
-import egg2 from "../../assets/Egg2-basket.svg";
+
 import egg3 from "../../assets/Egg3-basket.svg";
-import BackgroundPrize from "../../assets/./BackgroundPrize.svg";
-import BackgroundPrizemb from "../../assets/./bgmb.svg";
-import Cloud from "../../assets/./Cloudsbackground.svg";
-import Cloudmb from "../../assets/./cloudmb.svg";
+
 import TopCloud from "../../assets/TopCloud.svg";
 import BottomCloud from "../../assets/BottomCloud.svg";
 import background_texture from "../../assets/prizes_bg.png";

@@ -10,11 +10,6 @@ import Sphere from "../components/sphere.jsx"; // Import the Sphere component
 import contactCtaImage from "../assets/contact-cta.png";
 import menuBtnImage from "../assets/menu-btn.png";
 import mapFrameImage from "../assets/card.png";
-import roth from "../assets/roth.svg"
-import linkedin from "../assets/in.svg";
-import discord from "../assets/disc.svg";
-import instagram from "../assets/insta.svg";
-import xLogo from "../assets/x.svg";
 import RotatingRoth from "../components/Rotating_roth.jsx";
 
 const Footer1 = () => {
