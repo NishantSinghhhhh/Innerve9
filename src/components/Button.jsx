@@ -28,7 +28,7 @@ const Button = ({ BtnIcon, Label }) => {
       {Label && <span className="md:text-[32px] font-angrybirds">{Label}</span>}
       <video
         id="warning-video"
-        className="absolute -top-[10rem] -left-[10rem]"
+        className="absolute top-[-180%] md:top-[-210%] left-[-45%]"
         src={warning_video}
         autoPlay
         loop

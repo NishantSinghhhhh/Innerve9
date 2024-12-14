@@ -28,7 +28,7 @@ const SponsorUs = () => {
   const backgroundImage = isMobile ? Wooden_mobile : Wooden;
 
   return (
-    <div className="">
+    <div>
       {/* Cactus Image */}
       <div className="relative mb-[20px] scale-[2.5] md:scale-[1.5] lg:scale-[1] md:-mb-[20px] z-5">
         <img src={cactus} alt="Cactus" />
