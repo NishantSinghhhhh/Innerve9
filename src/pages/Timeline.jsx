@@ -4,18 +4,18 @@ import Piggy from "../assets/piggy.svg";
 import TimelineDetails from "../components/TimelineDetails";
 import Logo from "../assets/logo (1).svg";
 import Black from "../assets/Dot.svg";
-import LogoAnimation from "../components/LogoAnimation";
+// import LogoAnimation from "../components/LogoAnimation";
 import White_Leaves from "../assets/White_Leaves_1.svg";
 
 const timelineData = [
   {
-    title: "REGISTRATION STARTS",
+    title: "Registration Starts",
     date: "15 DEC 2024",
     description:
       "Secure your spot starting December 15, 2024, at 12:00 AM IST. Join us for an exciting 24-hour hackathon by registering early!",
   },
   {
-    title: "REGISTRATION Ends",
+    title: "Registration Ends",
     date: "20 JAN 2025",
     description:
       "Last date to register for the hackathon!. Don't miss out on this opportunity—finalize your participation before it's too late!",
@@ -121,7 +121,7 @@ const Timeline = () => {
                   />
                 ))}
               </div>
-              <div className="text-black flex gap-6 md:gap-[44px] flex-row w-[90%]">
+              <div className="text-black flex gap-6 md:gap-[44px] flex-row w-[100%]">
                 {/* Dots */}
                 <img
                   src={Black}
@@ -140,7 +140,7 @@ const Timeline = () => {
                     </p>
                   </div>
                   <div className="font-tthoves text-left text-sm md:text-base pt-[1rem]">
-                  The moment you've been waiting for is here! Discover the
+                  The moment you&apos;ve been waiting for is here! Discover the
                     hackathon winners and celebrate the outstanding
                     achievements of participants.
                   </div>
