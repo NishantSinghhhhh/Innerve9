@@ -48,21 +48,23 @@ const Cards = () => {
 
   return (
     <>
-      <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+      <div style={{ display: "flex", flexDirection: "column", alignItems: "center",}}>
         <div>
           <img src={TopCloud} style={{ width: "100%" }} alt="Top Cloud" />
         </div>
 
+      <div className="w-[100vw] bg-white flex justify-center items-center">
         <div
+          className="md:w-[97%] w-[100%]"
           style={{
-            width: "100vw",
+            borderRadius: "30px",
             position: "relative", // Enables layering
             backgroundColor: "rgba(16, 159, 161, 0.9)", // Semi-transparent background color
-            padding: "20px",
             boxSizing: "border-box",
             paddingBottom: "60px",
+            overflow: "hidden",
           }}
-        >
+          >
           {/* Background image with transparency */}
           <div
             style={{
@@ -92,7 +94,7 @@ const Cards = () => {
             </div>
           </div>
         </div>
-
+      </div>
         <div>
           <img src={BottomCloud} style={{ width: "100%" }} alt="Bottom Cloud" />
         </div>
