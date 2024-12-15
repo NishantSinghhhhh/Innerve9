@@ -1,4 +1,4 @@
-import { useState } from "react";
+// import { useState } from "react";
 import Tracks from "./pages/Tracks";
 import Hero from "./components/Hero";
 import "./App.css";
@@ -11,21 +11,18 @@ import Testimonials from "./pages/Testimonials";
 import SponsorUs from "./pages/SponsorUs";
 import React from "react";
 import Footer1 from "./pages/Foooter1";
-import Loader from "./pages/Loader";
+// import Loader from "./pages/Loader";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true); 
+  // const [isLoading, setIsLoading] = useState(true); 
 
-  const handleLoaderComplete = () => {
-    setIsLoading(false);
-  }
+  // const handleLoaderComplete = () => {
+  //   setIsLoading(false);
+  // }
 
 
   return (
     <div className="h-full w-full flex flex-col gap-[120px] justify-center items-center overflow-x-hidden relative">
-      {isLoading && <Loader onComplete={handleLoaderComplete} />} {/* Show loader only while loading */}
-      {!isLoading && ( // Render app content only when loader is hidden
-        <>
           <Hero />
           <Cards />
           <Tracks />
@@ -35,8 +32,6 @@ function App() {
           <SponsorUs />
           <Footer1 />
           <Noise />
-        </>
-      )}
     </div>
   );
 }
