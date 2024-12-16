@@ -1,5 +1,11 @@
+    .footer-container{
+      width: 100%;
 
-  
+    }
+    .box{
+      display: flex;
+      justify-content: space-between;
+    }
   .solar-system {
     position: relative;
     width: 400px;
