@@ -10,7 +10,7 @@ import Noise from "./components/noise";
 import Testimonials from "./pages/Testimonials";
 import SponsorUs from "./pages/SponsorUs";
 import React from "react";
-import Footer1 from "./pages/Foooter1";
+import Footer2 from "./pages/Footer2";
 // import Loader from "./pages/Loader";
 
 function App() {
@@ -30,7 +30,7 @@ function App() {
           <Testimonials />
           <Sponsors />
           <SponsorUs />
-          <Footer1 />
+          <Footer2 />
           <Noise />
     </div>
   );

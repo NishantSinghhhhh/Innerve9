@@ -1,0 +1,77 @@
+
+  
+  .solar-system {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    display: flex;
+  
+    flex-direction: column;
+
+  }
+  .board {
+    border: 2px solid gold; /* Golden border */
+    box-shadow: 0 0 10px 5px gold; /* Golden glow effect */
+    border-radius: 8px; /* Optional: makes the corners rounded */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 100px;
+    background-color: #0A161C;
+  }
+  .sun {
+    position: absolute;
+    top: 30%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+   z-index: 1;
+    border-radius: 50%;
+  
+  }
+  .board {
+    position: absolute;
+    left: 30%;
+    top: 90%;
+    height: 80px;
+    z-index: -1;
+    font-family: "AngryBirds";
+  src: url("./assets/fonts/angrybirds-regular.ttf") format("truetype");
+  font-size: 1rem;
+  font-weight: bold;
+  background: linear-gradient(270deg,#FBD176, #CF9518,#FEB71E);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  }
+  
+  .planet {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+  object-fit: cover;
+   
+   
+  }
+  
+  
+  .planet1 { top: 10%; left: 15%; transform: translate(-50%, -50%); scale:0.5;}
+  .planet2 { top: 45%; left: 108%; transform: translate(-50%, -50%);scale:0.85; }
+  .planet3 { top: 25%; left: 100%; transform: translate(-50%, -50%); scale:0.75;}
+  .planet4 { top: 45%; left: 5%; transform: translate(-50%, -50%); scale:0.85;}
+  .planet5 { top: 65%; left: 15%; transform: translate(-50%, -50%); }
+  .planet6 { top: 25%; left: 10%; transform: translate(-50%, -50%); scale:0.75;}
+   .planet7 { top: 65%; left: 100%; transform: translate(-50%, -50%); }
+   .planet8 { top: 85%; left: 30%; transform: translate(-50%, -50%); }
+   .planet9 { top: 85%; left: 85%; transform: translate(-50%, -50%); }
+   .planet10 { top: 10%; left: 90%; transform: translate(-50%, -50%); scale:0.5;}
+  .contact{
+    display: flex;
+    justify-content: flex-start;
+  }
+  .map{
+    display: flex;
+    justify-content: flex-end;
+    
+  }
