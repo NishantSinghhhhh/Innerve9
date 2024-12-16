@@ -11,16 +11,9 @@ import Testimonials from "./pages/Testimonials";
 import SponsorUs from "./pages/SponsorUs";
 import React from "react";
 import Footer2 from "./pages/Footer2";
-// import Loader from "./pages/Loader";
+import Footer1 from "./pages/Foooter1";
 
 function App() {
-  // const [isLoading, setIsLoading] = useState(true); 
-
-  // const handleLoaderComplete = () => {
-  //   setIsLoading(false);
-  // }
-
-
   return (
     <div className="h-full w-full flex flex-col gap-[120px] justify-center items-center overflow-x-hidden relative">
           <Hero />
@@ -30,7 +23,7 @@ function App() {
           <Testimonials />
           <Sponsors />
           <SponsorUs />
-          <Footer2 />
+          <Footer1 />
           <Noise />
     </div>
   );
