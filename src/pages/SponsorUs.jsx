@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 
 import cactus from "../assets/cactus.svg";
 import Rocks from "../assets/ROCKS.svg";
 import Texture from "../assets/Texture_Sponsor_Us.svg";
-import Wooden from "../assets/wooden_block.svg";
+import Wooden from "../assets/wooden _block.svg";
 import Wooden_mobile from "../assets/wooden_mobile.svg";
 import ButtonSponsor from '../components/ButtonSponsor';
 
@@ -23,7 +23,7 @@ const SponsorUs = () => {
 
   const backgroundImage = isMobile ? Wooden_mobile : Wooden;
 
-  const history = useHistory();
+  // const history = useHistory();
 
   const handleSponsorUsClick = () => {
     window.location.href = "/sponsor-us"; 
@@ -56,7 +56,7 @@ const SponsorUs = () => {
         <div
           className="z-10 flex items-center justify-center w-[100%] md:w-[80%] lg:w-[70%] h-[50vh] md:h-[60vh] lg:h-[70vh] bg-no-repeat bg-center bg-contain"
           style={{
-            backgroundImage: url(${backgroundImage}),
+            backgroundImage: `url(${backgroundImage})`,
           }}
         >
           <div className="flex flex-col items-center justify-center gap-[2rem] md:px-[2rem] text-center">
