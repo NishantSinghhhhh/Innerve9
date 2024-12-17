@@ -15,6 +15,8 @@ import ICICI from "../assets/icici.svg?react";
 import Texture from "../assets/texture.svg?react";
 import UpperLeaves from "../assets/Orange_Leaves_1.png";
 import LowerLeaves from "../assets/Orange_Leaves_bottom.png";
+// import buddhani from "../assets/budhani.svg?react";
+// import GDSCOSS from "../assets/GDSCAIT.svg?react";
 // Components
 import SponsorTab from "../components/SponsorTab";
 
@@ -24,9 +26,11 @@ const Sponsors = () => {
   const titleSponsorImages = [<Accops />, <MRO />];
   const platinumSponsorImages = [<Tailcall />, <Microsoft />];
   const platformSponsorImages = [<Solana />, <Devfolio />];
-  const coSponsorImages = [<Replit />, <Echo />, <XYZ />];
+  const coSponsorImages = [<Replit />, <Echo />];
   const subSponsorImages = [<Verbwire />];
   const goodwillPartnerImages = [<ICICI />];
+  // const commuinityPartnerImages = [<GDSCOSS />];
+  // const FoodPartner = [<buddhani />];
 
   return (
     <section className="relative w-full flex flex-col justify-center items-center">
@@ -44,7 +48,8 @@ const Sponsors = () => {
       <div className="flex flex-col justify-center items-center relative py-24 bg-[#FE7702] w-full">
         {/* Texture Background */}
         <div className="absolute w-full h-full top-0 left-0 opacity-80 mix-blend-soft-light">
-          <Texture className="w-full h-full object-cover" />
+          
+        <Texture className="w-full h-full object-cover" />
         </div>
 
         {/* Heading */}
@@ -93,7 +98,7 @@ const Sponsors = () => {
       </div>
 
       {/* Lower Leaves */}
-      <div className="w-[120vw] -mt-10 md:-mt-64">
+      <div className="w-[120vw] -mt-2 md:-mt-64">
         <img
           src={LowerLeaves}
           alt="leaves"
