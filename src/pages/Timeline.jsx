@@ -6,6 +6,9 @@ import Logo from "../assets/logo (1).svg";
 import Black from "../assets/Dot.svg";
 // import LogoAnimation from "../components/LogoAnimation";
 import White_Leaves from "../assets/White_Leaves_1.svg";
+import Floating from "../components/Floating";
+// import Grids from "../assets/all_grids.svg";
+import BubblePiggy from "../assets/bubble-piggy.svg";
 
 const timelineData = [
   {
@@ -72,14 +75,20 @@ const timelineData = [
 
 const Timeline = () => {
   return (
+    <>
     <section>
+
       {/* Cloud Image - Top */}
       <div className="relative top-[10px] w-full">
+        <div  className="-z-10 absolute left-[0%] bottom-[-26%] w-screen">
+        <Floating imgSrc={BubblePiggy}/>
+
+        </div>
         <img
           src={Cloud}
           alt="Cloud Background"
           className="w-full object-cover"
-        />
+          />
       </div>
 
       {/* White Section */}
@@ -91,7 +100,7 @@ const Timeline = () => {
             src={Piggy}
             alt="Piggy"
             className="absolute w-6 md:w-10 top-[-20%] left-[90%] rotate-[-6.39deg]"
-          />
+            />
           </div>
           <p className="font-angrybirds text-black text-[20px] md:text-[32px] leading-[100%] uppercase">
             HERE&apos;S YOUR GUIDE TO INNERVE9
@@ -118,8 +127,8 @@ const Timeline = () => {
                     title={event.title}
                     date={event.date}
                     description={event.description}
-                  />
-                ))}
+                    />
+                  ))}
               </div>
               <div className="text-black flex gap-6 md:gap-[44px] flex-row w-[100%]">
                 {/* Dots */}
@@ -127,7 +136,7 @@ const Timeline = () => {
                   src={Black}
                   className="w-[40px] h-[40px]"
                   alt="Black Dot"
-                />
+                  />
 
                 {/* Details */}
                 <div className="w-[80%]">
@@ -151,7 +160,7 @@ const Timeline = () => {
           {/* Logo Section - Separate from the main white section */}
           {/* <div className=" bg-white w-[50%] md:w-[240px] z-10">
             <img src={Logo} alt="Logo" />
-          </div> */}
+            </div> */}
         </div>
       </div>
 
@@ -170,12 +179,17 @@ const Timeline = () => {
         className="w-full object-cover transform"
         style={{
           backgroundSize: "100vw",
-
-        }}
-      /> */}
+          
+          }}
+          /> */}
+    
     </div>
-
+    <div className="absolute -mt-48 -z-10">
+      <Floating imgSrc={BubblePiggy} />
+     </div >
     </section>
+
+          </>
   );
 };
 
