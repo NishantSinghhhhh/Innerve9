@@ -3,6 +3,10 @@ import Logo from "../assets/logo.svg";
 import Navigate from "../assets/link.svg";
 
 const Navbar = () => {
+  const handleBrochureClick = () => {
+    window.open("https://drive.google.com/file/d/your-file-id/view?usp=sharing", "_blank");
+  };
+
   return (
     <header className="w-full">
       <nav className="flex justify-between items-center py-4 px-8 lg:py-8 lg:px-[120px]">
@@ -10,7 +14,7 @@ const Navbar = () => {
           <img src={Logo} alt="logo" />
         </a>
         <div className="flex gap-4 items-center">
-          <div className="flex items-center gap-2 cursor-pointer px-4 group">
+          <div className="flex items-center gap-2 cursor-pointer px-4 group" onClick={handleBrochureClick}>
             <span className="h-[20px] w-1 bg-[#3AFFA3] z-10"></span>
             <span
               className="h-4 w-1 bg-[#3AFFA3] absolute -translate-x-1/2"

@@ -5,15 +5,12 @@ import radialsecond from "../../assets/radialtrianglesecond.svg";
 import radialthird from "../../assets/radialtrianglethird.svg";
 import leftside from "../../assets/leftsidecut.svg";
 import rightside from "../../assets/rightsidecut.svg";
-import egg1 from "../../assets/Egg1-basket.svg";
-import egg2 from "../../assets/Egg2-basket.svg";
+
 import egg3 from "../../assets/Egg3-basket.svg";
-import BackgroundPrize from "../../assets/./BackgroundPrize.svg";
-import BackgroundPrizemb from "../../assets/./bgmb.svg";
-import Cloud from "../../assets/./Cloudsbackground.svg";
-import Cloudmb from "../../assets/./cloudmb.svg"
-import TopCloud from "../../assets/TopCloud.svg"
-import BottomCloud from "../../assets/BottomCloud.svg"
+
+import TopCloud from "../../assets/TopCloud.svg";
+import BottomCloud from "../../assets/BottomCloud.svg";
+import background_texture from "../../assets/prizes_bg.png";
 
 const Cards = () => {
   const cardProps = {
@@ -44,51 +41,60 @@ const Cards = () => {
       },
     },
   };
+
   return (
     <>
-    <>
-    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-      <div>
-      <img src={TopCloud} style={{width: '100%'}}></img>
-      </div>
-      <div className="b-[" 
-      style={{ 
-        width: '100vw', 
-        backgroundColor: '#109fa1', 
-        padding: '20px',
-        boxSizing: 'border-box',
-        paddingBottom: '60px'
-      }}>
-      <p className="font-angrybirds  text-white text-6xl pt-10">
-          PRIZE POOL OF Rs. 10,00,000+
-        </p>
-        <div className="flex justify-center gap-20 pt-14 items-center flex-wrap pb-[60px]">
-          <CardWrapper {...cardProps.cardProps.firstPrize} style={{maxWidth: '300px'}} />
-          <CardWrapper {...cardProps.cardProps.secondPrize} style={{maxWidth: '300px'}} />
-          <CardWrapper {...cardProps.cardProps.thirdPrize} style={{maxWidth: '300px'}} />
+      <div style={{ display: "flex", flexDirection: "column", alignItems: "center",}}>
+        <div>
+          <img src={TopCloud} style={{ width: "100%" }} alt="Top Cloud" />
+        </div>
+
+      <div className="w-[100vw] bg-white flex justify-center items-center">
+        <div
+          className="md:w-[97%] w-[100%]"
+          style={{
+            borderRadius: "30px",
+            position: "relative", // Enables layering
+            backgroundColor: "rgba(16, 159, 161, 0.9)", // Semi-transparent background color
+            boxSizing: "border-box",
+            paddingBottom: "60px",
+            overflow: "hidden",
+          }}
+          >
+          {/* Background image with transparency */}
+          <div
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              backgroundImage: `url(${background_texture})`,
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
+              opacity: 0.2, // Adjust the transparency of the image
+              zIndex: 1, // Place it behind content
+            }}
+          ></div>
+
+          {/* Content */}
+          <div style={{ position: "relative", zIndex: 2 }}> {/* Brings content above the background */}
+            <p className="font-angrybirds text-white text-6xl pt-10">
+              PRIZE POOL OF Rs. 10,00,000+
+            </p>
+            <div className="flex justify-center gap-20 pt-14 items-center flex-wrap pb-[60px]">
+              <CardWrapper {...cardProps.cardProps.firstPrize} style={{ maxWidth: "300px" }} />
+              <CardWrapper {...cardProps.cardProps.secondPrize} style={{ maxWidth: "300px" }} />
+              <CardWrapper {...cardProps.cardProps.thirdPrize} style={{ maxWidth: "300px" }} />
+            </div>
+          </div>
         </div>
       </div>
-      <div>
-      <img src={BottomCloud} style={{width: '100%'}}></img>
-      </div>
-    </div>
-    </>
-    {/* <div className="prize lg:h-auto md:h-[200vh] h-[220%] mt-[-10vh] z-[3]">
-      
-      <div className="relative flex flex-col items-center top-0 z-[-2] w-screen transform bg-[#109fa1]" >
-        <p className="absolute text-4xl md:text-5xl lg:text-5xl xl:text-5xl xl:top-[30%] lg:top-[30%] top-[6%] font-angrybirds z-[5] text-white left-1/2 transform -translate-x-1/2 text-center w-full">
-          PRIZE POOL OF Rs. 10,00,000+
-        </p>
-        <div className="absolute flex flex-col lg:flex-row justify-center items-center top-[12%] lg:top-[40%] md:top-[20vh] w-full h-screen gap-20 lg:gap-10 z-[5] px-4 bg-[#109fa1]">
-          <CardWrapper {...cardProps.cardProps.firstPrize} className="order-1 md:order-2" />
-          <CardWrapper {...cardProps.cardProps.secondPrize} className="order-2 md:order-1" />
-          <CardWrapper {...cardProps.cardProps.thirdPrize} className="order-3" />
-          
+        <div>
+          <img src={BottomCloud} style={{ width: "100%" }} alt="Bottom Cloud" />
         </div>
-        
       </div>
-      
-    </div> */}
     </>
   );
 };

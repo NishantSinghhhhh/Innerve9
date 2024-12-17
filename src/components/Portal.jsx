@@ -2,9 +2,8 @@ import React from "react";
 import Port from "../assets/portal.svg";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import Red from "../assets/red.svg"
 
-const Portal = () => {
+const Portal = ({ birdImage }) => {
   useGSAP(() => {
     gsap.from("#bird", {
       y: 35,
@@ -21,7 +20,7 @@ const Portal = () => {
       <img src={Port} alt="port" />
       <img
         id="bird"
-        src={Red}
+        src={birdImage} 
         alt="bird"
         className="absolute top-6 left-[50%] -translate-x-1/2"
       />

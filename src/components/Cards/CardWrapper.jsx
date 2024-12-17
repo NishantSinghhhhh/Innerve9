@@ -11,10 +11,9 @@ const CardWrapper = ({ prize, prizeLabel, description, amount, images }) => {
     <>
       <div className="">
         <div className="relative">
-          {/* Prize Label */}
           <PrizeLabel text={prizeLabel}/>
           <div
-            className={`relative w-[300px] h-[400px] ${
+            className={`relative w-[20rem] h-[30rem] md:w-[27.5rem] md:h-[33.81rem] ${
               prize === "First Prize"
                 ? "bg-[#E14863]"
                 : prize === "Third Prize"
@@ -22,20 +21,12 @@ const CardWrapper = ({ prize, prizeLabel, description, amount, images }) => {
                 : "bg-[#5b5b5b]"
             } rounded-lg overflow-hidden shadow-[-8.542px_8.542px_0px_0px_rgba(0,0,0,0.15)] gap`}
           >
-            {/* Prize Title */}
             <p className="absolute top-8 text-white text-center font-angrybirds text-[22px] font-normal z-[3] pl-4">
               {prize}
             </p>
-
-            {/* Prize Details */}
             <PrizeDetails amount={amount} description={description} />
-
-            {/* Background and Decorations */}
             <CardBackground images={images} />
-
-            {/* Eggs */}
-          </div>
-
+            </div>
           <Eggs images={images} />
         </div>
       </div>

@@ -65,7 +65,7 @@ const Sponsors = () => {
         </div>
 
         {/* Sponsors Tab */}
-        <div className="px-6">
+        <div className="px-6 mt-24">
           <MemoizedSponsorTab heading="Title Sponsor" images={titleSponsorImages} piggyNumber={0}/>
           <MemoizedSponsorTab heading="Platinum Sponsor" images={platinumSponsorImages} piggyNumber={0}/>
           <MemoizedSponsorTab heading="Platform Sponsors" images={platformSponsorImages} piggyNumber={1}/>
@@ -77,6 +77,7 @@ const Sponsors = () => {
 
       {/* Lower leaves */}
       <div className="w-[120vw] -mt-10 md:-mt-64">
+
         <img
           src={LowerLeaves}
           alt="leaves"

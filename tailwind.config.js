@@ -12,7 +12,7 @@ export default {
         mx: '1390px',
       },
       animation: {
-        rotate: 'rotate 3s linear ',
+        rotate: 'rotate 3s linear infinite',
       },
       keyframes: {
         rotate: {
