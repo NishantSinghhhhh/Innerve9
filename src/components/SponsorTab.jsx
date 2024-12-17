@@ -3,18 +3,25 @@ import PropTypes from 'prop-types';
 
 const SponsorTab = ({ heading, images, piggyNumber }) => {
   return (
-    <div className="w-full">
+    <div className="w-full mb-[7.23rem]">
       <div className="flex flex-col items-center">
-        <h3 className="text-2xl md:text-4xl font-angrybirds text-white mb-6 md:mb-8">
+        {/* Heading */}
+        <h3 className="text-[2rem] md:text-[2.5rem] font-angrybirds text-[#FFFF5C] mb-6 md:mb-8 ">
           {heading}
         </h3>
+
+        {/* Images */}
         <div className="flex flex-wrap justify-center gap-8 md:gap-12">
-          {images.map((Image, index) => (
-            <div 
-              key={index} 
-              className="w-32 h-32 md:w-40 md:h-40 bg-white rounded-2xl flex items-center justify-center p-4"
+          {images.map((image, index) => (
+            <div
+              key={index}
+              className="relative md:w-[23rem] w-[20rem] h-[6.25rem] border-8 border-[#734F1F] transform -skew-x-12 flex items-center justify-center"
             >
-              {Image}
+              <div className="flex items-center justify-center bg-white border-4 border-[#FFC102] transform -skew-x-10 h-full w-full">
+                <div className='flex items-center justify-center w-[50%] h-[50%]'>
+                  {image} 
+                </div>
+              </div>
             </div>
           ))}
         </div>
