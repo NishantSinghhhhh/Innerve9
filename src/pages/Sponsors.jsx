@@ -35,7 +35,7 @@ const Sponsors = () => {
   return (
     <section className="relative w-full flex flex-col justify-center items-center">
       {/* Upper Leaves */}
-      <div className="w-[120vw] -mb-10 md:-mb-64">
+      <div className="w-[120vw] -mb-10 md:-mb-32 xl:-mb-48">
         <img
           src={UpperLeaves}
           alt="leaves"
@@ -43,6 +43,8 @@ const Sponsors = () => {
           loading="lazy"
         />
       </div>
+
+      
 
       {/* Sponsor Section */}
       <div className="flex flex-col justify-center items-center relative py-24 bg-[#FE7702] w-full">
@@ -98,7 +100,7 @@ const Sponsors = () => {
       </div>
 
       {/* Lower Leaves */}
-      <div className="w-[120vw] -mt-2 md:-mt-64">
+      <div className="w-[120vw] -mt-2 md:-mt-32 xl:-mt-48">
         <img
           src={LowerLeaves}
           alt="leaves"
