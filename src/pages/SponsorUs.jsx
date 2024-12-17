@@ -70,6 +70,7 @@ const SponsorUs = () => {
               <div className="text-left">
                 <p className="text-white font-angrybirds text-[1rem] md:text-[2.75rem] ml-[1rem] xl:text-[3rem]">
                   WANT TO
+                  
                 </p>
               </div>
 
