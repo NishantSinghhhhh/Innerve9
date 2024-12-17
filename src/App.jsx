@@ -23,7 +23,7 @@ function App() {
           <Testimonials />
           <Sponsors />
           <SponsorUs />
-          <Footer1 />
+          <Footer2 />
           <Noise />
     </div>
   );
