@@ -5,18 +5,18 @@ import TestimonialsCard from "../components/TestimonialsCard";
 const data = [
   {
     content:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta est suscipit a iste impedit fuga sed. Obcaecati amet fugiat ea quibusdam nulla sit incidunt dolorum totam nobis quae aperiam esse earum vitae dolor.",
-    name: "Nishant Singh",
+      "Innerve provided a platform to innovate and challenge myself. I got to meet talented people, work on groundbreaking ideas, and see how different minds approach solving the same problem. The energy and learning were unparalleled. Highly recommend it!",
+    name: "Priya Verma, Data Scientist",
   },
   {
     content:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta est suscipit a iste impedit fuga sed. Obcaecati amet fugiat ea quibusdam nulla sit incidunt dolorum totam nobis quae aperiam esse earum vitae dolor.",
-    name: "Ananya Sharma",
+      "Innerve 8 was an incredible experience! The challenges were both exciting and tough, pushing me to think creatively and outside the box. The collaborative atmosphere made problem-solving even more rewarding, and I’ve learned a ton from my teammates. Can't wait for the next one!",
+    name: "Anjali Gupta, Developer",
   },
   {
     content:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta est suscipit a iste impedit fuga sed. Obcaecati amet fugiat ea quibusdam nulla sit incidunt dolorum totam nobis quae aperiam esse earum vitae dolor.",
-    name: "Rahul Mehta",
+      "Participating in Innerve 8 was a game-changer for me. The hackathon not only helped me refine my coding skills but also gave me the chance to work on real-world projects with passionate developers. The support from mentors was amazing, and the whole event was incredibly well-organized!",
+    name: "Jaskirat Singh, UI/UX designer",
   },
 ];
 
