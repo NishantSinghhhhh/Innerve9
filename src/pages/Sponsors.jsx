@@ -44,6 +44,8 @@ const Sponsors = () => {
         />
       </div>
 
+      
+
       {/* Sponsor Section */}
       <div className="flex flex-col justify-center items-center relative py-24 bg-[#FE7702] w-full">
         {/* Texture Background */}
