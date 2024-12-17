@@ -12,6 +12,7 @@ import SponsorUs from "./pages/SponsorUs";
 import React from "react";
 import Footer2 from "./pages/Footer2";
 import Footer1 from "./pages/Foooter1";
+import ControlledLottie from "./pages/ControlledLottie"
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <SponsorUs />
           <Footer1 />
           <Noise />
+          <ControlledLottie src="../public/lottie-redbot-v7.json" loop autoplay/>
     </div>
   );
 }
