@@ -1,23 +1,40 @@
 import React from 'react';
-import SponsorBox from './SponsorBox';
-import PiggySponsorBox from './PiggySponsorBox';
+import PropTypes from 'prop-types';
 
 const SponsorTab = ({ heading, images, piggyNumber }) => {
-  const sponsorBoxes = images.map((image, index) => {
-    if (index === piggyNumber) {
-      return <PiggySponsorBox key={index} image={image} />;
-    }
-    return <SponsorBox key={index} image={image} />;
-  });
-
   return (
-    <div className="pb-[5rem]">
-      <p className="font-angrybirds text-[36px] text-[#FFFF5C] pb-[3rem]">{heading}</p>
-      <div className="flex-wrap gap-[4rem] mt-4 flex flex-row items-center justify-center">
-        {sponsorBoxes}
+    <div className="w-full mb-[7.23rem]">
+      <div className="flex flex-col items-center">
+        {/* Heading */}
+        <h3 className="text-[2rem] md:text-[2.5rem] font-angrybirds text-[#FFFF5C] mb-6 md:mb-8 ">
+          {heading}
+        </h3>
+
+        {/* Images */}
+        <div className="flex flex-wrap justify-center gap-8 md:gap-12">
+        {images.map((image, index) => (
+          <div
+            key={index}
+            className="relative md:w-[23rem] w-[20rem] h-[6.25rem] border-8 border-[#734F1F] transform -skew-x-12 flex items-center justify-center"
+          >
+            <div className="flex items-center justify-center bg-white border-4 border-[#FFC102] transform -skew-x-10 h-full w-full">
+              <div className="flex items-center justify-center w-[50%] h-[50%]">
+                {image} {/* Directly render the image */}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
       </div>
     </div>
   );
+};
+
+SponsorTab.propTypes = {
+  heading: PropTypes.string.isRequired,
+  images: PropTypes.arrayOf(PropTypes.node).isRequired,
+  piggyNumber: PropTypes.number.isRequired,
 };
 
 export default SponsorTab;
