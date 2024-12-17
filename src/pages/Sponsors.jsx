@@ -48,7 +48,8 @@ const Sponsors = () => {
       <div className="flex flex-col justify-center items-center relative py-24 bg-[#FE7702] w-full">
         {/* Texture Background */}
         <div className="absolute w-full h-full top-0 left-0 opacity-80 mix-blend-soft-light">
-          <Texture className="w-full h-full object-cover" />
+          
+        <Texture className="w-full h-full object-cover" />
         </div>
 
         {/* Heading */}
@@ -97,7 +98,7 @@ const Sponsors = () => {
       </div>
 
       {/* Lower Leaves */}
-      <div className="w-[120vw] -mt-10 md:-mt-64">
+      <div className="w-[120vw] -mt-2 md:-mt-64">
         <img
           src={LowerLeaves}
           alt="leaves"
