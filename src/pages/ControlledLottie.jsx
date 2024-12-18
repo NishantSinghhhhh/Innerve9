@@ -103,7 +103,7 @@ const ControlledLottie = () => {
   };
 
   return (
-    <div className="fixed -bottom-4 left-0 w-full" style={{ zIndex: 1000 }}>
+    <div className="fixed  -bottom-4 left-0 w-full z-10">
       <div
         ref={containerRef}
         className="w-[200px] h-[200px] -ml-[20px] md:w-[300px] md:h-[300px]"
@@ -147,18 +147,4 @@ const ControlledLottie = () => {
   );
 };
 
-const App = () => {
-  const [showLottie, setShowLottie] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowLottie(true);
-    }, 5000); // Delay of 5 seconds
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  return <div>{showLottie && <ControlledLottie />}</div>;
-};
-
-export default App;
+export default ControlledLottie;

@@ -1,38 +1,4 @@
-// // import { useState } from "react";
-// import Tracks from "./pages/Tracks";
-// import Hero from "./components/Hero";
-// import "./App.css";
-// import Cards from "./components/Cards/index";
-// import Timeline from "./pages/Timeline";
-// import Sponsors from "./pages/Sponsors";
-// // import Footer from "./pages/Footer";
-// import Noise from "./components/noise";
-// import Testimonials from "./pages/Testimonials";
-// import SponsorUs from "./pages/SponsorUs";
-// import React from "react";
-// import Footer2 from "./pages/Footer2";
-// import Footer1 from "./pages/Foooter1";
-
-// function App() {
-//   return (
-//     <div className="h-full w-full flex flex-col gap-[120px] justify-center items-center overflow-x-hidden relative">
-//           <Hero />
-//           <Cards />
-//           <Tracks />
-//           <Timeline />
-//           <Testimonials />
-//           <Sponsors />
-//           <SponsorUs />
-//           <Footer1 />
-//           <Noise />
-//     </div>
-//   );
-// }
-
-// export default App;
-
-
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Tracks from "./pages/Tracks";
 import Hero from "./components/Hero";
 import "./App.css";
@@ -46,6 +12,16 @@ import Noise from "./components/noise";
 import ControlledLottie from "./pages/ControlledLottie";
 
 function App() {
+  const [showLottie, setShowLottie] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowLottie(true);
+    }, 5000); // Delay rendering by 5 seconds
+
+    return () => clearTimeout(timer); // Cleanup the timer
+  }, []);
+
   return (
     <div className="h-full w-full flex flex-col gap-[120px] justify-center items-center overflow-x-hidden relative">
       <section id="hero-section">
@@ -70,11 +46,11 @@ function App() {
         <SponsorUs />
       </section>
 
-      <section  className="w-full" id="footer-section">
+      <section className="w-full" id="footer-section">
         <Footer1 />
       </section>
       <Noise />
-      <ControlledLottie src="../public/lottie-redbot-v7.json" loop autoplay/>
+      {showLottie && <ControlledLottie />}
     </div>
   );
 }
