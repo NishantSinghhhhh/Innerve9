@@ -20,6 +20,7 @@
     "framer-motion": "^4.1.2",
     "framer-motion-hooks": "^1.0.10",
     "gsap": "^3.12.5",
+    "lottie-web": "^5.12.2",
     "maath": "^0.10.8",
     "million": "^3.1.11",
     "next-images": "^1.8.5",
