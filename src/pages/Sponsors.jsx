@@ -38,7 +38,7 @@ const Sponsors = () => {
         {/* Heading */}
         <div className="flex flex-col md:flex-row gap-0">
           <p className="capitalize text-[32px] md:text-7xl font-angrybirds text-[#FFFF5C] leading-none">
-            Our Past
+            Our 
           </p>
           <p className="capitalize text-[80px] md:text-[128px] font-angrybirds text-[#FFFF5C] leading-none">
             Sponsors
@@ -48,9 +48,9 @@ const Sponsors = () => {
         {/* Sponsors Tab */}
         <div className="px-6 mt-24">
           <MemoizedSponsorTab
-            heading="Title Sponsor"
+            // heading="Title Sponsor"
             images={titleSponsorImages}
-            piggyNumber={0}
+            piggyNumber={1}
           />
         </div>
       </div>
