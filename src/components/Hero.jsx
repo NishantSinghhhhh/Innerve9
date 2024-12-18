@@ -21,7 +21,7 @@ import "../index.css";
 import video from "../assets/Nine.webm";
 import gsap from "gsap";
 
-const Hero = () => {
+const   Hero = () => {
   const videoRef = useRef(null);
 
   useEffect(() => {
