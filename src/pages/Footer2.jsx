@@ -34,8 +34,8 @@ const Footer2 = () => {
       <div className="flex-grow"></div> {/* This takes up remaining space */}
       <div className="flex flex-col gap-[7rem] ">
       <div className="ml-[3.5rem] md:scale-[.8] lg:scale-[.8]  xl:scale-[1]"> 
-  <Secratry Name="Deepshika Rawat" contactNumber="+91 639 879 3447" ImageSrc={Female} />
-  <Secratry Name="Kaushal Vyas" contactNumber="+91 866 895 2920" ImageSrc={Male} /></div> 
+        <Secratry Name="Deepshika Rawat" contactNumber="+91 639 879 3447" ImageSrc={Female} />
+      <Secratry Name="Kaushal Vyas" contactNumber="+91 866 895 2920" ImageSrc={Male} /></div> 
 </div>
 
       <div></div>

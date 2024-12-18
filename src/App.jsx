@@ -42,8 +42,7 @@ import Sponsors from "./pages/Sponsors";
 import Testimonials from "./pages/Testimonials";
 import SponsorUs from "./pages/SponsorUs";
 import Footer1 from "./pages/Foooter1";
-import ControlledLottie from "./pages/ControlledLottie"
-
+import Noise from "./components/noise";
 
 function App() {
   return (
@@ -69,10 +68,12 @@ function App() {
       <section id="sponsor-us-section">
         <SponsorUs />
       </section>
-      <footer id="footer-section">
+
+      <section  className="w-full" id="footer-section">
         <Footer1 />
-      </footer>
+      </section>
       <Noise />
+      {/* <ControlledLottie src="../public/lottie-redbot-v7.json" loop autoplay/> */}
     </div>
   );
 }
