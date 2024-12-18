@@ -26,7 +26,7 @@ function App() {
           <SponsorUs />
           <Footer1 />
           <Noise />
-          <ControlledLottie src="../public/lottie-redbot-v7.json" loop autoplay/>
+          {/* <ControlledLottie src="../public/lottie-redbot-v7.json" loop autoplay/> */}
     </div>
   );
 }

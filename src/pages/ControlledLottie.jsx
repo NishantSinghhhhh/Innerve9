@@ -108,7 +108,7 @@ const ControlledLottie = () => {
         {currentMessage}
       </p>
 
-      {/* {showText && (
+    {showText && (
         <div className={`absolute top-[3rem] left-[5rem] animated-slide`}>
           <p className="w-auto rounded-lg p-2 text-center text-lg font-semibold text-white border-2">
             Go Away Red &times;
@@ -122,8 +122,7 @@ const ControlledLottie = () => {
             Go away red!
           </p>
         </div>
-      )} */}
-
+      )} 
       <style jsx>{`
         .animated-slide {
           animation: slide-in 1s forwards;
