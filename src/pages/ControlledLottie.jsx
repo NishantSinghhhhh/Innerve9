@@ -36,14 +36,10 @@ const segmentMessages = {
   angryBird: "Feeling like an angry bird!",
 };
 
-const segmentKeys = Object.keys(animationSegments);
-
 const ControlledLottie = () => {
   const containerRef = useRef(null);
   const [lottieInstance, setLottieInstance] = useState(null);
   const [currentMessage, setCurrentMessage] = useState("");
-  const [showMessage, setShowMessage] = useState(false);
-  const [glowActive, setGlowActive] = useState(false);
 
   useEffect(() => {
     if (containerRef.current) {
@@ -64,85 +60,44 @@ const ControlledLottie = () => {
   useEffect(() => {
     if (!lottieInstance) return;
 
-    let currentIndex = 0;
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
 
-    const intervalId = setInterval(() => {
-      const segmentName = segmentKeys[currentIndex];
-      const segment = animationSegments[segmentName];
+      let selectedSegment = null;
 
-      if (segment) {
-        lottieInstance.playSegments([segment.start, segment.end], true);
-
-      setShowMessage(false);
-        setTimeout(() => {
-          setCurrentMessage(segmentMessages[segmentName]);
-          setShowMessage(true);
-        });
-
-        currentIndex = (currentIndex + 1) % segmentKeys.length;
+      if (scrollPosition < 200) {
+        selectedSegment = "scrollingEyes";
+      } else if (scrollPosition >= 200 && scrollPosition < 400) {
+        selectedSegment = "helloThumbsUp";
+      } else if (scrollPosition >= 400 && scrollPosition < 600) {
+        selectedSegment = "shocked";
+      } else if (scrollPosition >= 600 && scrollPosition < 800) {
+      } else {
+        selectedSegment = "angryBird";
       }
-    }, 3000);
 
-    return () => clearInterval(intervalId);
-  }, [lottieInstance]);
-
-  useEffect(() => {
-    const handleOutsideClick = () => {
-      if (glowActive) {
-        setGlowActive(false); // Hide the glow when clicking anywhere
+      if (selectedSegment) {
+        const segment = animationSegments[selectedSegment];
+        lottieInstance.playSegments([segment.start, segment.end], true);
+        setCurrentMessage(segmentMessages[selectedSegment]);
       }
     };
 
-    document.addEventListener("click", handleOutsideClick);
-    return () => document.removeEventListener("click", handleOutsideClick);
-  }, [glowActive]);
-
-  const handleClick = (event) => {
-    event.stopPropagation(); // Prevent triggering the global click handler
-    setGlowActive((prev) => !prev);
-  };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lottieInstance]);
 
   return (
     <div className="fixed  -bottom-4 left-0 w-full z-10">
       <div
         ref={containerRef}
         className="w-[200px] h-[200px] -ml-[20px] md:w-[300px] md:h-[300px]"
-        onClick={handleClick}
       ></div>
-
-  {/* {showMessage && (
+      {/* {currentMessage && (
         <p className="absolute top-[5rem] w-[12rem] left-[10rem] md:top-[10rem] md:left-[15rem] md:w-[15rem] rounded-lg p-2 text-center text-sm font-semibold text-black border-2 border-black bg-[#ffff]">
           {currentMessage}
         </p>
       )} */}
-      {/* <div className={`glow-animation ${glowActive ? "active" : "hidden"}`}></div>
-
-      <style jsx>{`
-        .glow-animation {
-          position: fixed;
-          bottom: 0;
-          left: 0;
-          width: 100%;
-          height: 10%;
-          background: linear-gradient(
-            to top,
-            rgba(255, 0, 0, 0.8) 0%,
-            rgba(255, 0, 0, 0) 70%
-          );
-          z-index: 999;
-          display: none;
-        }
-
-        .glow-animation.active {
-          display: block;
-        }
-
-        @media (max-width: 768px) {
-          .glow-animation {
-            display: block;
-          }
-        }
-      `}</style> */}
     </div>
   );
 };
