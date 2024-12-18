@@ -17,16 +17,32 @@ import ControlledLottie from "./pages/ControlledLottie"
 function App() {
   return (
     <div className="h-full w-full flex flex-col gap-[120px] justify-center items-center overflow-x-hidden relative">
-          <Hero />
-          <Cards />
-          <Tracks />
-          <Timeline />
-          <Testimonials />
-          <Sponsors />
-          <SponsorUs />
-          <Footer1 />
-          <Noise />
-          {/* <ControlledLottie src="../public/lottie-redbot-v7.json" loop autoplay/> */}
+      <section id="hero-section">
+        <Hero />
+      </section>
+      <section id="cards-section">
+        <Cards />
+      </section>
+      <section id="tracks-section">
+        <Tracks />
+      </section>
+      <section id="timeline-section">
+        <Timeline />
+      </section>
+      <section id="testimonials-section">
+        <Testimonials />
+      </section>
+      <section id="sponsors-section">
+        <Sponsors />
+      </section>
+      <section id="sponsor-us-section">
+        <SponsorUs />
+      </section>
+      <section  className="w-full" id="footer-section">
+        <Footer1 />
+      </section>
+      <Noise />
+      {/* <ControlledLottie src="../public/lottie-redbot-v7.json" loop autoplay/> */}
     </div>
   );
 }

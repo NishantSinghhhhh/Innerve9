@@ -43,9 +43,7 @@ const ControlledLottie = () => {
   const containerRef = useRef(null);
   const [lottieInstance, setLottieInstance] = useState(null);
   const [currentMessage, setCurrentMessage] = useState("");
-  const [hoveringAngryBird, setHoveringAngryBird] = useState(false);
-  const [showText, setShowText] = useState(false);
-  const [exitAnimation, setExitAnimation] = useState(false);
+  const [glowActive, setGlowActive] = useState(false);
 
   useEffect(() => {
     if (containerRef.current) {
@@ -83,74 +81,59 @@ const ControlledLottie = () => {
     return () => clearInterval(intervalId);
   }, [lottieInstance]);
 
-  const handleMouseEnter = () => {
-    setShowText(true);
-    setExitAnimation(false);  // Reset exit animation
-  };
+  useEffect(() => {
+    const handleOutsideClick = () => {
+      if (glowActive) {
+        setGlowActive(false); // Hide the glow when clicking anywhere
+      }
+    };
 
-  const handleMouseLeave = () => {
-    setShowText(false); // Immediately hide the text
-    setTimeout(() => {
-      setExitAnimation(true);  // Trigger exit animation after 2 seconds
-    }, 2000);  // Wait for 2 seconds before applying the exit animation
+    document.addEventListener("click", handleOutsideClick);
+    return () => document.removeEventListener("click", handleOutsideClick);
+  }, [glowActive]);
+
+  const handleClick = (event) => {
+    event.stopPropagation(); // Prevent triggering the global click handler
+    setGlowActive((prev) => !prev);
   };
 
   return (
     <div className="fixed -bottom-4 left-0 w-full" style={{ zIndex: 1000 }}>
       <div
         ref={containerRef}
-        className="w-[300px] h-[300px]"
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
+        className="w-[200px] h-[200px] -ml-[20px] md:w-[300px] md:h-[300px]"
+        onClick={handleClick}
       ></div>
 
-      <p className="absolute top-[10rem] left-[15rem] w-[15rem] rounded-lg p-2 text-center text-lg font-semibold text-black border-2 border-black bg-[#ffff]">
+      <p className="absolute top-[5rem] w-[12rem] left-[10rem] md:top-[10rem] md:left-[15rem] md:w-[15rem] rounded-lg p-2 text-center text-sm font-semibold text-black border-2 border-black bg-[#ffff]">
         {currentMessage}
       </p>
 
-    {showText && (
-        <div className={`absolute top-[3rem] left-[5rem] animated-slide`}>
-          <p className="w-auto rounded-lg p-2 text-center text-lg font-semibold text-white border-2">
-            Go Away Red &times;
-          </p>
-        </div>
-      )}
+      <div className={`glow-animation ${glowActive ? "active" : "hidden"}`}></div>
 
-      {exitAnimation && !showText && (
-        <div className="absolute top-[12rem] left-[-200px] exit-slide">
-          <p className="text-white bg-red-600 rounded-lg px-4 py-2 font-bold shadow-md">
-            Go away red!
-          </p>
-        </div>
-      )} 
       <style jsx>{`
-        .animated-slide {
-          animation: slide-in 1s forwards;
+        .glow-animation {
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 10%;
+          background: linear-gradient(
+            to top,
+            rgba(255, 0, 0, 0.8) 0%,
+            rgba(255, 0, 0, 0) 70%
+          );
+          z-index: 999;
+          display: none;
         }
 
-        .exit-slide {
-          animation: slide-out 1s forwards;
+        .glow-animation.active {
+          display: block;
         }
 
-        @keyframes slide-in {
-          from {
-            transform: translateX(-200%);
-            opacity: 0;
-          }
-          to {
-            transform: translateX(0);
-            opacity: 1;
-          }
-        }
-
-        @keyframes slide-out {
-          from {
-            transform: translateX(0);
-            opacity: 1;
-          }
-          to {
-            transform: translateX(-200%);
-            opacity: 0;
+        @media (max-width: 768px) {
+          .glow-animation {
+            display: block;
           }
         }
       `}</style>

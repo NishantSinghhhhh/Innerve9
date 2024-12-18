@@ -5,7 +5,7 @@ import TestimonialsCard from "../components/TestimonialsCard";
 const data = [
   {
     content:
-      "Innerve provided a platform to innovate and challenge myself. I got to meet talented people, work on groundbreaking ideas, and see how different minds approach solving the same problem. The energy and learning were unparalleled. Highly recommend it!",
+      "Innerve provided an excellent platform for innovation and self-challenge. I had the opportunity to engage with talented individuals, work on pioneering ideas, and observe diverse approaches to problem-solving. The energy and learning experiences were exceptional. I highly recommend it",
     name: "Priya Verma, Data Scientist",
   },
   {
@@ -15,7 +15,7 @@ const data = [
   },
   {
     content:
-      "Participating in Innerve 8 was a game-changer for me. The hackathon not only helped me refine my coding skills but also gave me the chance to work on real-world projects with passionate developers. The support from mentors was amazing, and the whole event was incredibly well-organized!",
+      "Participating in Innerve 8 was a transformative experience. The hackathon not only allowed me to enhance my coding skills but also provided the opportunity to work on real-world projects alongside dedicated developers. The mentorship provided was exceptional, and the event was exceptionally well-organized.",
     name: "Jaskirat Singh, UI/UX designer",
   },
 ];
