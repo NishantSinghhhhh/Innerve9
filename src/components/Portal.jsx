@@ -1,26 +1,30 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Port from "../assets/portal.svg";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
+import { gsap } from "gsap";
 
 const Portal = ({ birdImage }) => {
-  useGSAP(() => {
-    gsap.from("#bird", {
-      y: 35,
-      repeat: -1,
-      yoyo: true,
-      rotate: 6,
-      ease: "power1",
-      duration: 3,
-    });
+  const birdRef = useRef(null);
+
+  useEffect(() => {
+    gsap.fromTo(
+      birdRef.current,
+      { y: -10 }, // Starting position
+      {
+        y: 10, // End position
+        repeat: -1, // Infinite loop
+        yoyo: true, // Return to the starting position
+        ease: "power1.inOut", // Smooth easing
+        duration: 2, // Duration for one complete motion
+      }
+    );
   }, []);
 
   return (
     <div className="relative overflow-hidden">
       <img src={Port} alt="port" />
       <img
-        id="bird"
-        src={birdImage} 
+        ref={birdRef}
+        src={birdImage}
         alt="bird"
         className="absolute top-6 left-[50%] -translate-x-1/2"
       />
