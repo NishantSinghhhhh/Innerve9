@@ -63,22 +63,46 @@ const ControlledLottie = () => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
 
-      let selectedSegment = null;
+      let selectedSegment = "";
 
       if (scrollPosition < 200) {
         selectedSegment = "scrollingEyes";
-      } else if (scrollPosition >= 200 && scrollPosition < 400) {
+      } else if (scrollPosition >= 200 && scrollPosition < 700) {
         selectedSegment = "helloThumbsUp";
-      } else if (scrollPosition >= 400 && scrollPosition < 600) {
+      } else if (scrollPosition >= 700 && scrollPosition < 1800) {
         selectedSegment = "shocked";
-      } else if (scrollPosition >= 600 && scrollPosition < 800) {
-      } else {
-        selectedSegment = "angryBird";
+      } else if (scrollPosition >= 1800 && scrollPosition < 3400) {
+        selectedSegment = "sleeping"; // Trigger shocked on scroll
       }
+       else if (scrollPosition >= 3400 && scrollPosition < 5800) {
+        selectedSegment = "runComeBack"; // Trigger shocked on scroll
+      }
+      else if (scrollPosition >= 5800 && scrollPosition < 7300) {
+        selectedSegment = "laughing"; // Trigger shocked on scroll
+      }
+      else if (scrollPosition >= 7400 && scrollPosition < 8400) {
+        selectedSegment = "screaming"; // Trigger shocked on scroll
+      }
+      else if (scrollPosition >= 8400 && scrollPosition < 10400) {
+        selectedSegment = "ohSit"; // Trigger shocked on scroll
+      }
+
+
 
       if (selectedSegment) {
         const segment = animationSegments[selectedSegment];
+
+        // Enable looping for multiple repetitions of shocked
+        lottieInstance.loop = selectedSegment === "shocked"; // Only loop shocked animation
         lottieInstance.playSegments([segment.start, segment.end], true);
+
+        if (selectedSegment === "shocked") {
+          setTimeout(() => {
+            lottieInstance.loop = false; // Stop looping after the animation has played
+            lottieInstance.stop();
+          }, 3000); // Stop the loop after 3 seconds
+        }
+
         setCurrentMessage(segmentMessages[selectedSegment]);
       }
     };
@@ -88,11 +112,12 @@ const ControlledLottie = () => {
   }, [lottieInstance]);
 
   return (
-    <div className="fixed  -bottom-4 left-0 w-full z-10">
+    <div className="fixed -bottom-4 left-0 w-full z-10">
       <div
         ref={containerRef}
         className="w-[200px] h-[200px] -ml-[20px] md:w-[300px] md:h-[300px]"
       ></div>
+      {/* Optional message display */}
       {/* {currentMessage && (
         <p className="absolute top-[5rem] w-[12rem] left-[10rem] md:top-[10rem] md:left-[15rem] md:w-[15rem] rounded-lg p-2 text-center text-sm font-semibold text-black border-2 border-black bg-[#ffff]">
           {currentMessage}
