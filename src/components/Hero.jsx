@@ -2,7 +2,9 @@ import React, { useEffect, useRef } from "react";
 import Navbar from "./Navbar";
 import FlipCountdown from "./FlipCountdown";
 import Button from "./Button";
-import Devfolio from "../assets/devfolio_1.svg";
+// import Devfolio from "../assets/devfolio_1.svg";
+import Unstop from "../assets/unstop.png";
+
 import Tnt from "../assets/bubble-tnt.svg";
 import Dates from "./Dates";
 import Stars from "./Stars";
@@ -51,6 +53,10 @@ const Hero = () => {
     alert("Innerve 9 is now LIVE!!");
   };
 
+  // const handleRedirect=()=>{
+  //   window.location.assign="https://Innerve.openinapp.link/Register"
+  // };
+
   return (
     <section
       id="hero"
@@ -67,7 +73,11 @@ const Hero = () => {
         <Heading />
         <FlipCountdown targetDate="2025-02-07T00:10:00" onEnd={handleEnd} />
         {/* <CountdownExample /> */}
-        <Button BtnIcon={Devfolio} Label="APPLY WITH DEVFOLIO" />
+        {/* <div className="text-lg"> */}
+       <a href="https://Innerve.openinapp.link/Register"> <Button  BtnIcon={Unstop} Label="APPLY WITH UNSTOP"
+       />
+       </a>
+       {/* </div> */}
       </div>
       <Dates />
       <Stars />

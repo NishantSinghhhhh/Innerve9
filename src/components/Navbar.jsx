@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import Logo from "../assets/logo.svg";
 import Navigate from "../assets/link.svg";
+import Sidebar from "./Sidebar"; // Import Sidebar component
 
 const Navbar = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false); // State to toggle sidebar visibility
+
   const handleBrochureClick = () => {
     window.open("https://drive.google.com/file/d/your-file-id/view?usp=sharing", "_blank");
+  };
+
+  // Toggle Sidebar
+  const toggleSidebar = () => {
+    setIsSidebarOpen((prevState) => !prevState);
   };
 
   return (
@@ -19,19 +27,25 @@ const Navbar = () => {
             <span
               className="h-4 w-1 bg-[#3AFFA3] absolute -translate-x-1/2"
               style={{
-                animation: "growBlur 500ms infinite",
+                animation: "growBlur 1400ms infinite",
                 opacity: 1,
               }}
             ></span>
             <p>Brochure</p>
             <img src={Navigate} alt="brochure" className="group-hover:rotate-[45deg] transition duration-500"/>
           </div>
-          <button className="flex items-center gap-[10px] border border-[rgba(255,255,255,0.5)] pl-6 pr-4 py-[10px] rounded group">
+          <button 
+            className="flex items-center gap-[10px] border border-[rgba(255,255,255,0.5)] pl-6 pr-4 py-[10px] rounded group"
+            onClick={toggleSidebar} // Toggle sidebar on button click
+          >
             <p>Menu</p>
             <img src={Navigate} alt="menu" className="group-hover:rotate-[45deg] transition duration-500"/>
           </button>
         </div>
       </nav>
+
+      {/* Render Sidebar when open */}
+      {isSidebarOpen && <Sidebar closeSidebar={toggleSidebar} />}
     </header>
   );
 };
