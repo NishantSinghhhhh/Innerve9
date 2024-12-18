@@ -1,25 +1,60 @@
-import React, { lazy, Suspense, useState } from 'react';
-import Loader from './Loader';
+import React, { useEffect, useRef } from 'react';
+import { gsap } from "gsap";
+import video from "../assets/Nine.webm";
 
-const MainContent = lazy(() => import('./MainContent'));
+const Loader = ({onComplete}) => {
+  const videoRef = useRef(null);
+  const loaderRef = useRef(null);
 
-const App = () => {
-  const [isLoaderComplete, setLoaderComplete] = useState(false);
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 2.0;
+    }
+    const timeout = setTimeout(() => {
+    gsap.to(loaderRef.current, {
+      y: "-100%",
+      duration: 0.4,
+      ease: "linear",
+      onComplete: () => {
+        if (loaderRef.current) {
+          onComplete();
+        }
+      },
+    });
+  }, 4000);
 
-  const handleLoaderComplete = () => {
-    setLoaderComplete(true);
-  };
+    // Cleanup function
+    return () => 
+      clearTimeout(timeout); // Stop the timeline if component unmounts
+  }, [onComplete]); // Empty dependency array means this runs once on mount
 
   return (
-    <>
-      {!isLoaderComplete && <Loader onComplete={handleLoaderComplete} />}
-      {isLoaderComplete && (
-        <Suspense fallback={<Loader />}>
-          <MainContent />
-        </Suspense>
-      )}
-    </>
+    <div
+      ref={loaderRef}
+      style={{
+        height: "100%",
+        width: "100%",
+        // background: "white",
+        position: "fixed",
+        top: 0,
+        zIndex: 999,
+        // transition: "all ease 0.4s",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        overflow: "hidden",
+      }}
+    >
+        <video
+          ref={videoRef}
+          src={video}
+          autoPlay
+          loop
+          muted
+          className="h-[300px] object-cover"
+        />
+    </div>
   );
 };
 
-export default App;
+export default Loader;
