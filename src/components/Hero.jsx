@@ -23,7 +23,7 @@ import "../index.css";
 import video from "../assets/Nine.webm";
 import gsap from "gsap";
 
-const Hero = () => {
+const   Hero = () => {
   const videoRef = useRef(null);
 
   useEffect(() => {
@@ -101,7 +101,7 @@ const Hero = () => {
         <div className="hidden lg:flex absolute top-[80%] left-[10%]">
           <Portal  birdImage={White}/>
         </div>
-        <div id="loader" className="absolute top-0 z-1000 w-full h-screen bg-white flex justify-center items-center">
+        <div id="loader" className="absolute top-0 z-1000 w-screen h-screen bg-white flex justify-center items-center">
           <video
             ref={videoRef}
             src={video}

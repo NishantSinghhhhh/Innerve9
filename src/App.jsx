@@ -42,7 +42,8 @@ import Sponsors from "./pages/Sponsors";
 import Testimonials from "./pages/Testimonials";
 import SponsorUs from "./pages/SponsorUs";
 import Footer1 from "./pages/Foooter1";
-import Noise from "./components/noise";
+import ControlledLottie from "./pages/ControlledLottie"
+
 
 function App() {
   return (
