@@ -66,7 +66,7 @@ const ControlledLottie = () => {
       let selectedSegment = "";
 
       if (scrollPosition < 200) {
-        selectedSegment = "scrollingEyes";
+        selectedSegment = "helloThumbsUp";
       } else if (scrollPosition >= 200 && scrollPosition < 700) {
         selectedSegment = "helloThumbsUp";
       } else if (scrollPosition >= 700 && scrollPosition < 1800) {
