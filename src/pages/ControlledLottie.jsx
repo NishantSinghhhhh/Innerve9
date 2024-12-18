@@ -110,11 +110,11 @@ const ControlledLottie = () => {
         onClick={handleClick}
       ></div>
 
-  {showMessage && (
+  {/* {showMessage && (
         <p className="absolute top-[5rem] w-[12rem] left-[10rem] md:top-[10rem] md:left-[15rem] md:w-[15rem] rounded-lg p-2 text-center text-sm font-semibold text-black border-2 border-black bg-[#ffff]">
           {currentMessage}
         </p>
-      )}
+      )} */}
       {/* <div className={`glow-animation ${glowActive ? "active" : "hidden"}`}></div>
 
       <style jsx>{`

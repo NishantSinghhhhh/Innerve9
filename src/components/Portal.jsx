@@ -20,13 +20,13 @@ const Portal = ({ birdImage }) => {
   }, []);
 
   return (
-    <div className="relative overflow-hidden">
-      <img src={Port} alt="port" />
+    <div className="relative overflow-hidden flex justify-center items-center">
+      <img src={Port} alt="port" className="w-full h-auto" />
       <img
         ref={birdRef}
         src={birdImage}
         alt="bird"
-        className="absolute top-6 left-[50%] -translate-x-1/2"
+        className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2"
       />
     </div>
   );

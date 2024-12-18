@@ -12,20 +12,19 @@ const SponsorTab = ({ heading, images, piggyNumber }) => {
 
         {/* Images */}
         <div className="flex flex-wrap justify-center gap-8 md:gap-12">
-        {images.map((image, index) => (
-          <div
-            key={index}
-            className="relative md:w-[23rem] w-[14rem] h-[5.25rem] border-8 border-[#734F1F] transform -skew-x-12 flex items-center justify-center"
-          >
-            <div className="flex items-center justify-center bg-white border-4 border-[#FFC102] transform -skew-x-10 h-full w-full">
-              <div className="flex items-center justify-center w-[50%] h-[50%]">
-                {image} {/* Directly render the image */}
+          {images.map((image, index) => (
+            <div
+              key={index}
+              className="relative md:w-[23rem] w-[14rem] h-[5.25rem] border-8 border-[#734F1F] transform -skew-x-12 flex items-center justify-center"
+            >
+              <div className="flex items-center justify-center bg-white border-4 border-[#FFC102] transform -skew-x-10 h-full w-full">
+                <div className="flex items-center justify-center w-[80%] h-[50%] transform skew-x-12">
+                  {image} {/* The image appears straight */}
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
-
+          ))}
+        </div>
       </div>
     </div>
   );

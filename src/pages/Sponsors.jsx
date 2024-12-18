@@ -1,36 +1,17 @@
 import React, { memo } from "react";
 
-// Import SVGs directly
-import Accops from "../assets/Accops.svg?react";
-import Devfolio from "../assets/devfolio.svg?react";
-import Solana from "../assets/solana.svg?react";
-import Microsoft from "../assets/Microsoft.svg?react";
-import Tailcall from "../assets/taicall.svg?react";
-import MRO from "../assets/mro.svg?react";
-import Replit from "../assets/replit.svg?react";
-import Echo from "../assets/echo.svg?react";
-import XYZ from "../assets/xyz.svg?react";
-import Verbwire from "../assets/verbwire.svg?react";
-import ICICI from "../assets/icici.svg?react";
+import NordVpn from "../assets/NordVpn.svg?react"
+import Wolfram from "../assets/wolfram.svg?react"
 import Texture from "../assets/texture.svg?react";
 import UpperLeaves from "../assets/Orange_Leaves_1.png";
 import LowerLeaves from "../assets/Orange_Leaves_bottom.png";
-// import buddhani from "../assets/budhani.svg?react";
-// import GDSCOSS from "../assets/GDSCAIT.svg?react";
-// Components
+
 import SponsorTab from "../components/SponsorTab";
 
 const MemoizedSponsorTab = memo(SponsorTab);
 
 const Sponsors = () => {
-  const titleSponsorImages = [<Accops />, <MRO />];
-  const platinumSponsorImages = [<Tailcall />, <Microsoft />];
-  const platformSponsorImages = [<Solana />, <Devfolio />];
-  const coSponsorImages = [<Replit />, <Echo />];
-  const subSponsorImages = [<Verbwire />];
-  const goodwillPartnerImages = [<ICICI />];
-  // const commuinityPartnerImages = [<GDSCOSS />];
-  // const FoodPartner = [<buddhani />];
+  const titleSponsorImages = [<NordVpn />, <Wolfram />];
 
   return (
     <section className="relative w-full flex flex-col justify-center items-center">
@@ -70,31 +51,6 @@ const Sponsors = () => {
             heading="Title Sponsor"
             images={titleSponsorImages}
             piggyNumber={0}
-          />
-          <MemoizedSponsorTab
-            heading="Platinum Sponsor"
-            images={platinumSponsorImages}
-            piggyNumber={0}
-          />
-          <MemoizedSponsorTab
-            heading="Platform Sponsors"
-            images={platformSponsorImages}
-            piggyNumber={1}
-          />
-          <MemoizedSponsorTab
-            heading="Co Sponsors"
-            images={coSponsorImages}
-            piggyNumber={2}
-          />
-          <MemoizedSponsorTab
-            heading="Sub Sponsor"
-            images={subSponsorImages}
-            piggyNumber={0}
-          />
-          <MemoizedSponsorTab
-            heading="GoodWill Partner"
-            images={goodwillPartnerImages}
-            piggyNumber={1}
           />
         </div>
       </div>
