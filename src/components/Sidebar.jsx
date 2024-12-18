@@ -79,10 +79,10 @@ const Sidebar = ({ closeSidebar }) => {
         {[
           { text: "PRIZES", id: "cards-section" },
           { text: "TRACKS", id: "tracks-section" },
-          { text: "SPONSORED PROBLEM STATEMENTS", id: "sponsored-problem-statements-section" },
+        //   { text: "SPONSORED PROBLEM STATEMENTS", id: "sponsored-problem-statements-section" },
           { text: "TIMELINE", id: "timeline-section" },
           { text: "SPONSORS", id: "sponsors-section" },
-          { text: "FAQS", id: "faqs-section" },
+        //   { text: "FAQS", id: "faqs-section" },
           { text: "TESTIMONIALS", id: "testimonials-section" },
         ].map((item, index) => (
           <a
