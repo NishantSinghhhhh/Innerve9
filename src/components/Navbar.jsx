@@ -22,10 +22,10 @@ const Navbar = () => {
           <img src={Logo} alt="logo" />
         </a>
         <div className="flex gap-4 items-center">
-          <div className="flex items-center gap-2 cursor-pointer px-4 group" onClick={handleBrochureClick}>
-            <span className="h-[20px] w-1 bg-[#3AFFA3] z-10"></span>
+          <div className="flex items-center gap-2 cursor-pointer px-4 group "  onClick={handleBrochureClick}>
+            <span className="h-[20px] w-1 bg-[#3AFFA3] z-1"></span>
             <span
-              className="h-4 w-1 bg-[#3AFFA3] absolute -translate-x-1/2"
+              className="h-4 w-1 bg-[#3AFFA3] absolute z-1 -translate-x-1/2"
               style={{
                 animation: "growBlur 1400ms infinite",
                 opacity: 1,
