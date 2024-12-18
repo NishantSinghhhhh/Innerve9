@@ -1,4 +1,3 @@
-"use client";
 import React, { useEffect, useRef, useState } from "react";
 import lottie from "lottie-web";
 import animationData from "../../public/lottie-redbot-v7.json";
