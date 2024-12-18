@@ -43,6 +43,7 @@ import Testimonials from "./pages/Testimonials";
 import SponsorUs from "./pages/SponsorUs";
 import Footer1 from "./pages/Foooter1";
 import Noise from "./components/noise";
+import ControlledLottie from "./pages/ControlledLottie";
 
 function App() {
   return (
@@ -73,7 +74,7 @@ function App() {
         <Footer1 />
       </section>
       <Noise />
-      {/* <ControlledLottie src="../public/lottie-redbot-v7.json" loop autoplay/> */}
+      <ControlledLottie src="../public/lottie-redbot-v7.json" loop autoplay/>
     </div>
   );
 }

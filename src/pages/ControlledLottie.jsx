@@ -43,6 +43,7 @@ const ControlledLottie = () => {
   const containerRef = useRef(null);
   const [lottieInstance, setLottieInstance] = useState(null);
   const [currentMessage, setCurrentMessage] = useState("");
+  const [showMessage, setShowMessage] = useState(false);
   const [glowActive, setGlowActive] = useState(false);
 
   useEffect(() => {
@@ -72,7 +73,12 @@ const ControlledLottie = () => {
 
       if (segment) {
         lottieInstance.playSegments([segment.start, segment.end], true);
-        setCurrentMessage(segmentMessages[segmentName]);
+
+      setShowMessage(false);
+        setTimeout(() => {
+          setCurrentMessage(segmentMessages[segmentName]);
+          setShowMessage(true);
+        });
 
         currentIndex = (currentIndex + 1) % segmentKeys.length;
       }
@@ -105,11 +111,12 @@ const ControlledLottie = () => {
         onClick={handleClick}
       ></div>
 
-      <p className="absolute top-[5rem] w-[12rem] left-[10rem] md:top-[10rem] md:left-[15rem] md:w-[15rem] rounded-lg p-2 text-center text-sm font-semibold text-black border-2 border-black bg-[#ffff]">
-        {currentMessage}
-      </p>
-
-      <div className={`glow-animation ${glowActive ? "active" : "hidden"}`}></div>
+  {showMessage && (
+        <p className="absolute top-[5rem] w-[12rem] left-[10rem] md:top-[10rem] md:left-[15rem] md:w-[15rem] rounded-lg p-2 text-center text-sm font-semibold text-black border-2 border-black bg-[#ffff]">
+          {currentMessage}
+        </p>
+      )}
+      {/* <div className={`glow-animation ${glowActive ? "active" : "hidden"}`}></div>
 
       <style jsx>{`
         .glow-animation {
@@ -136,9 +143,23 @@ const ControlledLottie = () => {
             display: block;
           }
         }
-      `}</style>
+      `}</style> */}
     </div>
   );
 };
 
-export default ControlledLottie;
+const App = () => {
+  const [showLottie, setShowLottie] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowLottie(true);
+    }, 5000); // Delay of 5 seconds
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  return <div>{showLottie && <ControlledLottie />}</div>;
+};
+
+export default App;
