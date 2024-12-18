@@ -8,6 +8,9 @@ const Sidebar = ({ closeSidebar }) => {
   const itemsRef = useRef([]);
 
   useEffect(() => {
+    // Lock scrolling when the sidebar is open
+    document.body.style.overflow = "hidden";
+
     gsap.fromTo(
       backgroundRef.current,
       { y: "-100vh", opacity: 0 },
@@ -19,6 +22,11 @@ const Sidebar = ({ closeSidebar }) => {
       { y: "50%", opacity: 0 },
       { y: "0", opacity: 1, duration: 0.5, ease: "power1.inOut", delay: 0.5, stagger: 0.2 }
     );
+
+    // Cleanup function to unlock scrolling when the component unmounts
+    return () => {
+      document.body.style.overflow = "auto";
+    };
   }, []);
 
   const handleCloseSidebar = (event, targetId) => {
@@ -67,7 +75,7 @@ const Sidebar = ({ closeSidebar }) => {
       </button>
 
       {/* Menu Items */}
-      <div className="font-angrybirds text-center space-y-6 z-10">
+      <div className="font-angrybirds text-center space-y-16 z-10">
         {[
           { text: "PRIZES", id: "cards-section" },
           { text: "TRACKS", id: "tracks-section" },
@@ -93,4 +101,3 @@ const Sidebar = ({ closeSidebar }) => {
 };
 
 export default Sidebar;
-
