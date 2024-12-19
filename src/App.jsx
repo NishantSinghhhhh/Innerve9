@@ -13,89 +13,23 @@ import FAQs from "./pages/FAQs";
 import ControlledLottie from "./pages/ControlledLottie";
 import Lenis from "@studio-freight/lenis";
 import video from "./assets/Nine.webm";
-import gsap from "gsap";
 
 function App() {
   const [showLottie, setShowLottie] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const videoRef = useRef(null);
+  const heroSectionRef = useRef(null);
   const lenisRef = useRef(null);
-
-  // Function to disable scroll
-  const disableScroll = () => {
-    // Prevent default wheel event
-    document.addEventListener('wheel', preventDefault, { passive: false });
-    // Prevent default touchmove event
-    document.addEventListener('touchmove', preventDefault, { passive: false });
-    // Disable scrolling with keys
-    document.addEventListener('keydown', preventDefaultForScrollKeys);
-    
-    // Set overflow hidden on body
-    document.body.style.overflow = 'hidden';
-    document.documentElement.style.overflow = 'hidden';
-    
-    // If using Lenis, pause it
-    if (lenisRef.current) {
-      lenisRef.current.stop();
-    }
-  };
-
-  // Function to enable scroll
-  const enableScroll = () => {
-    document.removeEventListener('wheel', preventDefault, { passive: false });
-    document.removeEventListener('touchmove', preventDefault, { passive: false });
-    document.removeEventListener('keydown', preventDefaultForScrollKeys);
-    
-    document.body.style.overflow = 'auto';
-    document.documentElement.style.overflow = 'auto';
-    
-    // If using Lenis, resume it
-    if (lenisRef.current) {
-      lenisRef.current.start();
-    }
-  };
-
-  // Prevent default for events
-  const preventDefault = (e) => {
-    e.preventDefault();
-  };
-
-  // Prevent scrolling with keys
-  const preventDefaultForScrollKeys = (e) => {
-    const keys = { 37: 1, 38: 1, 39: 1, 40: 1 };
-    if (keys[e.keyCode]) {
-      preventDefault(e);
-      return false;
-    }
-  };
+  const videoRef = useRef(null); // Ref to control video playback
 
   useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.playbackRate = 2.0;
+    if (isLoading) {
+      document.documentElement.style.overflow = "hidden";
+      document.body.style.overflow = "hidden";
+    } else {
+      document.documentElement.style.overflow = "auto";
+      document.body.style.overflow = "auto";
     }
 
-    // Disable scroll immediately
-    disableScroll();
-
-    // Handle loader animation
-    setTimeout(() => {
-      gsap.to("#loader", {
-        y: "-100%",
-        duration: 0.4,
-        onComplete: () => {
-          setIsLoading(false);
-          enableScroll();
-        },
-      });
-    }, 4000);
-
-    // Cleanup
-    return () => {
-      enableScroll();
-    };
-  }, []);
-
-  useEffect(() => {
     const lenis = new Lenis({
       lerp: 0.1,
       smooth: true,
@@ -103,20 +37,21 @@ function App() {
 
     lenisRef.current = lenis;
 
-    // If still loading, don't start Lenis
-    if (isLoading) {
-      lenis.stop();
-    }
-
     const raf = (time) => {
       lenis.raf(time);
       requestAnimationFrame(raf);
     };
 
-    const animationFrame = requestAnimationFrame(raf);
+    requestAnimationFrame(raf);
+
+    if (heroSectionRef.current && !isLoading) {
+      heroSectionRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
 
     return () => {
-      cancelAnimationFrame(animationFrame);
       lenis.destroy();
     };
   }, [isLoading]);
@@ -126,12 +61,38 @@ function App() {
       setShowLottie(true);
     }, 5000);
 
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 7000);
+
+    // Speed up the video playback once it's loaded
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 2.0; // Set playback rate to 2x speed
+    }
+
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <div className="h-full w-full flex flex-col gap-[120px] justify-center items-center overflow-x-hidden relative">
-      <section id="hero-section">
+      {isLoading && (
+        <div
+          id="loader"
+          className="absolute top-0 z-[1000] w-full h-screen bg-white flex justify-center items-center"
+          style={{ position: "fixed", top: 0, left: 0, right: 0, bottom: 0 }}
+        >
+          <video
+            ref={videoRef} // Attach ref to the video element
+            src={video}
+            autoPlay
+            loop
+            muted
+            className="h-[300px] object-cover"
+          />
+        </div>
+      )}
+
+      <section ref={heroSectionRef} id="hero-section">
         <Hero />
       </section>
       <section id="cards-section">
@@ -160,17 +121,6 @@ function App() {
       </section>
       <Noise />
       {showLottie && <ControlledLottie />}
-      
-      <div id="loader" className="absolute top-0 z-1000 w-full h-screen bg-white flex justify-center items-center">
-        <video
-          ref={videoRef}
-          src={video}
-          autoPlay
-          loop
-          muted
-          className="h-[300px] object-cover"
-        />
-      </div>
     </div>
   );
 }
