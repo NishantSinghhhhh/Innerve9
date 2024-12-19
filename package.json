@@ -16,6 +16,7 @@
     "@million/lint": "^1.0.14",
     "@react-three/drei": "^9.117.3",
     "@react-three/fiber": "^8.17.10",
+    "@studio-freight/lenis": "^1.0.42",
     "@types/three": "^0.170.0",
     "framer-motion": "^4.1.2",
     "framer-motion-hooks": "^1.0.10",

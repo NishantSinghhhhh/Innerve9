@@ -11,9 +11,30 @@ import Footer1 from "./pages/Foooter1";
 import Noise from "./components/noise";
 import FAQs from "./pages/FAQs";
 import ControlledLottie from "./pages/ControlledLottie";
+import Lenis from "@studio-freight/lenis";
 
 function App() {
   const [showLottie, setShowLottie] = useState(false);
+
+  useEffect(() => {
+    // Initialize Lenis
+    const lenis = new Lenis({
+      lerp: 0.1, // Adjust for smoothness
+      smooth: true,
+    });
+
+    const raf = (time) => {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    };
+
+    requestAnimationFrame(raf);
+
+    // Clean up Lenis on component unmount
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -44,12 +65,11 @@ function App() {
         <Sponsors />
       </section>
       <section id="Faqs">
-        <FAQs/>
+        <FAQs />
       </section>
       <section id="sponsor-us-section">
         <SponsorUs />
       </section>
-
       <section className="w-full" id="footer-section">
         <Footer1 />
       </section>
