@@ -2,19 +2,21 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import BackgroundImage from "../assets/background.svg";
 import CrossIcon from "../assets/closeButton.svg";
+import Lenis from "@studio-freight/lenis"; // Import Lenis
 
 const Sidebar = ({ closeSidebar }) => {
   const backgroundRef = useRef(null);
   const itemsRef = useRef([]);
+  const lenis = useRef(null); // Store the Lenis instance
 
   useEffect(() => {
-    // More comprehensive scroll locking
-    document.body.style.overflow = "hidden";
-    document.body.style.height = "100vh";
-    document.body.style.position = "fixed";
-    document.body.style.width = "100%";
-    document.body.style.top = `-${window.scrollY}px`; // Store current scroll position
+    // Create Lenis instance for smooth scrolling
+    lenis.current = new Lenis({
+      lerp: 0.1, // Linear easing for smooth scrolling
+      smoothWheel: true, // Enable smooth wheel scrolling
+    });
 
+    // Scroll animations on sidebar open
     gsap.fromTo(
       backgroundRef.current,
       { y: "-100vh", opacity: 0 },
@@ -27,15 +29,16 @@ const Sidebar = ({ closeSidebar }) => {
       { y: "0", opacity: 1, duration: 0.5, ease: "power1.inOut", delay: 0.5, stagger: 0.2 }
     );
 
-    // Cleanup: Restore scroll position and remove locks
+    // Update Lenis on each scroll frame
+    const animate = () => {
+      lenis.current.update();
+      requestAnimationFrame(animate);
+    };
+    requestAnimationFrame(animate);
+
+    // Cleanup function
     return () => {
-      const scrollY = document.body.style.top;
-      document.body.style.overflow = "auto";
-      document.body.style.height = "auto";
-      document.body.style.position = "static";
-      document.body.style.width = "auto";
-      document.body.style.top = "";
-      window.scrollTo(0, parseInt(scrollY || "0") * -1);
+      lenis.current.destroy();
     };
   }, []);
 

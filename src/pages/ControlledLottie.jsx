@@ -21,18 +21,18 @@ const animationSegments = {
 
 const segmentMessages = {
   scrollingEyes: "Looking around curiously!",
-  helloThumbsUp: "Saying hello with a thumbs up!",
-  bored: "Feeling a bit bored...",
-  laughing: "Laughing out loud!",
-  dizziness: "Feeling a bit dizzy...",
-  screaming: "Screaming in excitement!",
+  helloThumbsUp: "Welcome to Innerve.tech!",
+  bored: "Not interested in Tracks",
+  laughing: "How funny !!",
+  dizziness: "This is too much to handle!",
+  screaming: "Yipeeeee , I did something !!",
   thinking: "Deep in thought...",
-  shocked: "Shocked by what just happened!",
+  shocked: "Such a big Pool Prize!",
   sleeping: "Taking a quick nap...",
-  furiousFace: "Looking furious!",
-  ohSit: "Sitting down quickly!",
+  furiousFace: "You made me angry now you see ",
+  ohSit: "Contacting Team Innerve Soon!",
   lookingAround: "Looking around sneakily!",
-  runComeBack: "Running back and forth!",
+  runComeBack: "Packing my Bags just wait",
   angryBird: "Feeling like an angry bird!",
 };
 
@@ -42,8 +42,8 @@ const ControlledLottie = () => {
   const [currentMessage, setCurrentMessage] = useState("");
   const [isAnimating, setIsAnimating] = useState(false);
   const [currentSegment, setCurrentSegment] = useState("");
+  const [isMobile, setIsMobile] = useState(false);
 
-  // Object to keep track of the loop count for each animation segment
   const loopCounts = useRef({
     helloThumbsUp: 0,
     shocked: 0,
@@ -62,6 +62,18 @@ const ControlledLottie = () => {
   });
 
   useEffect(() => {
+    setIsMobile(window.innerWidth <= 768);
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
     if (containerRef.current) {
       const anim = lottie.loadAnimation({
         container: containerRef.current,
@@ -71,55 +83,78 @@ const ControlledLottie = () => {
         animationData,
       });
 
-      // Add complete listener to handle animation completion
-      anim.addEventListener('complete', () => {
+      anim.addEventListener("complete", () => {
         setIsAnimating(false);
       });
 
       setLottieInstance(anim);
 
       return () => {
-        anim.removeEventListener('complete');
+        anim.removeEventListener("complete");
         anim.destroy();
       };
     }
+  }, []);
+
+  // Set the initial message when the component loads
+  useEffect(() => {
+    setCurrentMessage("Welcome to Innerve.tech!"); // or any initial message
   }, []);
 
   useEffect(() => {
     if (!lottieInstance) return;
 
     const handleScroll = () => {
-      if (isAnimating) return; // Skip if animation is already playing
+      if (isAnimating) return;
 
       const scrollPosition = window.scrollY;
       let selectedSegment = "";
 
-      // Determine which segment to play based on scroll position
-      if (scrollPosition < 200) {
-        selectedSegment = "helloThumbsUp";
-      } else if (scrollPosition >= 200 && scrollPosition < 700) {
-        selectedSegment = "helloThumbsUp";
-      } else if (scrollPosition >= 700 && scrollPosition < 1800) {
-        selectedSegment = "shocked";
-      } else if (scrollPosition >= 1800 && scrollPosition < 3400) {
-        selectedSegment = "sleeping";
-      } else if (scrollPosition >= 3400 && scrollPosition < 5800) {
-        selectedSegment = "runComeBack";
-      } else if (scrollPosition >= 5800 && scrollPosition < 7300) {
-        selectedSegment = "laughing";
-      } else if (scrollPosition >= 7400 && scrollPosition < 8400) {
-        selectedSegment = "screaming";
-      } else if (scrollPosition >= 8400 && scrollPosition < 10400) {
-        selectedSegment = "ohSit";
+      if (isMobile) {
+        if (scrollPosition >= 0 && scrollPosition < 300) {
+          selectedSegment = "helloThumbsUp";
+        } else if (scrollPosition >= 300 && scrollPosition < 2400) {
+          selectedSegment = "shocked";
+        } else if (scrollPosition >= 2400 && scrollPosition < 4800) {
+          selectedSegment = "sleeping";
+        }
+        else if (scrollPosition >= 4800 && scrollPosition < 8400) {
+          selectedSegment = "runComeBack";
+        }
+        else if (scrollPosition >= 8400 && scrollPosition < 12000) {
+          selectedSegment = "scrollingEyes";
+        }
+        else if (scrollPosition >= 12000 && scrollPosition < 14400) {
+          selectedSegment = "screaming";
+        }
+        else{
+          selectedSegment = "ohSit";
+        }
+      } else {
+        if (scrollPosition < 200) {
+          selectedSegment = "helloThumbsUp";
+        } else if (scrollPosition >= 200 && scrollPosition < 700) {
+          selectedSegment = "helloThumbsUp";
+        } else if (scrollPosition >= 700 && scrollPosition < 1800) {
+          selectedSegment = "shocked";
+        } else if (scrollPosition >= 1800 && scrollPosition < 3400) {
+          selectedSegment = "sleeping";
+        } else if (scrollPosition >= 3400 && scrollPosition < 5800) {
+          selectedSegment = "runComeBack";
+        } else if (scrollPosition >= 5800 && scrollPosition < 7300) {
+          selectedSegment = "scrollingEyes";
+        } else if (scrollPosition >= 7400 && scrollPosition < 8400) {
+          selectedSegment = "screaming";
+        } else if (scrollPosition >= 8400 && scrollPosition < 10400) {
+          selectedSegment = "ohSit";
+        }
       }
 
-      // Only play animation if we have a selected segment and it's different from current
       if (selectedSegment && selectedSegment !== currentSegment) {
         const segment = animationSegments[selectedSegment];
         setIsAnimating(true);
         setCurrentSegment(selectedSegment);
 
-        // Reset the loop count for this segment
         loopCounts.current[selectedSegment] = 0;
 
         const playAnimation = () => {
@@ -139,7 +174,6 @@ const ControlledLottie = () => {
       }
     };
 
-    // Debounce the scroll handler to prevent too many updates
     let scrollTimeout;
     const debouncedHandleScroll = () => {
       clearTimeout(scrollTimeout);
@@ -151,20 +185,21 @@ const ControlledLottie = () => {
       window.removeEventListener("scroll", debouncedHandleScroll);
       clearTimeout(scrollTimeout);
     };
-  }, [lottieInstance, isAnimating, currentSegment]);
+  }, [lottieInstance, isAnimating, currentSegment, isMobile]);
 
   return (
-    <div className="fixed -bottom-4 left-0 w-full z-10">
+    <div className="fixed -bottom-4 left-0 w-full z-10 flex items-center">
       <div
         ref={containerRef}
         className="w-[200px] h-[200px] -ml-[20px] md:w-[300px] md:h-[300px]"
       ></div>
-      {/* Optional message display */}
-      {/* {currentMessage && (
-        <p className="absolute top-[5rem] w-[12rem] left-[10rem] md:top-[10rem] md:left-[15rem] md:w-[15rem] rounded-lg p-2 text-center text-sm font-semibold text-black border-2 border-black bg-[#ffff]">
-          {currentMessage}
-        </p>
-      )} */}
+
+      {/* Positioning the message next to the animation */}
+      <div
+        className="absolute font-tthoves left-[8rem] md:left-[13rem] text-center text-black border-2 border-white bg-white/70 p-2 rounded-xl md:p-2 md:rounded-lg shadow-lg backdrop-blur-sm max-w-xs"
+      >
+        {currentMessage}
+      </div>
     </div>
   );
 };

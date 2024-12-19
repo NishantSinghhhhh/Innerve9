@@ -87,7 +87,7 @@ function App() {
             autoPlay
             loop
             muted
-            className="h-[300px] object-cover"
+            className="md:h-[300px] h-[150px] object-cover"
           />
         </div>
       )}
