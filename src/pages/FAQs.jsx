@@ -119,6 +119,7 @@ const FAQs = () => {
       <div className="flex flex-col md:flex-row h-full ">
         <div className="w-full md:w-1/5 flex flex-col items-center justify-center gap-4 p-4 md:ml-[4rem] md:mr-[4rem]">
         {categories.map((category) => (
+          // test
           <button
             key={category}
             className={`font-angrybirds text-1rem md:text-[2rem] w-[10rem] h-[2rem]  md:w-[20rem]  md:h-[4.31rem] py-2 px-3 rounded-lg text-center font-semibold 
