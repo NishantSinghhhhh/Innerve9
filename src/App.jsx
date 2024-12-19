@@ -9,6 +9,7 @@ import Testimonials from "./pages/Testimonials";
 import SponsorUs from "./pages/SponsorUs";
 import Footer1 from "./pages/Foooter1";
 import Noise from "./components/noise";
+import FAQs from "./pages/FAQs";
 import ControlledLottie from "./pages/ControlledLottie";
 
 function App() {
@@ -41,6 +42,9 @@ function App() {
       </section>
       <section id="sponsors-section">
         <Sponsors />
+      </section>
+      <section id="Faqs">
+        <FAQs/>
       </section>
       <section id="sponsor-us-section">
         <SponsorUs />
