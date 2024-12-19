@@ -8,8 +8,12 @@ const Sidebar = ({ closeSidebar }) => {
   const itemsRef = useRef([]);
 
   useEffect(() => {
-    // Lock scrolling when the sidebar is open
+    // More comprehensive scroll locking
     document.body.style.overflow = "hidden";
+    document.body.style.height = "100vh";
+    document.body.style.position = "fixed";
+    document.body.style.width = "100%";
+    document.body.style.top = `-${window.scrollY}px`; // Store current scroll position
 
     gsap.fromTo(
       backgroundRef.current,
@@ -23,14 +27,20 @@ const Sidebar = ({ closeSidebar }) => {
       { y: "0", opacity: 1, duration: 0.5, ease: "power1.inOut", delay: 0.5, stagger: 0.2 }
     );
 
-    // Cleanup function to unlock scrolling when the component unmounts
+    // Cleanup: Restore scroll position and remove locks
     return () => {
+      const scrollY = document.body.style.top;
       document.body.style.overflow = "auto";
+      document.body.style.height = "auto";
+      document.body.style.position = "static";
+      document.body.style.width = "auto";
+      document.body.style.top = "";
+      window.scrollTo(0, parseInt(scrollY || "0") * -1);
     };
   }, []);
 
   const handleCloseSidebar = (event, targetId) => {
-    event.preventDefault(); // Prevent the default anchor link navigation
+    event.preventDefault();
 
     gsap.to(backgroundRef.current, {
       y: "-100vh",
@@ -48,47 +58,42 @@ const Sidebar = ({ closeSidebar }) => {
       delay: 0.2,
     });
 
-    // Close the sidebar after the animation
     setTimeout(() => {
-      closeSidebar(); // Trigger the closeSidebar function
-      document.getElementById(targetId).scrollIntoView({ behavior: "smooth" }); // Navigate to the target section
+      closeSidebar();
+      document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth" });
     }, 820);
   };
 
   return (
     <div
       ref={backgroundRef}
-      className="absolute top-0 right-0 overflow-hidden h-screen w-screen flex justify-center items-center bg-cover bg-center z-50"
+      className="fixed top-0 right-0 overflow-hidden h-screen w-screen flex justify-center items-center bg-cover bg-center z-50"
       style={{ backgroundImage: `url(${BackgroundImage})` }}
     >
-      {/* Close Button */}
       <button
-        className="absolute top-4 right-8 z-20"
-        onClick={handleCloseSidebar}
+        className="absolute top-[2rem] right-[10rem] z-20"
+        onClick={(e) => handleCloseSidebar(e, "")}
       >
         <img
           src={CrossIcon}
           alt="close"
-          className="w-6 h-6 sm:w-8 sm:h-8 hover:opacity-75"
+          className="w-6 h-6 sm:w-12 sm:h-12 hover:opacity-50"
           style={{ backgroundColor: "transparent" }}
         />
       </button>
 
-      {/* Menu Items */}
       <div className="font-angrybirds text-center space-y-16 z-10">
         {[
           { text: "PRIZES", id: "cards-section" },
           { text: "TRACKS", id: "tracks-section" },
-        //   { text: "SPONSORED PROBLEM STATEMENTS", id: "sponsored-problem-statements-section" },
           { text: "TIMELINE", id: "timeline-section" },
           { text: "SPONSORS", id: "sponsors-section" },
-        //   { text: "FAQS", id: "faqs-section" },
           { text: "TESTIMONIALS", id: "testimonials-section" },
         ].map((item, index) => (
           <a
             key={item.text}
             href={`#${item.id}`}
-            onClick={(event) => handleCloseSidebar(event, item.id)} // Pass event and target ID to handleCloseSidebar
+            onClick={(event) => handleCloseSidebar(event, item.id)}
             className="text-white text-3xl sm:text-4xl md:text-5xl font-bold block no-underline"
             ref={(el) => (itemsRef.current[index] = el)}
           >

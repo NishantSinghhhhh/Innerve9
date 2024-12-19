@@ -7,7 +7,7 @@ const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false); // State to toggle sidebar visibility
 
   const handleBrochureClick = () => {
-    window.open("https://drive.google.com/file/d/your-file-id/view?usp=sharing", "_blank");
+    window.open("https://drive.google.com/file/d/1QfAPDxhfOkAoZRe2Rwb6sa8gNhvMrnEk/view?usp=drive_link", "_blank");
   };
 
   // Toggle Sidebar

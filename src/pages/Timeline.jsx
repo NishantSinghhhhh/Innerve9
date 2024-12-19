@@ -113,8 +113,9 @@ const Timeline = () => {
           {/* timeline data and innerve logo formation */}
           <div className="w-[100%] flex justify-center items-center gap-auto">
             {/* left div */}
-            <div className="hidden md:flex w-[48%] justify-center items-center relative">
-            <img src={Logo} alt="Logo" />
+            <div className="hidden md:flex h-[10rem] w-[48%]  justify-center items-center relative">
+              <div></div>
+            <img src={Logo} alt="Logo"  className="md:h-[32.5rem] md:w-[15]"/>
               {/* <LogoAnimation /> */}
             </div>
 

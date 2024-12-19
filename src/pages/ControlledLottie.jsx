@@ -40,6 +40,26 @@ const ControlledLottie = () => {
   const containerRef = useRef(null);
   const [lottieInstance, setLottieInstance] = useState(null);
   const [currentMessage, setCurrentMessage] = useState("");
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [currentSegment, setCurrentSegment] = useState("");
+
+  // Object to keep track of the loop count for each animation segment
+  const loopCounts = useRef({
+    helloThumbsUp: 0,
+    shocked: 0,
+    sleeping: 0,
+    runComeBack: 0,
+    laughing: 0,
+    screaming: 0,
+    ohSit: 0,
+    bored: 0,
+    scrollingEyes: 0,
+    dizziness: 0,
+    furiousFace: 0,
+    thinking: 0,
+    lookingAround: 0,
+    angryBird: 0,
+  });
 
   useEffect(() => {
     if (containerRef.current) {
@@ -51,9 +71,17 @@ const ControlledLottie = () => {
         animationData,
       });
 
+      // Add complete listener to handle animation completion
+      anim.addEventListener('complete', () => {
+        setIsAnimating(false);
+      });
+
       setLottieInstance(anim);
 
-      return () => anim.destroy();
+      return () => {
+        anim.removeEventListener('complete');
+        anim.destroy();
+      };
     }
   }, []);
 
@@ -61,10 +89,12 @@ const ControlledLottie = () => {
     if (!lottieInstance) return;
 
     const handleScroll = () => {
-      const scrollPosition = window.scrollY;
+      if (isAnimating) return; // Skip if animation is already playing
 
+      const scrollPosition = window.scrollY;
       let selectedSegment = "";
 
+      // Determine which segment to play based on scroll position
       if (scrollPosition < 200) {
         selectedSegment = "helloThumbsUp";
       } else if (scrollPosition >= 200 && scrollPosition < 700) {
@@ -72,44 +102,56 @@ const ControlledLottie = () => {
       } else if (scrollPosition >= 700 && scrollPosition < 1800) {
         selectedSegment = "shocked";
       } else if (scrollPosition >= 1800 && scrollPosition < 3400) {
-        selectedSegment = "sleeping"; // Trigger shocked on scroll
-      }
-       else if (scrollPosition >= 3400 && scrollPosition < 5800) {
-        selectedSegment = "runComeBack"; // Trigger shocked on scroll
-      }
-      else if (scrollPosition >= 5800 && scrollPosition < 7300) {
-        selectedSegment = "laughing"; // Trigger shocked on scroll
-      }
-      else if (scrollPosition >= 7400 && scrollPosition < 8400) {
-        selectedSegment = "screaming"; // Trigger shocked on scroll
-      }
-      else if (scrollPosition >= 8400 && scrollPosition < 10400) {
-        selectedSegment = "ohSit"; // Trigger shocked on scroll
+        selectedSegment = "sleeping";
+      } else if (scrollPosition >= 3400 && scrollPosition < 5800) {
+        selectedSegment = "runComeBack";
+      } else if (scrollPosition >= 5800 && scrollPosition < 7300) {
+        selectedSegment = "laughing";
+      } else if (scrollPosition >= 7400 && scrollPosition < 8400) {
+        selectedSegment = "screaming";
+      } else if (scrollPosition >= 8400 && scrollPosition < 10400) {
+        selectedSegment = "ohSit";
       }
 
-
-
-      if (selectedSegment) {
+      // Only play animation if we have a selected segment and it's different from current
+      if (selectedSegment && selectedSegment !== currentSegment) {
         const segment = animationSegments[selectedSegment];
+        setIsAnimating(true);
+        setCurrentSegment(selectedSegment);
 
-        // Enable looping for multiple repetitions of shocked
-        lottieInstance.loop = selectedSegment === "shocked"; // Only loop shocked animation
-        lottieInstance.playSegments([segment.start, segment.end], true);
+        // Reset the loop count for this segment
+        loopCounts.current[selectedSegment] = 0;
 
-        if (selectedSegment === "shocked") {
-          setTimeout(() => {
-            lottieInstance.loop = false; // Stop looping after the animation has played
-            lottieInstance.stop();
-          }, 3000); // Stop the loop after 3 seconds
-        }
+        const playAnimation = () => {
+          if (loopCounts.current[selectedSegment] < 10) {
+            lottieInstance.playSegments([segment.start, segment.end], true);
+            loopCounts.current[selectedSegment] += 1;
+            lottieInstance.addEventListener("complete", playAnimation);
+          } else {
+            lottieInstance.removeEventListener("complete", playAnimation);
+            setIsAnimating(false);
+          }
+        };
+
+        playAnimation();
 
         setCurrentMessage(segmentMessages[selectedSegment]);
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [lottieInstance]);
+    // Debounce the scroll handler to prevent too many updates
+    let scrollTimeout;
+    const debouncedHandleScroll = () => {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(handleScroll, 50);
+    };
+
+    window.addEventListener("scroll", debouncedHandleScroll);
+    return () => {
+      window.removeEventListener("scroll", debouncedHandleScroll);
+      clearTimeout(scrollTimeout);
+    };
+  }, [lottieInstance, isAnimating, currentSegment]);
 
   return (
     <div className="fixed -bottom-4 left-0 w-full z-10">
