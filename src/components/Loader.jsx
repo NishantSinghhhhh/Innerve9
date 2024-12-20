@@ -1,39 +1,58 @@
 import React from 'react';
-import { useEffect } from 'react';
+import { motion } from 'framer-motion';
+import Nine from "../assets/Nine.png";
 
 const Loader = () => {
   return (
-    <div className="h-screen w-full fixed top-0 left-0 right-0 bottom-0 z-[1000] bg-white flex flex-col items-center justify-center gap-6">
-   
-      <div className="relative w-24 h-24">
-        <div className="absolute inset-0 rounded-full border-8 border-[#e34a65] border-r-transparent border-l-transparent animate-spin" />
+    <div className="h-screen w-full fixed top-0 left-0 z-[1000] bg-white flex items-center justify-center">
+      <motion.div
+        className="relative flex items-center justify-center"
+        animate={{
+          scale: [1, 1.15, 1],
+          rotate: [0, 360],
+        }}
+        transition={{
+          duration: 3,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      >
+        {/* Image Animation */}
+        <motion.img
+          src={Nine}
+          alt="Loader Icon"
+          className="w-[120px] h-[120px] sm:w-[150px] sm:h-[150px] md:w-[200px] md:h-[200px]"
+          animate={{
+            scale: [1, 0.9, 1],
+            opacity: [1, 0.7, 1],
+          }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
         
-        <div className="absolute inset-4 rounded-full bg-[#e34a65] animate-pulse" />
-        
-        <div className="absolute inset-[14px] rounded-full bg-[#e34a65] animate-ping" />
-      </div>
-      
-      <div className="relative">
-        <div className="text-2xl font-bold bg-gradient-to-r from-[#e34a65] via-[#e34a65] to-[#e34a65] bg-clip-text text-transparent animate-pulse">
-          Loading...
-        </div>
-      </div>
-      <div className="w-48 h-1 bg-[#e34a65] rounded-full overflow-hidden">
-        <div className="h-full bg-[#e34a65] rounded-full animate-[loading_1.5s_ease-in-out_infinite]" />
-      </div>
+        {/* Number Animation */}
+        <motion.span
+          className="absolute text-[4rem] sm:text-[6rem] md:text-[8rem] lg:text-[15rem] text-[#D80026] font-bold"
+          animate={{
+            scale: [1, 1.1, 1],
+            opacity: [1, 0.5, 1],
+          }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        >
+          <div className="font-angrybirds text-[5rem] sm:text-[8rem] md:text-[12rem]">
+            9
+          </div>
+        </motion.span>
+      </motion.div>
     </div>
   );
 };
-
-// Add keyframes for loading animation
-const style = document.createElement('style');
-style.textContent = `
-  @keyframes loading {
-    0% { width: 0%; }
-    50% { width: 100%; }
-    100% { width: 0%; }
-  }
-`;
-document.head.appendChild(style);
 
 export default Loader;
