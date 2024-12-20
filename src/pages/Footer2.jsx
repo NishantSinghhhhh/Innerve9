@@ -14,59 +14,62 @@
 // const Footer2 = () => {
 //   const planets = [
 //     { id: 1, img: lock, alt: "Lock Icon" },
-//     { id: 2, img: gram, alt: "Gram Icon" },
-//     { id: 3, img: lock, alt: "Lock Icon" },
-//     { id: 4, img: twir, alt: "Twitter Icon" },
-//     { id: 5, img: cord, alt: "Cord Icon" },
-//     { id: 6, img: lock, alt: "Lock Icon" },
-//     { id: 7, img: ins, alt: "Instagram Icon" },
-//     { id: 8, img: lock, alt: "Lock Icon" },
-//     { id: 9, img: lock, alt: "Lock Icon" },
-//     { id: 10, img: lock, alt: "Lock Icon" },
+//     { id: 2, img: gram, alt: "Gram Icon" ,link: "https://www.instagram.com/ossclub.ait?igsh=MTRlNXNpbnFjem42Yg==" },
+//     { id: 3, img: lock, alt: "Lock Icon",link: "https://www.instagram.com/ossclub.ait?igsh=MTRlNXNpbnFjem42Yg==" },
+//     { id: 4, img: twir, alt: "Twitter Icon",link: "https://example.com/lock1" },
+//     { id: 5, img: cord, alt: "Cord Icon",link: "https://example.com/lock1" },
+//     { id: 6, img: lock, alt: "Lock Icon",link: "https://example.com/lock1" },
+//     { id: 7, img: ins, alt: "Instagram Icon",link: "https://example.com/lock1" },
+//     { id: 8, img: lock, alt: "Lock Icon",link: "https://example.com/lock1" },
+//     { id: 9, img: lock, alt: "Lock Icon",link: "https://example.com/lock1" },
+//     { id: 10, img: lock, alt: "Lock Icon",link: "https://example.com/lock1" },
 //   ];
 
 //   return (
     
-//     <div className="footer-container  sm:flex-row  ">
-//       <div className="box flex flex-col md:flex-row md:gap-[22rem] md: ml-[-35px]  w-full lg:w-1/6 object-contain xl:w-1/4 2xl:w-1/4  ">
+//     <div className="footer1-container   ">
+//       <div className="footer">
+//     <div className="footer-container">
+//       {/* Sun Section */}
+//       <div className="sun">
+//         <img src={creamRoth} alt="Cream Roth Logo" className="logo" />
+//         <div className="board">CONNECT WITH US!</div>
+//       </div>
 
-//       <div className=" flex gap-[2rem] flex-col justify-between md:flex-row md:justify-center md:items-center " >
-//       <div className="flex-grow"></div> {/* This takes up remaining space */}
-//       <div className="flex flex-col gap-[7rem] ">
-//       <div className="ml-[3.5rem] md:scale-[.8] lg:scale-[.8]  xl:scale-[1]"> 
-//         <Secratry Name="Deepshika Rawat" contactNumber="+91 639 879 3447" ImageSrc={Female} />
-//       <Secratry Name="Kaushal Vyas" contactNumber="+91 866 895 2920" ImageSrc={Male} /></div> 
-// </div>
-
-//       <div></div>
+//       {/* Planets Section */}
+//       <div className="planets-container">
+//   {planets.map((planet, index) => (
+//     <div key={index} className={`planet planet${index + 1}`}>
+//       <a href={planet.link} target="_blank" rel="noopener noreferrer">
+//         <img src={planet.img} alt={planet.alt} className="planet-icon" />
+//       </a>
 //     </div>
-
-//       {/* Solar System Section */}
-//       <div className="w-[10%] xl:scale-[1] lg:scale-[.8] sm:scale-[.9] md:scale-[.7] ">
-
-//       <div className="solar-system xl:ml-[20px] lg:ml-[-230px] sm:ml-[16rem] mt-[5em] md:ml-[-430px] ">
-//         <div className="sun ">
-//           <img src={creamRoth} alt="Cream Roth Logo"    />
-//           <div className="board">CONNECT WITH US!</div>
+//   ))}
+// </div>
+//     </div>
+//     <div className="foot">
+//     <div  className="contact">
+     
+//       <div className="female">
+        
+//         <div className="f_char"><img src={Female} alt="" /></div>
+//         <div className="con">
+//         <div className="name">Deepshika Rawat</div>
+//         <div className="ph">+91 639 879 3447</div>
 //         </div>
-//         {planets.map((planet, index) => (
-//           <div key={index} className={`planet planet${index + 1}`}>
-//             <img src={planet.img} alt={planet.alt}  />
-//           </div>
-//         ))}
 //       </div>
+//       <div className="gap"></div>
+//       <div className="male">
+//       <div className="m_char"><img src={Male} alt="" /></div>
+//         <div className="con1">
+//         <div className="name">Kaushal Vyas</div>
+//         <div className="ph">+91 866 895 2920</div>
+//         </div>
 //       </div>
-
-//       <div className="w-[33%] flex justify-center items-center  lg:ml-[-90px] md:ml-[-700px] md:mb-[5rem] md:scale-[0.8] ">
-          
-//       {/* Contact Section */}
-//       <div className="xl:w-1/4 flex flex-col items-center justify-center mt-[6rem] ml-[32rem]  xl:ml-[900px] xl: scale-[1.2] xl:mb-[3rem] lg:ml-[-150px] ">
-//       <h3 className="text-xl font-semibold mb-2">Venue</h3>
-//       <div className="relative w-[280px] h-[200px] mt-2 flex items-center justify-center">
+//     </div>
+//     <div className="venue"> <div className="card">
 //         <img
 //           src={mapFrameImage}
-//           alt="Map Frame"
-//           className="absolute w-full h-full object-contain lg:scale-[.8]  xl:scale-[1]"
 //           />
 //         <iframe
 //           title="Venue Location"
@@ -77,11 +80,9 @@
 //           allowFullScreen=""
 //           loading="fast"
 //           ></iframe>
+//       </div></div>
 //       </div>
 //     </div>
-//     </div>
-
-//       </div>
 
 //         <div>
 //         <div className="border-t border-[#9CA3AF] w-full min-h-10 
@@ -115,7 +116,7 @@
 //     </div>
 //         </div>
       
-//     </div>
+//         </div>
 //   );
 // };
 

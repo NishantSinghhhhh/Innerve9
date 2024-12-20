@@ -8,6 +8,7 @@ import Sponsors from "./pages/Sponsors";
 import Testimonials from "./pages/Testimonials";
 import SponsorUs from "./pages/SponsorUs";
 import Footer1 from "./pages/Foooter1";
+// import Footer2 from "./pages/Footer2";
 import Noise from "./components/noise";
 import FAQs from "./pages/FAQs";
 import ControlledLottie from "./pages/ControlledLottie";
@@ -126,7 +127,7 @@ function App() {
         <Footer1 />
       </section>
       <Noise />
-      {/* {showLottie && <ControlledLottie />} */}
+      {showLottie && <ControlledLottie />}
     </div>
   );
 }
