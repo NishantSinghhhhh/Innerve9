@@ -49,7 +49,7 @@ const Cards = () => {
           <img src={TopCloud} style={{ width: "100%" }} alt="Top Cloud" />
         </div>
 
-      <div className="w-[100vw] bg-white flex justify-center items-center">
+      <div className="w-[100%] bg-white flex justify-center items-center">
         <div
           className="md:w-[97%] w-[100%]"
           style={{
@@ -81,7 +81,7 @@ const Cards = () => {
           {/* Content */}
           <div style={{ position: "relative", zIndex: 2 }}> {/* Brings content above the background */}
             <p className="font-angrybirds text-white text-6xl pt-10">
-              PRIZE POOL OF Rs. 10,00,000+
+              PRIZE POOL OF Rs. 12,00,000+
             </p>
             <div className="flex justify-center gap-20 pt-14 items-center flex-wrap pb-[60px]">
               <CardWrapper {...cardProps.cardProps.firstPrize} style={{ maxWidth: "300px" }} />
