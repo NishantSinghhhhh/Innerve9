@@ -86,3 +86,30 @@ body{
   }
 } */
 
+
+
+/* styles/lottie.css */
+.ios-lottie {
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+}
+
+/* Optional: Add these styles if you experience flickering */
+.lottie-container {
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure smooth animations */
+@media screen and (max-width: 768px) {
+  .ios-lottie {
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+  }
+}
