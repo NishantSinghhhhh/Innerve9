@@ -166,7 +166,7 @@ const Timeline = () => {
       </div>
 
       {/* Cloud Image - Bottom */}
-      <div className="relative min-h-8 md:h-24 sm:h-16 lg:h-36 rotate-180 w-full z-1"
+      <div className="relative min-h-8 md:h-24 sm:h-16 lg:h-[13rem] lg:w-[100vw]  rotate-180 w-full z-1"
       style={{
         backgroundImage: ` url(${White_Leaves})`,
         backgroundSize: "110%",

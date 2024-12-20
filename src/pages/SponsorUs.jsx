@@ -51,7 +51,7 @@ const SponsorUs = () => {
         <Floating imgSrc={bubble_Rock}/>
       </div>
       {/* Cactus Image */}
-      <div className="relative mb-[20px] scale-[2.5] md:scale-[1.5] lg:scale-[1] md:-mb-[20px] z-5">
+      <div className="relative mb-[20px] scale-[2.5] md:scale-[1.5] lg:scale-[1.1] md:-mb-[20px] z-5">
         <img src={cactus} alt="Cactus" />
       </div>
 
@@ -102,7 +102,7 @@ const SponsorUs = () => {
         </div>
       </div>
 
-      <div className="relative -mt-[15px] scale-[2] md:scale-[1.5] lg:scale-[1] md:-mt-[50px] lg:-mt-[100px] z-5">
+      <div className="relative -mt-[15px] scale-[2] md:scale-[1.5] lg:scale-[1.5] md:-mt-[50px] lg:-mt-[100px] z-5">
         <img src={Rocks} alt="Rocks" />
       </div>
 
