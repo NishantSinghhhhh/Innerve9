@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Pink_Board from '../assets/Faq_board.png'
+import Pink_Board from "../assets/Faq_board.png";
 
 const FAQs = () => {
   const [selectedCategory, setSelectedCategory] = useState("GENERAL");
@@ -82,10 +82,8 @@ const FAQs = () => {
           "The OSS Club offers financial support to cover or partially reimburse travel expenses for participants.",
       },
       {
-        question:
-          "Is there any additional cost for mess and lodgings?",
-        answer:
-          "There will be no additional expenses.",
+        question: "Is there any additional cost for mess and lodgings?",
+        answer: "There will be no additional expenses.",
       },
       {
         question:
@@ -105,10 +103,12 @@ const FAQs = () => {
   };
 
   return (
-    <div className="w-screen h-[55rem] md:h-[60rem] lg:h-[50rem] text-white">
+    <div className="w-screen h-[61rem] md:h-[60rem] lg:h-[50rem] text-white">
       <div className="text-center py-6">
-        <h1 className="text-[8rem] bg-center md:text-5xl lg:text-8xl font-bold font-angrybirds 
-          animate-fade-in transition-all duration-300">
+        <h1
+          className="text-[8rem] bg-center md:text-5xl lg:text-8xl font-bold font-angrybirds 
+          animate-fade-in transition-all duration-300"
+        >
           FAQs
         </h1>
         <p className="text-gray-400 mt-2 text-[1rem] md:text-[2rem] font-angrybirds">
@@ -118,29 +118,28 @@ const FAQs = () => {
 
       <div className="flex flex-col md:flex-row h-full ">
         <div className="w-full md:w-1/5 flex flex-col items-center  mt-[3rem]  gap-4 p-4 md:ml-[4rem] md:mr-[4rem]">
-        {categories.map((category) => (
-          // test
-          <button
-            key={category}
-            className={`font-angrybirds text-1rem md:text-[2rem] w-[15rem] h-[3rem] md:w-[20rem] mb-[1rem]  md:h-[4.31rem] py-2 px-3 rounded-lg text-center font-semibold 
+          {categories.map((category) => (
+            // test
+            <button
+              key={category}
+              className={`font-angrybirds text-1rem md:text-[2rem] w-[15rem] h-[3rem] md:w-[20rem] mb-[1rem]  md:h-[4.31rem] py-2 px-3 rounded-lg text-center font-semibold 
               transition-all duration-300 transform hover:scale-105 text-white
               ${
                 selectedCategory === category
                   ? "shadow-lg"
-                  : "hover:bg-gray-600"
+                  : "hover:bg-transparent"
               }`}
-            style={{
-              backgroundImage: `url(${Pink_Board})`,
-              backgroundSize: "contain",
-              backgroundRepeat: "no-repeat",
-              backgroundPosition: "center",
-            }}
-            onClick={() => setSelectedCategory(category)}
-          >
-            {category}
-          </button>
-        ))}
-
+              style={{
+                backgroundImage: `url(${Pink_Board})`,
+                backgroundSize: "contain",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center",
+              }}
+              onClick={() => setSelectedCategory(category)}
+            >
+              {category}
+            </button>
+          ))}
         </div>
 
         <div className="w-full md:w-3/5 mx-auto p-4">
@@ -149,8 +148,8 @@ const FAQs = () => {
           </h2> */}
           <div className="space-y-4">
             {faqsData[selectedCategory].map((faq, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="border-b border-gray-600 pb-4 transition-all duration-300 hover:border-pink-500"
               >
                 <div
@@ -158,17 +157,23 @@ const FAQs = () => {
                     transition-all duration-300 hover:text-pink-500"
                   onClick={() => toggleQuestion(index)}
                 >
-                  <span className="md:text-[32px] md:mb-[1.5rem] md:mt-[1.5rem] text-left text-[1rem] font-semibold font-tthoves">{faq.question}</span>
-                  <span className={`text-2xl transform transition-transform duration-600 
-                    ${openQuestion === index ? "rotate-180" : "rotate-0"}`}>
+                  <span className="md:text-[32px] md:mb-[1.5rem] md:mt-[1.5rem] text-left text-[1rem] font-semibold font-tthoves">
+                    {faq.question}
+                  </span>
+                  <span
+                    className={`text-2xl transform transition-transform duration-600 
+                    ${openQuestion === index ? "rotate-180" : "rotate-0"}`}
+                  >
                     {openQuestion === index ? "−" : "+"}
                   </span>
                 </div>
                 <div
                   className={`overflow-hidden transition-all duration-600 transform
-                    ${openQuestion === index 
-                      ? "max-h-96 opacity-100 translate-y-0"
-                      : "max-h-0 opacity-0 -translate-y-2"}`}
+                    ${
+                      openQuestion === index
+                        ? "max-h-96 opacity-100 translate-y-0"
+                        : "max-h-0 opacity-0 -translate-y-2"
+                    }`}
                 >
                   <div className="mt-2 text-left md:text-[1.5rem] text-gray-300 transition-opacity duration-300">
                     {faq.answer}
