@@ -13,6 +13,8 @@ import FAQs from "./pages/FAQs";
 import ControlledLottie from "./pages/ControlledLottie";
 import Lenis from "@studio-freight/lenis";
 import video from "./assets/Nine.webm";
+import Loader from "./components/Loader";
+
 // import Footer2 from "./pages/Footer2";
 
 function App() {
@@ -67,7 +69,9 @@ function App() {
     }, 7000);
 
     if (videoRef.current) {
+
       videoRef.current.playbackRate = 2.0;
+      
     }
 
     return () => clearTimeout(timer);
@@ -81,14 +85,16 @@ function App() {
           className="absolute top-0 z-[1000] w-full h-screen bg-white flex justify-center items-center"
           style={{ position: "fixed", top: 0, left: 0, right: 0, bottom: 0 }}
         >
-          <video
+          {/* <video
             ref={videoRef} // Attach ref to the video element
             src={video}
             autoPlay
             loop
             muted
             className="md:h-[300px] h-[150px] object-cover"
-          />
+          /> */}
+
+          <Loader/>
         </div>
       )}
 
