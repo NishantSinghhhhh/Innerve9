@@ -82,13 +82,13 @@ const SponsorUs = () => {
           <div className="flex flex-col items-center justify-center gap-[1rem] md:px-[2rem] text-center">
             <div className="w-full">
               <div className="text-left">
-                <p className="text-white font-angrybirds text-[1rem] md:text-[2.75rem] ml-[1rem] xl:text-[3rem]">
+                <p className="text-white font-angrybirds text-[2.5rem] md:text-[2.75rem] ml-[1rem] xl:text-[3rem]">
                   WANT TO
                 </p>
               </div>
 
               <div>
-                <p className="text-white font-angrybirds text-[1.5rem] md:text-[6rem] xl:text-[8rem]">
+                <p className="text-white font-angrybirds text-[3.5rem] md:text-[6rem] xl:text-[8rem]">
                   SPONSOR US!
                 </p>
               </div>
