@@ -10,7 +10,6 @@ const Navbar = () => {
     window.open("https://drive.google.com/file/d/1QfAPDxhfOkAoZRe2Rwb6sa8gNhvMrnEk/view?usp=drive_link", "_blank");
   };
 
-  // Toggle Sidebar
   const toggleSidebar = () => {
     setIsSidebarOpen((prevState) => !prevState);
   };
@@ -18,7 +17,7 @@ const Navbar = () => {
   return (
     <header className="w-full">
       <nav className="flex justify-between items-center py-4 px-8 lg:py-8 lg:px-[120px]">
-        <a href="/">
+        <a>
           <img src={Logo} alt="logo" />
         </a>
         <div className="flex gap-4 items-center">
@@ -36,7 +35,7 @@ const Navbar = () => {
           </div>
           <button 
             className="flex items-center gap-[10px] border border-[rgba(255,255,255,0.5)] pl-6 pr-4 py-[10px] rounded group"
-            onClick={toggleSidebar} // Toggle sidebar on button click
+            onClick={toggleSidebar}
           >
             <p>Menu</p>
             <img src={Navigate} alt="menu" className="group-hover:rotate-[45deg] transition duration-500"/>
@@ -44,7 +43,6 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* Render Sidebar when open */}
       {isSidebarOpen && <Sidebar closeSidebar={toggleSidebar} />}
     </header>
   );
