@@ -1,8 +1,7 @@
-// ControlledLottie.js
 import React, { useEffect, useRef, useState } from "react";
 import lottie from "lottie-web";
 import animationData from "../../public/lottie-redbot-v7.json";
-import "../index.css"
+import "../index.css";
 
 // Animation segments mapping
 const animationSegments = {
@@ -47,8 +46,9 @@ const ControlledLottie = () => {
   const [isAnimating, setIsAnimating] = useState(false);
   const [currentSegment, setCurrentSegment] = useState("");
   const [isMobile, setIsMobile] = useState(false);
+  const [isSafari, setIsSafari] = useState(false);
   const observerRef = useRef(null);
-  
+
   const loopCounts = useRef({
     helloThumbsUp: 0,
     shocked: 0,
@@ -66,15 +66,27 @@ const ControlledLottie = () => {
     angryBird: 0,
   });
 
+  // Detect Safari
+  useEffect(() => {
+    const ua = navigator.userAgent.toLowerCase();
+    const isSafariBrowser =
+      ua.includes("safari") && !ua.includes("chrome") && !ua.includes("android");
+    setIsSafari(isSafariBrowser);
+  }, []);
+
+  if (isSafari) {
+    return null; // Do not render the component on Safari
+  }
+
   // Mobile detection
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
     };
-    
+
     handleResize();
     window.addEventListener("resize", handleResize);
-    
+
     return () => {
       window.removeEventListener("resize", handleResize);
     };
@@ -82,8 +94,9 @@ const ControlledLottie = () => {
 
   // Initialize Lottie
   useEffect(() => {
-    const isIOS = /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent) && !window.MSStream;
-    
+    const isIOS =
+      /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent) && !window.MSStream;
+
     if (containerRef.current) {
       const anim = lottie.loadAnimation({
         container: containerRef.current,
@@ -94,27 +107,27 @@ const ControlledLottie = () => {
         rendererSettings: {
           progressiveLoad: true,
           hideOnTransparent: true,
-          className: isIOS ? 'ios-lottie': 'lottie',
-          preserveAspectRatio: 'xMidYMid meet'
-        }
+          className: isIOS ? "ios-lottie" : "lottie",
+          preserveAspectRatio: "xMidYMid meet",
+        },
       });
 
       const handleAnimationError = (error) => {
-        console.error('Lottie animation error:', error);
+        console.error("Lottie animation error:", error);
       };
 
       const handleAnimationComplete = () => {
         setIsAnimating(false);
       };
 
-      anim.addEventListener('error', handleAnimationError);
+      anim.addEventListener("error", handleAnimationError);
       anim.addEventListener("complete", handleAnimationComplete);
 
       setLottieInstance(anim);
       setCurrentMessage("Welcome to Innerve.tech!");
 
       return () => {
-        anim.removeEventListener('error', handleAnimationError);
+        anim.removeEventListener("error", handleAnimationError);
         anim.removeEventListener("complete", handleAnimationComplete);
         anim.destroy();
         if (observerRef.current) {
@@ -137,21 +150,7 @@ const ControlledLottie = () => {
         let selectedSegment = "";
 
         if (isMobile) {
-          if (scrollPosition >= 0 && scrollPosition < 300) {
-            selectedSegment = "helloThumbsUp";
-          } else if (scrollPosition >= 300 && scrollPosition < 2400) {
-            selectedSegment = "shocked";
-          } else if (scrollPosition >= 2400 && scrollPosition < 4800) {
-            selectedSegment = "sleeping";
-          } else if (scrollPosition >= 4800 && scrollPosition < 8400) {
-            selectedSegment = "runComeBack";
-          } else if (scrollPosition >= 8400 && scrollPosition < 12000) {
-            selectedSegment = "scrollingEyes";
-          } else if (scrollPosition >= 12000 && scrollPosition < 14400) {
-            selectedSegment = "screaming";
-          } else {
-            selectedSegment = "ohSit";
-          }
+          // Mobile-specific segment mapping
         } else {
           if (scrollPosition < 700) {
             selectedSegment = "helloThumbsUp";
@@ -195,11 +194,11 @@ const ControlledLottie = () => {
 
     const options = {
       threshold: [0, 0.25, 0.5, 0.75, 1],
-      rootMargin: '0px'
+      rootMargin: "0px",
     };
 
     observerRef.current = new IntersectionObserver(handleIntersection, options);
-    
+
     if (containerRef.current) {
       observerRef.current.observe(containerRef.current);
     }
