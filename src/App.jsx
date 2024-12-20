@@ -13,6 +13,7 @@ import FAQs from "./pages/FAQs";
 import ControlledLottie from "./pages/ControlledLottie";
 import Lenis from "@studio-freight/lenis";
 import video from "./assets/Nine.webm";
+import Footer2 from "./pages/Footer2";
 
 function App() {
   const [showLottie, setShowLottie] = useState(false);
@@ -117,7 +118,7 @@ function App() {
         <SponsorUs />
       </section>
       <section className="w-full" id="footer-section">
-        <Footer1 />
+        <Footer2 />
       </section>
       <Noise />
       {showLottie && <ControlledLottie />}
