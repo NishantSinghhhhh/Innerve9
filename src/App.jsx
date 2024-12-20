@@ -121,7 +121,7 @@ function App() {
         <Footer1 />
       </section>
       <Noise />
-      {showLottie && <ControlledLottie />}
+      {/* {showLottie && <ControlledLottie />} */}
     </div>
   );
 }
