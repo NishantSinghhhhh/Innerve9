@@ -66,9 +66,8 @@ function App() {
       setIsLoading(false);
     }, 7000);
 
-    // Speed up the video playback once it's loaded
     if (videoRef.current) {
-      videoRef.current.playbackRate = 2.0; // Set playback rate to 2x speed
+      videoRef.current.playbackRate = 2.0;
     }
 
     return () => clearTimeout(timer);

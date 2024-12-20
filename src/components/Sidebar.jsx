@@ -74,7 +74,7 @@ const Sidebar = ({ closeSidebar }) => {
       style={{ backgroundImage: `url(${BackgroundImage})` }}
     >
       <button
-        className="absolute top-[2rem] right-[10rem] z-20"
+        className="absolute top-[3rem] right-[2rem] md:top-[2rem] md:right-[10rem] z-20"
         onClick={(e) => handleCloseSidebar(e, "")}
       >
         <img
