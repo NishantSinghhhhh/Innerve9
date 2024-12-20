@@ -26,14 +26,14 @@ const Button = ({ BtnIcon, Label }) => {
     >
       {BtnIcon && <img src={BtnIcon} alt="icon" className="h-[2rem] w-[2rem]" />}
       {Label && <span className="md:text-[32px] font-angrybirds">{Label}</span>}
-      <video
+      {/* <video
         id="warning-video"
         className="absolute top-[-180%] md:top-[-210%] left-[-45%]"
         src={warning_video}
         autoPlay
         loop
         muted
-      />
+      /> */}
     </button>
   );
 };
