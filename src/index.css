@@ -113,3 +113,14 @@ body{
     -webkit-transform-style: preserve-3d;
   }
 }
+
+@media (max-width: 480px) {
+  .footer-container {
+    transform: scale(0.7);
+    padding-right: 0.75rem;
+  }
+  
+  .venue {
+    transform: scale(0.7);
+  }
+}

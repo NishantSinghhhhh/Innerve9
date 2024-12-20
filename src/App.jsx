@@ -13,6 +13,7 @@ import FAQs from "./pages/FAQs";
 import ControlledLottie from "./pages/ControlledLottie";
 import Lenis from "@studio-freight/lenis";
 import video from "./assets/Nine.webm";
+// import Footer2 from "./pages/Footer2";
 
 function App() {
   const [showLottie, setShowLottie] = useState(false);

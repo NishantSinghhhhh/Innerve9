@@ -1,6 +1,7 @@
 import React from 'react';
 import Warning from "../assets/warning-graphic.svg";
 import btn from "../assets/btn.svg";
+import label from "../assets/label.png";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
@@ -16,17 +17,26 @@ const ButtonSponsor = ({ BtnIcon, Label }) => {
 
   return (
     <button
-      className="flex items-center justify-center gap-[10px] px-16 py-8 text-white relative"
+      className="flex items-center justify-center gap-[10px] px-16 py-8 text-white relative md:h-[5rem] md:w-[20rem] h-[1rem] w-[10rem]"
       style={{
-        backgroundImage: `url(${btn})`,
+        backgroundImage: `url(${label})`,
         backgroundRepeat: "no-repeat",
-        backgroundSize:"contain",
+        backgroundSize: "contain",
         backgroundPosition: "center",
       }}
     >
-      {BtnIcon && <img src={BtnIcon} alt="icon" className="h-[2rem] w-[2rem]" />}
-      {Label && <span className=" md:text-[32px] font-angrybirds">{Label}</span>}
-      <img src={Warning} id="warning" alt="warning" className="absolute top-[5%] left-[-8%] md:left-[-3%]"/>
+      {BtnIcon && <img src={label} alt="icon" className="w-full" />}
+      {Label && (
+        <div className="absolute inset-0 flex items-center justify-center w-full font-angrybirds text-[1rem] md:text-[32px] px-4">
+          {Label}
+        </div>
+      )}
+      <img 
+        src={Warning} 
+        id="warning" 
+        alt="warning" 
+        className="absolute top-[5%] left-[-8%] md:left-[-3%]"
+      />
     </button>
   );
 };

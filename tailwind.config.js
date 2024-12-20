@@ -3,7 +3,6 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
-
   ],
   theme: {
     extend: {
@@ -20,13 +19,21 @@ export default {
           '100%': { transform: 'rotate(360deg)' },
         },
       },
-    },
-    fontFamily: {
-      angrybirds: ["AngryBirds", "sans-serif"],
-      tthoves: ["TTHoves", "sans-serif"],// Add the custom font
+      fontFamily: {
+        angryBirds: ["AngryBirds", "sans-serif"],
+        tthoves: ["TTHoves", "sans-serif"],
       },
+      scale: {
+        '120': '1.2',
+        '85': '0.85',
+      },
+      borderWidth: {
+        '3': '3px',
+      },
+      spacing: {
+        '120': '30rem',
+      },
+    },
   },
-  plugins: [
-    
-  ],
-}
+  plugins: [],
+};

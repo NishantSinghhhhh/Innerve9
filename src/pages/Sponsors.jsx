@@ -1,17 +1,17 @@
 import React, { memo } from "react";
-
 import NordVpn from "../assets/NordVpn.svg?react"
-import Wolfram from "../assets/wolfram.svg?react"
+// import Wolfram from "../assets/wolfram-sm.png"
+// import Wolfram1 from "../assets/Wolfram_Research-Logo.wine.svg?react"
 import Texture from "../assets/texture.svg?react";
 import UpperLeaves from "../assets/Orange_Leaves_1.png";
 import LowerLeaves from "../assets/Orange_Leaves_bottom.png";
-
+import Wolfram from "../assets/logo/Wolfram";
 import SponsorTab from "../components/SponsorTab";
 
 const MemoizedSponsorTab = memo(SponsorTab);
 
 const Sponsors = () => {
-  const titleSponsorImages = [<NordVpn />, <Wolfram />];
+  const titleSponsorImages = [<NordVpn />, <Wolfram/>];
 
   return (
     <section className="relative w-full flex flex-col justify-center items-center">
