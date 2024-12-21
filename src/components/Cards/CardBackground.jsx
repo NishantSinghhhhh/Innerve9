@@ -8,6 +8,8 @@ const CardBackground = ({ images }) => {
         src={radial}
         alt="radial"
         className="absolute top-[60%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 origin-center h-[1260px] w-[1260px] z-[0]"
+        draggable="false"
+        style={{ pointerEvents: 'none' }}
       />
       <img
         src={leftside}
@@ -18,7 +20,7 @@ const CardBackground = ({ images }) => {
         src={rightside}
         alt="rightside"
         className="absolute bottom-20 -right-0 w-[60px] h-[60px] origin-center z-8"
-      />
+      /> 
     </>
   );
 };
