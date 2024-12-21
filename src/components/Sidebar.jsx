@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import BackgroundImage from "../assets/background.svg";
+import BackgroundImage from "../assets/background.png";
 import CrossIcon from "../assets/closeButton.svg";
 import Lenis from "@studio-freight/lenis"; // Import Lenis
 
