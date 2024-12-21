@@ -62,11 +62,32 @@ const Hero = () => {
   };
 
   const birds = [
-    { id: "red-bird", src: Red, style: "top-56 left-20" },
-    { id: "blue-bird", src: Blue, style: "top-[25%] right-[10rem]" },
-    { id: "yellow-bird", src: Yellow, style: "top-[70%] right-[10%]" },
-    { id: "white-bird", src: White, style: "top-[80%] left-[10%] bottom-[13%]" },
+    { 
+      id: "red-bird", 
+      src: Red, 
+      style: "top-56 left-20", 
+      className: "relative -top-[2rem] left-[3rem] transform -translate-x-1/2 -translate-y-1/2" 
+    },
+    { 
+      id: "blue-bird", 
+      src: Blue, 
+      style: "top-[25%] right-[10rem]", 
+      className: "relative -top-[3rem] left-[2rem] transform -translate-x-1/2 -translate-y-1/2" 
+    },
+    { 
+      id: "yellow-bird", 
+      src: Yellow, 
+      style: "top-[70%] right-[10%]", 
+      className: "relative -top-[1rem] left-[4rem] transform -translate-x-1/2 -translate-y-1/2" 
+    },
+    { 
+      id: "white-bird", 
+      src: White, 
+      style: "top-[80%] left-[10%] bottom-[13%]", 
+      className: "relative -top-[4rem] left-[5rem] transform -translate-x-1/2 -translate-y-1/2" 
+    },
   ];
+  
 
   return (
     <section
@@ -97,20 +118,21 @@ const Hero = () => {
 
       {/* Birds and Portals */}
       {birds.map((bird, index) => (
-        <div key={bird.id} className={`hidden lg:flex absolute ${bird.style}`}>
-          <div className="relative">
-            <div className="absolute w-[10rem] h-[10rem]">
-              <Portal />
-            </div>
-            <img
-              src={bird.src}
-              ref={(el) => (birdsRef.current[index] = el)}
-              className="relative -top-[3rem] left-[4rem] transform -translate-x-1/2 -translate-y-1/2"
-              alt={bird.id}
-            />
+      <div key={bird.id} className={`hidden lg:flex absolute ${bird.style}`}>
+        <div className="relative">
+          <div className="absolute w-[10rem] h-[10rem]">
+            <Portal />
           </div>
+          <img
+            src={bird.src}
+            ref={(el) => (birdsRef.current[index] = el)}
+            className={bird.className}
+            alt={bird.id}
+          />
         </div>
-      ))}
+      </div>
+    ))}
+
 
       <div
         id="loader"
