@@ -15,6 +15,7 @@ import ControlledLottie from "./pages/ControlledLottie";
 import Lenis from "@studio-freight/lenis";
 import video from "./assets/Nine.webm";
 import Loader from "./components/Loader";
+import GoToTop from "./components/GoToTop";
 
 // import Footer2 from "./pages/Footer2";
 
@@ -128,6 +129,8 @@ function App() {
       </section>
       <Noise />
       {showLottie && <ControlledLottie />}
+      
+      <GoToTop/>
     </div>
   );
 }

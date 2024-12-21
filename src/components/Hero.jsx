@@ -21,44 +21,73 @@ import gsap from "gsap";
 
 const Hero = () => {
   const videoRef = useRef(null);
+  const birdsRef = useRef([]);
 
   useEffect(() => {
+    // Adjust video playback speed
     if (videoRef.current) {
       videoRef.current.playbackRate = 2.0;
     }
 
-    const disableScroll = () => {
-      document.body.style.overflow = "hidden";
-    };
-    disableScroll();
+    // Disable scrolling initially
+    document.body.style.overflow = "hidden";
 
-    const enableScroll = () => {
-      document.body.style.overflow = "auto";
-    };
-
+    // Enable scrolling after loader
     setTimeout(() => {
       gsap.to("#loader", {
         y: "-100%",
         duration: 0.4,
-        onComplete: enableScroll,
+        onComplete: () => {
+          document.body.style.overflow = "auto";
+        },
       });
     }, 4000);
 
-    const birdAnimations = ["#red-bird", "#blue-bird", "#yellow-bird", "#white-bird"];
-    birdAnimations.forEach((selector) => {
-      gsap.to(selector, {
-        y: 20,
-        duration: 2.0,
-        repeat: -1,
-        yoyo: true,
-        ease: "power1.inOut",
-      });
+    // Animate only birds
+    birdsRef.current.forEach((bird) => {
+      if (bird) {
+        gsap.to(bird, {
+          y: "+=20",
+          duration: 2,
+          repeat: -1,
+          yoyo: true,
+          ease: "power1.inOut",
+        });
+      }
     });
   }, []);
 
   const handleEnd = () => {
     alert("Innerve 9 is now LIVE!!");
   };
+
+  const birds = [
+    { 
+      id: "red-bird", 
+      src: Red, 
+      style: "top-56 left-20", 
+      className: "relative -top-[2rem] ml-[10px] left-[3.5rem] transform -translate-x-1/2 -translate-y-1/2" 
+    },
+    { 
+      id: "blue-bird", 
+      src: Blue, 
+      style: "top-[25%] right-[10rem]", 
+      className: "relative -top-[2rem] ml-[10px] left-[2rem] transform -translate-x-1/2 -translate-y-1/2" 
+    },
+    { 
+      id: "yellow-bird", 
+      src: Yellow, 
+      style: "top-[75%] right-[10%]", 
+      className: "relative -top-[1rem] left-[3.4rem] transform -translate-x-1/2 -translate-y-1/2" 
+    },
+    { 
+      id: "white-bird", 
+      src: White, 
+      style: "top-[80%] left-[10%] bottom-[13%]", 
+      className: "relative -top-[3rem] left-[3.4rem] ml-[10px] transform -translate-x-1/2 -translate-y-1/2" 
+    },
+  ];
+  
 
   return (
     <section
@@ -88,24 +117,22 @@ const Hero = () => {
       </div>
 
       {/* Birds and Portals */}
-      {[
-        { id: "red-bird", src: Red, style: "top-56 left-20" },
-        { id: "blue-bird", src: Blue, style: "top-[25%] right-[20px]" },
-        { id: "yellow-bird", src: Yellow, style: "top-[70%] right-[10%]" },
-        { id: "white-bird", src: White, style: "top-[80%] left-[10%] bottom-[13%]" },
-      ].map((bird) => (
-        <div key={bird.id} className={`hidden lg:flex absolute ${bird.style}`}>
-          <div className="relative">
+      {birds.map((bird, index) => (
+      <div key={bird.id} className={`hidden lg:flex absolute ${bird.style}`}>
+        <div className="relative">
+          <div className="absolute w-[10rem] h-[10rem]">
             <Portal />
-            <img
-              src={bird.src}
-              // alt={`${bird.id.replace("-bird", "")} bird`}
-              id={bird.id}
-              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-            />
           </div>
+          <img
+            src={bird.src}
+            ref={(el) => (birdsRef.current[index] = el)}
+            className={bird.className}
+            alt={bird.id}
+          />
         </div>
-      ))}
+      </div>
+    ))}
+
 
       <div
         id="loader"

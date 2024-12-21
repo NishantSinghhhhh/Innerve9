@@ -188,7 +188,7 @@ const ControlledLottie = () => {
   }, [lottieInstance, isAnimating, currentSegment, isMobile]);
 
   return (
-    <div className="fixed -bottom-4 left-0 w-full z-10 flex items-center">
+    <div className="fixed -bottom-4 left-0 w-[30rem] z-10 flex items-center">
       <div
         ref={containerRef}
         className="w-[200px] h-[200px] -ml-[20px] md:w-[300px] md:h-[300px]"

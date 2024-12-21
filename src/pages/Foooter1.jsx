@@ -96,10 +96,10 @@ const Footer1 = () => {
 
             <div className="flex gap-[15px]">
               {/* Links for social media icons */}
-              <a href="https://discord.com" target="_blank" rel="noopener noreferrer">
+              {/* <a href="https://discord.com" target="_blank" rel="noopener noreferrer">
                 <img src={discord1} alt="Discord" className="w-6 h-6 md:w-auto md:h-auto" />
-              </a>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+              </a> */}
+              <a href="https://github.com/aitoss" target="_blank" rel="noopener noreferrer">
                 <img src={github} alt="GitHub" className="w-6 h-6 md:w-auto md:h-auto" />
               </a>
               <a href="hthttps://www.instagram.com/innerve.tech/tps://www.meta.com" target="_blank" rel="noopener noreferrer">
@@ -108,7 +108,7 @@ const Footer1 = () => {
               <a href="https://x.com/innerve_tech" target="_blank" rel="noopener noreferrer">
                 <img src={X_1} alt="X" className="w-6 h-6 md:w-auto md:h-auto" />
               </a>
-              <a href="https://whttps://www.linkedin.com/company/open-source-software-club/posts/?feedView=allww.linkedin.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/company/open-source-software-club/posts/?feedView=all" target="_blank" rel="noopener noreferrer">
                 <img src={linkedIn} alt="LinkedIn" className="w-6 h-6 md:w-auto md:h-auto" />
               </a>
             </div>

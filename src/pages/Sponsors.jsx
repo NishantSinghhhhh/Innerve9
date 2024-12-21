@@ -2,11 +2,13 @@ import React, { memo } from "react";
 import NordVpn from "../assets/NordVpn.svg?react"
 // import Wolfram from "../assets/wolfram-sm.png"
 // import Wolfram1 from "../assets/Wolfram_Research-Logo.wine.svg?react"
-import Texture from "../assets/texture.svg?react";
+// import Texture from "../assets/texture.svg?react";
 import UpperLeaves from "../assets/Orange_Leaves_1.png";
 import LowerLeaves from "../assets/Orange_Leaves_bottom.png";
 import Wolfram from "../assets/logo/Wolfram";
 import SponsorTab from "../components/SponsorTab";
+// import Texture from "../assets/logo/Texture";
+import Texture2 from "../assets/texture.png";
 
 const MemoizedSponsorTab = memo(SponsorTab);
 
@@ -30,9 +32,14 @@ const Sponsors = () => {
       {/* Sponsor Section */}
       <div className="flex flex-col justify-center items-center relative py-24 bg-[#FE7702] w-full">
         {/* Texture Background */}
-        <div className="absolute w-full h-full top-0 left-0 opacity-80 mix-blend-soft-light">
+        <div className="absolute flex w-full h-full top-0 left-0 mix-blend-soft-light " style={{
+          backgroundImage: `url(${Texture2})`,
+          backgroundRepeat: "repeat-y",
+          backgroundSize: "100%",
+          // backgroundPosition: "center"
+        }}>
           
-        <Texture className="w-full h-full object-cover" />
+        {/* <Texture className="w-screen h-full object-cover" /> */}
         </div>
 
         {/* Heading */}
