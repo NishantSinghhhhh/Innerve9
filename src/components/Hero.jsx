@@ -105,7 +105,7 @@ const Hero = () => {
             <img
               src={bird.src}
               ref={(el) => (birdsRef.current[index] = el)}
-              className="relative -top-[10rem] left-[4.9rem] transform -translate-x-1/2 -translate-y-1/2"
+              className="relative -top-[2rem] left-[4.5rem] transform -translate-x-1/2 -translate-y-1/2"
               alt={bird.id}
             />
           </div>
