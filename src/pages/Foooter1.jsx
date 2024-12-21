@@ -108,7 +108,7 @@ const Footer1 = () => {
               <a href="https://x.com/innerve_tech" target="_blank" rel="noopener noreferrer">
                 <img src={X_1} alt="X" className="w-6 h-6 md:w-auto md:h-auto" />
               </a>
-              <a href="https://whttps://www.linkedin.com/company/open-source-software-club/posts/?feedView=allww.linkedin.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/company/open-source-software-club/posts/?feedView=all" target="_blank" rel="noopener noreferrer">
                 <img src={linkedIn} alt="LinkedIn" className="w-6 h-6 md:w-auto md:h-auto" />
               </a>
             </div>
