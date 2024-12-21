@@ -77,7 +77,7 @@ const Hero = () => {
     { 
       id: "yellow-bird", 
       src: Yellow, 
-      style: "top-[70%] right-[10%]", 
+      style: "top-[75%] right-[10%]", 
       className: "relative -top-[1rem] left-[3.4rem] transform -translate-x-1/2 -translate-y-1/2" 
     },
     { 
