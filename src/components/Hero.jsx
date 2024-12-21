@@ -66,13 +66,13 @@ const Hero = () => {
       id: "red-bird", 
       src: Red, 
       style: "top-56 left-20", 
-      className: "relative -top-[2rem] left-[3.5rem] transform -translate-x-1/2 -translate-y-1/2" 
+      className: "relative -top-[2rem] ml-[10px] left-[3.5rem] transform -translate-x-1/2 -translate-y-1/2" 
     },
     { 
       id: "blue-bird", 
       src: Blue, 
       style: "top-[25%] right-[10rem]", 
-      className: "relative -top-[2rem] left-[2rem] transform -translate-x-1/2 -translate-y-1/2" 
+      className: "relative -top-[2rem] ml-[10px] left-[2rem] transform -translate-x-1/2 -translate-y-1/2" 
     },
     { 
       id: "yellow-bird", 
@@ -84,7 +84,7 @@ const Hero = () => {
       id: "white-bird", 
       src: White, 
       style: "top-[80%] left-[10%] bottom-[13%]", 
-      className: "relative -top-[3rem] left-[3.7rem] transform -translate-x-1/2 -translate-y-1/2" 
+      className: "relative top-[5rem] left-[3.5rem] ml-[10px] transform -translate-x-1/2 -translate-y-1/2" 
     },
   ];
   
