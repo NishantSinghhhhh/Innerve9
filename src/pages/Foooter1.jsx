@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import discord1 from "../assets/discord.svg";
 import github from "../assets/github.svg";
 import meta from "../assets/meta.svg";
@@ -6,18 +6,56 @@ import X_1 from "../assets/X_1.svg";
 import linkedIn from "../assets/linkedIn.svg";
 import { FaGithub, FaLinkedin, FaDiscord, FaInstagram } from "react-icons/fa";
 import BlinkingDot from "../components/blinking.jsx";
-import Sphere from "../components/sphere.jsx"; // Import the Sphere component
+import Sphere from "../components/sphere.jsx";
 import contactCtaImage from "../assets/contact-cta.png";
 import menuBtnImage from "../assets/menu-btn.png";
 import mapFrameImage from "../assets/card.png";
 import RotatingRoth from "../components/Rotating_roth.jsx";
+
+// Contact Number component with tooltip
+const ContactNumber = ({ name, number }) => {
+  const [showTooltip, setShowTooltip] = useState(false);
+
+  const copyToClipboard = async () => {
+    try {
+      await navigator.clipboard.writeText(number);
+      setShowTooltip(true);
+      setTimeout(() => setShowTooltip(false), 2000); // Hide tooltip after 2 seconds
+    } catch (err) {
+      console.error('Failed to copy number:', err);
+    }
+  };
+
+  return (
+    <div className="relative w-full max-w-xs flex flex-col items-center">
+      <p className="text-center text-gray-500 font-semibold mb-1">{name}</p>
+      <div 
+        className="num flex items-center justify-center relative cursor-pointer"
+        onClick={copyToClipboard}
+      >
+        <img
+          src={contactCtaImage}
+          alt="Contact CTA"
+          className="w-44 h-auto object-cover"
+        />
+        <p className="absolute text-xs xl:text-sm">{number}</p>
+        
+        {showTooltip && (
+          <div className="absolute w-[10rem] -top-16 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-4 py-2 rounded-md text-sm opacity-100 transition-all duration-300 ease-in-out z-50">
+            <span className="block text-center">Number copied to clipboard!</span>
+            <div className="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-1/2 rotate-45 w-3 h-3 bg-gray-800"></div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
 
 const Footer1 = () => {
   return (
     <>
       <div className="w-[100%] h-[58rem] md:h-[25rem] lg:h-[35rem] xl:h-[35rem] overflow-hidden">
         <div className="flex md:flex-row justify-between mb-[1.5rem] flex-col">
-
           <div className="">
             <RotatingRoth />
           </div>
@@ -25,31 +63,14 @@ const Footer1 = () => {
           <div className="xl:w-1/4 flex flex-col items-center justify-center mt-8">
             <h3 className="text-xl font-semibold mb-3 text-center">CONTACT US</h3>
             <div className="space-y-6 w-full flex flex-col items-center">
-              {/* Kaushal Vyas Contact */}
-              <div className="relative w-full max-w-xs flex flex-col items-center">
-                <p className="text-center text-gray-500 font-semibold mb-1">Kaushal Vyas</p>
-                <div className="num flex items-center justify-center">
-                  <img
-                    src={contactCtaImage}
-                    alt="Contact CTA"
-                    className="w-44 h-auto object-cover"
-                  />
-                  <p className="absolute text-xs xl:text-sm">+91 866 895 2920</p>
-                </div>
-              </div>
-
-              {/* Deepshikha Rawat Contact */}
-              <div className="relative w-full max-w-xs flex flex-col items-center">
-                <p className="text-center text-gray-500 font-semibold mb-1">Deepshika Rawat</p>
-                <div className="num flex items-center justify-center">
-                  <img
-                    src={contactCtaImage}
-                    alt="Contact CTA"
-                    className="w-44 h-auto object-cover"
-                  />
-                  <p className="absolute text-xs xl:text-sm">+91 639 879 3447</p>
-                </div>
-              </div>
+              <ContactNumber 
+                name="Kaushal Vyas"
+                number="+91 866 895 2920"
+              />
+              <ContactNumber 
+                name="Deepshika Rawat"
+                number="+91 639 879 3447"
+              />
             </div>
           </div>
 
@@ -72,20 +93,10 @@ const Footer1 = () => {
               ></iframe>
             </div>
           </div>
-
         </div>
-        <div className="border-t border-[#9CA3AF] pt-[10px] w-full min-h-14 
-        flex flex-col 
-        md:flex-row 
-        md:items-center 
-        md:justify-center">
-          <div className="w-[95%] 
-            flex flex-col 
-            md:flex-row 
-            items-center 
-            justify-between 
-            space-y-4 
-            md:space-y-0">
+
+        <div className="border-t border-[#9CA3AF] pt-[10px] w-full min-h-14 flex flex-col md:flex-row md:items-center md:justify-center">
+          <div className="w-[95%] flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
             <div className="flex items-center gap-[10px]">
               <BlinkingDot />
             </div>
@@ -95,14 +106,10 @@ const Footer1 = () => {
             </div>
 
             <div className="flex gap-[15px]">
-              {/* Links for social media icons */}
-              {/* <a href="https://discord.com" target="_blank" rel="noopener noreferrer">
-                <img src={discord1} alt="Discord" className="w-6 h-6 md:w-auto md:h-auto" />
-              </a> */}
               <a href="https://github.com/aitoss" target="_blank" rel="noopener noreferrer">
                 <img src={github} alt="GitHub" className="w-6 h-6 md:w-auto md:h-auto" />
               </a>
-              <a href="hthttps://www.instagram.com/innerve.tech/tps://www.meta.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.instagram.com/innerve.tech/" target="_blank" rel="noopener noreferrer">
                 <img src={meta} alt="Meta" className="w-6 h-6 md:w-auto md:h-auto" />
               </a>
               <a href="https://x.com/innerve_tech" target="_blank" rel="noopener noreferrer">

@@ -48,7 +48,7 @@ const Sponsors = () => {
             Our 
           </p>
           <p className="capitalize text-[80px] md:text-[128px] font-angrybirds text-[#FFFF5C] leading-none">
-            Sponsors
+            sponsor
           </p>
         </div>
 
