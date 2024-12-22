@@ -30,6 +30,8 @@ const CardWrapper = ({ prize, prizeLabel, description, amount, images }) => {
           <Eggs images={images} />
         </div>
       </div>
+
+      
     </>
   );
 };
