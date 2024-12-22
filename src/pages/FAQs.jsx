@@ -79,7 +79,7 @@ const FAQs = () => {
       {
         question: "Are travel-related expenses reimbursable for participants?",
         answer:
-          "The OSS Club offers financial support to cover or partially reimburse travel expenses for participants.",
+          "The OSS Club will not cover  travel expenses for participants.",
       },
       {
         question: "Is there any additional cost for mess and lodgings?",

@@ -45,10 +45,10 @@ const Sponsors = () => {
         {/* Heading */}
         <div className="flex flex-col md:flex-row gap-0">
           <p className="capitalize text-[32px] md:text-7xl font-angrybirds text-[#FFFF5C] leading-none">
-            Our 
+            OUR 
           </p>
           <p className="capitalize text-[80px] md:text-[128px] font-angrybirds text-[#FFFF5C] leading-none">
-            sponsor
+            SPONSOR
           </p>
         </div>
 
