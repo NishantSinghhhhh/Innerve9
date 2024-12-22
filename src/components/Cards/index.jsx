@@ -83,10 +83,16 @@ const Cards = () => {
             <p className="font-angrybirds text-white text-6xl pt-10">
               PRIZE POOL OF Rs. 12,00,000+
             </p>
-            <div className="flex justify-center gap-20 pt-14 items-center flex-wrap pb-[60px]">
-              <CardWrapper {...cardProps.cardProps.firstPrize} style={{ maxWidth: "300px" }} />
-              <CardWrapper {...cardProps.cardProps.secondPrize} style={{ maxWidth: "300px" }} />
-              <CardWrapper {...cardProps.cardProps.thirdPrize} style={{ maxWidth: "300px" }} />
+            <div className="flex justify-center gap-20 pt-14 items-center flex-wrap pb-[60px]" style={{ userSelect: "none" }}>
+             
+                <CardWrapper {...cardProps.cardProps.firstPrize}style={{ maxWidth: "300px", userSelect: "none" }} />
+             
+             
+                <CardWrapper {...cardProps.cardProps.secondPrize} style={{ maxWidth: "300px", userSelect: "none" }} />
+             
+             
+                <CardWrapper {...cardProps.cardProps.thirdPrize} style={{ maxWidth: "300px", userSelect: "none" }}/>
+             
             </div>
           </div>
         </div>
