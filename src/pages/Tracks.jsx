@@ -31,7 +31,7 @@ const outerImages = [
 ];
 
 const labels = [
-  "AR/VR", "EdTech", "Health", "Gaming", "FinTech", 
+  "AR/VR", "EduTech", "Health", "GameDev", "FinTech", 
   "CyberSec", "Defence", "Blockchain", "Logistics"
 ];
 
