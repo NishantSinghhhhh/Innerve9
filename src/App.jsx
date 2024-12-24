@@ -64,11 +64,11 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowLottie(true);
-    }, 5000);
+    }, 4000);
 
     setTimeout(() => {
       setIsLoading(false);
-    }, 7000);
+    }, 5000);
 
     if (videoRef.current) {
 

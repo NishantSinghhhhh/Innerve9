@@ -109,7 +109,7 @@ const Timeline = () => {
         </div>
 
         {/* timeline main*/}
-        <div className=" flex flex-col items-center justify-center gap-24 md:gap-64">
+        <div className=" flex flex-col items-center justify-center gap-24 md:gap-64 b ">
           {/* timeline data and innerve logo formation */}
           <div className="w-[100%] flex justify-center items-center gap-auto">
             {/* left div */}
@@ -120,7 +120,7 @@ const Timeline = () => {
             </div>
 
             {/* Right Division// timeline data */}
-            <div className="flex px-4 flex-col justify-center items-center gap-[18px]">
+            <div className="flex px-4 flex-col justify-center items-center gap-[18px]  w-[90%]">
             <div className="flex flex-col items-start justify-start gap-[18px]">
                 {timelineData.map((event, index) => (
                   <TimelineDetails
@@ -140,7 +140,7 @@ const Timeline = () => {
                   />
 
                 {/* Details */}
-                <div className="w-[80%]">
+                <div className="w-[80%] md:w-[80%]">
                   <div className="flex flex-row justify-between items-center">
                     <p className="font-angrybirds text-base md:text-[20px]">
                     Result Declaration

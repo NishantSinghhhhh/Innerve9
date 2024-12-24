@@ -25,10 +25,10 @@ const GoToTop = () => {
   }, []);
 
   return (
-    <div className="flex justify-center items-center absolute">
+    <div className="flex justify-center items-center absolute ">
       {isVisible && (
         <div
-          className="top-btn w-[2.5rem] h-[2.5rem] text-xl font-[400] text-[#212121] fixed bottom-16 right-4 z-[9999] shadow-lg flex justify-center items-center cursor-pointer rounded-full p-3 m-3 bg-[rgba(255,255,255,0.7)] backdrop-blur-md hover:bg-[rgba(255,255,255,0.9)] transition-all duration-500"
+          className="top-btn w-[2.5rem] h-[2.5rem] text-xl font-[400] text-[#212121] fixed bottom-28  md:bottom-16 right-4 z-[9999] shadow-lg flex justify-center items-center cursor-pointer rounded-full p-3 m-3 bg-[rgba(255,255,255,0.7)] backdrop-blur-md hover:bg-[rgba(255,255,255,0.9)] transition-all duration-500"
           onClick={goToBtn}
         >
           <FaArrowUp />
